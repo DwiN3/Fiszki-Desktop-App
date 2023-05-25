@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="" />
+    <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ControllerFirstScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerFirstScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ControllerFirstScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerMainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +41,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <option name="MAIN_CLASS_NAME" value="app.App" />
       <module name="FiszkiDesktopApp" />
       <method v="2">
         <option name="Make" enabled="true" />

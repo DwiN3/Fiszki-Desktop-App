@@ -3,10 +3,10 @@ package app;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class ControllerMainMenu {
+public class ControllerRegister {
 
     @FXML
-    private void switchToPrimary() throws IOException {
+    private void switchActivity() throws IOException {
         App.setRoot("activity_first_screen");
     }
 }

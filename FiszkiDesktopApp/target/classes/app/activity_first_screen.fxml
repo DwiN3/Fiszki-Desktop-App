@@ -7,10 +7,14 @@
 
 <AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ControllerFirstScreen">
    <children>
-      <Label layoutX="248.0" layoutY="166.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" />
-      <Button fx:id="primaryButton" layoutX="343.0" layoutY="391.0" onAction="#switchToSecondary" text="Switch to Secondary View" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" layoutX="248.0" layoutY="166.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" />
       <TextField fx:id="id_name_first" layoutX="388.0" layoutY="162.0" prefHeight="25.0" prefWidth="215.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true"/>
+      <Label alignment="CENTER" contentDisplay="TOP" layoutX="248.0" layoutY="211.0" prefHeight="17.0" prefWidth="131.0" text="Hasło" />
+      <PasswordField fx:id="id_password_first" layoutX="388.0" layoutY="207.0" prefHeight="25.0" prefWidth="215.0" />
+      <Button fx:id="id_login_button_first" layoutX="388.0" layoutY="259.0" onAction="#switchActivity" prefHeight="25.0" prefWidth="215.0" text="LOGOWANIE" />
+      <Button fx:id="id_register_button_first" layoutX="388.0" layoutY="300.0" onAction="#switchActivity" prefHeight="25.0" prefWidth="215.0" text="REJESTRACJA" />
+      <Button fx:id="id_reset_button_first" layoutX="388.0" layoutY="340.0" onAction="#switchActivity" prefHeight="25.0" prefWidth="215.0" text="RESET HASŁA" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
