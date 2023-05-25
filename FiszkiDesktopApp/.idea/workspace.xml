@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/ControllerResetPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ControllerFirstScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,13 +38,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Szkola/0 Projekty i PDF/Projekty JAVA/Zadania/DataBase/2.0 plik zabezpieczenie/DatabaseTable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/dwini/Desktop/CuckooSearch/CuckooSearch"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="app.App" />
