@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ControllerFirstScreen">
+<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ControllerFirstScreen">
    <children>
       <Label layoutX="248.0" layoutY="166.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" />
       <Button fx:id="primaryButton" layoutX="343.0" layoutY="391.0" onAction="#switchToSecondary" text="Switch to Secondary View" />

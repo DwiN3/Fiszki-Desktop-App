@@ -1,4 +1,4 @@
-package org.example;
+package app;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
