@@ -11,7 +11,7 @@
         <Button fx:id="game_quiz_button_menu" layoutX="388.0" layoutY="244.0" prefHeight="25.0" prefWidth="215.0" text="Game Quiz" />
         <Button fx:id="game_wpis_button_menu" layoutX="388.0" layoutY="288.0" prefHeight="25.0" prefWidth="215.0" text="Game Wpis" />
         <Button fx:id="log_out_button_menu" layoutX="388.0" layoutY="330.0" prefHeight="25.0" prefWidth="215.0" text="Wyloguj się" />
-      <Label alignment="CENTER" layoutX="388.0" layoutY="117.0" prefHeight="17.0" prefWidth="215.0" text="Witaj" />
+      <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="388.0" layoutY="117.0" prefHeight="17.0" prefWidth="215.0" text="Witaj" />
       <ChoiceBox fx:id="category_choice_box_menu" layoutX="388.0" layoutY="374.0" prefHeight="25.0" prefWidth="215.0" />
     </children>
     <padding>

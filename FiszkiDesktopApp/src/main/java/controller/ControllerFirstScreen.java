@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import other.Token;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,6 +31,8 @@ public class ControllerFirstScreen {
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
     }
+
+    private Token token = Token.getInstance();
 
     public void initialize(){
         login_button_first.setOnAction(event -> {
@@ -55,10 +58,10 @@ public class ControllerFirstScreen {
     }
 
     private void checkAccount() {
-        String loginString = String.valueOf(name_first.getText());
-        String passwordString= String.valueOf(password_first.getText());
-        //String loginString = "kubiczek";
-        //String passwordString= "testowehaslo";
+        //String loginString = String.valueOf(name_first.getText());
+        //String passwordString= String.valueOf(password_first.getText());
+        String loginString = "dwin333";
+        String passwordString= "qwerty123";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -73,8 +76,9 @@ public class ControllerFirstScreen {
                 if(response.code() == 200){
                     Login post = response.body();
                     String TokenFromRetrofit = post.getToken();
-                    //token.setToken(TokenFromRetrofit);
-                    //token.setUserName(loginText.getText().toString());
+                    System.out.println(TokenFromRetrofit);
+                    token.setToken("123");
+                    token.setUserName(name_first.getText().toString());
                     try {
                         switchActivity("activity_main_menu");
                     } catch (IOException e) {
