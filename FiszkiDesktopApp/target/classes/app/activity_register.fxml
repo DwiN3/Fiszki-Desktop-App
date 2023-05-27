@@ -15,7 +15,7 @@
         <Label alignment="CENTER" contentDisplay="TOP" layoutX="257.0" layoutY="292.0" prefHeight="17.0" prefWidth="131.0" text="Powtórz Hasło" />
         <PasswordField fx:id="password_re_register" layoutX="388.0" layoutY="288.0" prefHeight="25.0" prefWidth="215.0" />
         <Button fx:id="register_button_register" layoutX="379.0" layoutY="332.0" prefHeight="25.0" prefWidth="215.0" text="REJESTRACJA" />
-        <Button fx:id="back_button_register" layoutX="379.0" layoutY="371.0" onAction="#switchActivity" prefHeight="25.0" prefWidth="215.0" text="POWRÓT DO LOGOWANIA" />
+        <Button fx:id="back_button_register" layoutX="379.0" layoutY="371.0" prefHeight="25.0" prefWidth="215.0" text="POWRÓT DO LOGOWANIA" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
