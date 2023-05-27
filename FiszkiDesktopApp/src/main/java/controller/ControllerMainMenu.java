@@ -13,7 +13,6 @@ public class ControllerMainMenu {
 
     @FXML
     private Label nick_user_menu;
-
     @FXML
     private ChoiceBox<String> category_choice_box_menu;
     @FXML
@@ -23,8 +22,8 @@ public class ControllerMainMenu {
     private String selectedCategory;
 
     @FXML
-    private void switchActivity(String activity_register) throws IOException {
-        App.setRoot("activity_first_screen");
+    private void switchActivity(String activity) throws IOException {
+        App.setRoot(activity);
     }
 
     public void initialize(){
@@ -32,7 +31,11 @@ public class ControllerMainMenu {
 
 
         profile_button_menu.setOnAction(event -> {
-
+            try {
+                switchActivity("activity_profile");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
         game_quiz_button_menu.setOnAction(event -> {
