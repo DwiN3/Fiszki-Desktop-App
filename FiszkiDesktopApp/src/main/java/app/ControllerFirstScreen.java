@@ -53,10 +53,10 @@ public class ControllerFirstScreen {
     }
 
     private void checkAccount() {
-        //String loginString = String.valueOf(name_first.getText());
-        //String passwordString= String.valueOf(password_first.getText());
-        String loginString = "kubiczek";
-        String passwordString= "testowehaslo";
+        String loginString = String.valueOf(name_first.getText());
+        String passwordString= String.valueOf(password_first.getText());
+        //String loginString = "kubiczek";
+        //String passwordString= "testowehaslo";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -68,12 +68,22 @@ public class ControllerFirstScreen {
         call.enqueue(new Callback<Login>() {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
-                System.out.println("NIE DZIALA");
+                if(response.code() == 200){
+                    Login post = response.body();
+                    String TokenFromRetrofit = post.getToken();
+                    //token.setToken(TokenFromRetrofit);
+                    //token.setUserName(loginText.getText().toString());
+                    try {
+                        switchActivity("activity_register");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else System.out.println("Błędne dane");
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
-                System.out.println("DZIALA");
             }
         });
     }
