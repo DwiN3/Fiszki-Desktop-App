@@ -49,12 +49,14 @@ public class ControllerWpisGame {
                 }
                 else{
                     next_word_button_wpis.setText("Następne słowo");
+                    answer_text_wpis.setText("Poprawne słowo to: "+answer);
                     System.out.println("złe słowo");
                 }
             }
             else{
                 your_word_text_wpis.setVisible(true);
                 your_word_text_wpis.setDisable(false);
+                answer_text_wpis.setText("");
                 next_word_button_wpis.setText("Sprawdź");
             }
         });
