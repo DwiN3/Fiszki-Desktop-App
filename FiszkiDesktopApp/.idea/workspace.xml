@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerMainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retrofit/JsonPlaceholderAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retrofit/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retrofit/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ControllerResetPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerResetPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activity/activity_first_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activity/activity_register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activity/activity_reset_password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/JsonPlaceholderAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Retrofit/JsonPlaceholderAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Retrofit/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Retrofit/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerFirstScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerFirstScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ControllerResetPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_register.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_reset_password.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaFXApplication" />
         <option value="Class" />
         <option value="FxmlFile" />
       </list>
