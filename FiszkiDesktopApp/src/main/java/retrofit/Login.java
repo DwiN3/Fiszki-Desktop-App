@@ -1,4 +1,4 @@
-package Retrofit;
+package retrofit;
 
 import com.google.gson.annotations.SerializedName;
 

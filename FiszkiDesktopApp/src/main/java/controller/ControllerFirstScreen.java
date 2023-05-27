@@ -1,6 +1,8 @@
-package app;
+package controller;
 
 import java.io.IOException;
+
+import app.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -9,9 +11,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import Retrofit.Login;
+import retrofit.Login;
 import retrofit2.converter.gson.GsonConverterFactory;
-import Retrofit.JsonPlaceholderAPI;
+import retrofit.JsonPlaceholderAPI;
 
 public class ControllerFirstScreen {
 

@@ -6,6 +6,8 @@ module org.example {
     requires com.google.gson;
 
     opens app to javafx.fxml;
-    opens Retrofit;
+    opens retrofit;
     exports app;
+    exports controller;
+    opens controller to javafx.fxml;
 }
