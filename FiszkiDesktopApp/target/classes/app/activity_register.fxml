@@ -16,6 +16,7 @@
         <PasswordField fx:id="password_re_register" layoutX="388.0" layoutY="288.0" prefHeight="25.0" prefWidth="215.0" />
         <Button fx:id="register_button_register" layoutX="379.0" layoutY="332.0" prefHeight="25.0" prefWidth="215.0" text="REJESTRACJA" />
         <Button fx:id="back_button_register" layoutX="379.0" layoutY="371.0" prefHeight="25.0" prefWidth="215.0" text="POWRÓT DO LOGOWANIA" />
+        <Label fx:id="create_into_text_register" alignment="CENTER" layoutX="379.0" layoutY="332.0" prefHeight="25.0" prefWidth="215.0" text="Konto zostało utworzone pomyślnie" visible="false" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

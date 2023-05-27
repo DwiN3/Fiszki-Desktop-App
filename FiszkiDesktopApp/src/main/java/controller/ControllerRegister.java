@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -26,6 +27,8 @@ public class ControllerRegister {
     private PasswordField password_register, password_re_register;
     @FXML
     private Button register_button_register, back_button_register;
+    @FXML
+    private Label create_into_text_register;
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -40,6 +43,10 @@ public class ControllerRegister {
 
         back_button_register.setOnAction(event -> {
             try {
+                register_button_register.setVisible(true);
+                register_button_register.setDisable(false);
+                create_into_text_register.setVisible(false);
+                create_into_text_register.setDisable(true);
                 switchActivity("activity_first_screen");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -65,10 +72,6 @@ public class ControllerRegister {
         call.enqueue(new Callback<Register>() {
             @Override
             public void onResponse(Call<Register> call, Response<Register> response) {
-                if(response.code() == 200){
-                    System.out.println("Udało się zarejstrować");
-                }
-
                 if(!response.isSuccessful()){
                     System.out.println("Błąd w rejestracji");
                 }
@@ -77,6 +80,10 @@ public class ControllerRegister {
             @Override
             public void onFailure(Call<Register> call, Throwable t) {
                 System.out.println("Utworzono konto pomyślnie");
+                register_button_register.setVisible(false);
+                register_button_register.setDisable(true);
+                create_into_text_register.setVisible(true);
+                create_into_text_register.setDisable(false);
             }
         });
     }
