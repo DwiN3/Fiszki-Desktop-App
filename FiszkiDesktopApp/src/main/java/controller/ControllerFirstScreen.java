@@ -76,7 +76,7 @@ public class ControllerFirstScreen {
                     //token.setToken(TokenFromRetrofit);
                     //token.setUserName(loginText.getText().toString());
                     try {
-                        switchActivity("activity_register");
+                        switchActivity("activity_main_menu");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
