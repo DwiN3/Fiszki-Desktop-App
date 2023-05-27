@@ -38,6 +38,7 @@ public class ControllerRegister {
 
     public void initialize(){
         register_button_register.setOnAction(event -> {
+            blockButtons(true);
             createAccount();
         });
 
@@ -74,17 +75,23 @@ public class ControllerRegister {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(!response.isSuccessful()){
                     System.out.println("Błąd w rejestracji");
+                    blockButtons(false);
                 }
             }
 
             @Override
             public void onFailure(Call<Register> call, Throwable t) {
                 System.out.println("Utworzono konto pomyślnie");
+                blockButtons(false);
                 register_button_register.setVisible(false);
                 register_button_register.setDisable(true);
                 create_into_text_register.setVisible(true);
                 create_into_text_register.setDisable(false);
             }
         });
+    }
+    private void blockButtons(boolean isLoading){
+        register_button_register.setDisable(isLoading);
+        back_button_register.setDisable(isLoading);
     }
 }

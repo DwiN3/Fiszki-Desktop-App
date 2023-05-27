@@ -27,6 +27,7 @@ public class ControllerFirstScreen {
     @FXML
     private Button login_button_first, register_button_first, reset_button_first;
 
+
     @FXML
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
@@ -36,6 +37,7 @@ public class ControllerFirstScreen {
 
     public void initialize(){
         login_button_first.setOnAction(event -> {
+            blockButtons(true);
             checkAccount();
         });
 
@@ -78,18 +80,28 @@ public class ControllerFirstScreen {
                     String TokenFromRetrofit = post.getToken();
                     token.setToken(TokenFromRetrofit);
                     token.setUserName(name_first.getText().toString());
+                    blockButtons(false);
                     try {
                         switchActivity("activity_main_menu");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                else System.out.println("Błędne dane");
+                else{
+                    System.out.println("Błędne dane");
+                    blockButtons(false);
+                }
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
             }
         });
+    }
+
+    private void blockButtons(boolean isLoading){
+        login_button_first.setDisable(isLoading);
+        register_button_first.setDisable(isLoading);
+        reset_button_first.setDisable(isLoading);
     }
 }
