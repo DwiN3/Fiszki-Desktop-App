@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMainMenu">
     <children>
 
-        <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="340.0" layoutY="117.0" prefHeight="17.0" prefWidth="215.0" text="Witaj">
+        <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="340.0" layoutY="120.0" prefHeight="17.0" prefWidth="215.0" text="Witaj">
             <font> <Font name="System Bold" size="12.0" /> </font></Label>
         <Button fx:id="profile_button_menu" layoutX="340.0" layoutY="160.0" prefHeight="25.0" prefWidth="215.0" text="Profil" />
         <Button fx:id="game_quiz_button_menu" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" text="Game Quiz" />

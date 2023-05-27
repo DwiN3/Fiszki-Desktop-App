@@ -39,6 +39,11 @@ public class ControllerMainMenu {
         });
 
         game_quiz_button_menu.setOnAction(event -> {
+            try {
+                switchActivity("activity_quiz_game");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
         });
 

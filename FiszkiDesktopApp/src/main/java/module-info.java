@@ -9,5 +9,6 @@ module org.example {
     opens retrofit;
     exports app;
     exports controller;
+
     opens controller to javafx.fxml;
 }
