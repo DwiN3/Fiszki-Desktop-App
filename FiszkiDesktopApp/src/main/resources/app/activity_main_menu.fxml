@@ -7,14 +7,16 @@
 
 <AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMainMenu">
     <children>
-        <Button fx:id="profile_button_menu" layoutX="388.0" layoutY="202.0" prefHeight="25.0" prefWidth="215.0" text="Profil" />
-        <Button fx:id="game_quiz_button_menu" layoutX="388.0" layoutY="244.0" prefHeight="25.0" prefWidth="215.0" text="Game Quiz" />
-        <Button fx:id="game_wpis_button_menu" layoutX="388.0" layoutY="288.0" prefHeight="25.0" prefWidth="215.0" text="Game Wpis" />
-        <Button fx:id="log_out_button_menu" layoutX="388.0" layoutY="375.0" prefHeight="25.0" prefWidth="215.0" text="Wyloguj się" />
-        <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="388.0" layoutY="117.0" prefHeight="17.0" prefWidth="215.0" text="Witaj">
-         <font> <Font name="System Bold" size="12.0" /> </font></Label>
-      <ChoiceBox fx:id="category_choice_box_menu" layoutX="388.0" layoutY="332.0" prefHeight="25.0" prefWidth="215.0" />
-      <Label layoutX="317.0" layoutY="336.0" prefHeight="17.0" prefWidth="57.0" text="Kategoria" />
+
+        <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="340.0" layoutY="117.0" prefHeight="17.0" prefWidth="215.0" text="Witaj">
+            <font> <Font name="System Bold" size="12.0" /> </font></Label>
+        <Button fx:id="profile_button_menu" layoutX="340.0" layoutY="160.0" prefHeight="25.0" prefWidth="215.0" text="Profil" />
+        <Button fx:id="game_quiz_button_menu" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" text="Game Quiz" />
+        <Button fx:id="game_wpis_button_menu" layoutX="340.0" layoutY="240" prefHeight="25.0" prefWidth="215.0" text="Game Wpis" />
+        <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="283.0" prefHeight="17.0" prefWidth="131.0" text="Kategoria" />
+      <ChoiceBox fx:id="category_choice_box_menu" layoutX="340.0" layoutY="280.0" prefHeight="25.0" prefWidth="215.0" />
+        <Button fx:id="log_out_button_menu" layoutX="340.0" layoutY="320.0" prefHeight="25.0" prefWidth="215.0" text="Wyloguj się" />
+
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
