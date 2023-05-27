@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ControllerMainMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -76,8 +76,7 @@ public class ControllerFirstScreen {
                 if(response.code() == 200){
                     Login post = response.body();
                     String TokenFromRetrofit = post.getToken();
-                    System.out.println(TokenFromRetrofit);
-                    token.setToken("123");
+                    token.setToken(TokenFromRetrofit);
                     token.setUserName(name_first.getText().toString());
                     try {
                         switchActivity("activity_main_menu");
