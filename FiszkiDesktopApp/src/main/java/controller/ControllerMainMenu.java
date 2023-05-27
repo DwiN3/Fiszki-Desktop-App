@@ -44,11 +44,14 @@ public class ControllerMainMenu {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         });
 
         game_wpis_button_menu.setOnAction(event -> {
-
+            try {
+                switchActivity("activity_wpis_game");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
         log_out_button_menu.setOnAction(event -> {
