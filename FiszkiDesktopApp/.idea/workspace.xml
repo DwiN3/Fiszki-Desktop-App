@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_reset_password.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/dwini/Desktop/CuckooSearch/CuckooSearch"
+    "last_opened_file_path": "C:/Users/dwini/Desktop/CuckooSearch/CuckooSearch",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
