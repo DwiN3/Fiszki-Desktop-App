@@ -19,7 +19,7 @@ public class ControllerQuizGame {
 
     @FXML
     private ImageView image_quiz, image_word_quiz;
-    private String answer = "dog";
+    private String answer = "";
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -31,8 +31,6 @@ public class ControllerQuizGame {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square.png"));
         image_quiz.setImage(image);
 
-        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
-        image_word_quiz.setImage(imageWord);
         setWord();
 
         answer_1_quiz.setOnAction(event -> {
@@ -43,7 +41,6 @@ public class ControllerQuizGame {
                 answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_1_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-                // Ustawienie koloru tła dla poprawnej odpowiedzi
                 if (answer.equals(answer_2_quiz.getText())) {
                     answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
@@ -62,7 +59,6 @@ public class ControllerQuizGame {
                 answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_2_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-                // Ustawienie koloru tła dla poprawnej odpowiedzi
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
@@ -81,7 +77,6 @@ public class ControllerQuizGame {
                 answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_3_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-                // Ustawienie koloru tła dla poprawnej odpowiedzi
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 } else if (answer.equals(answer_2_quiz.getText())) {
@@ -100,7 +95,6 @@ public class ControllerQuizGame {
                 answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_4_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-                // Ustawienie koloru tła dla poprawnej odpowiedzi
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 } else if (answer.equals(answer_2_quiz.getText())) {
@@ -122,7 +116,6 @@ public class ControllerQuizGame {
             answer_2_quiz.setStyle("");
             answer_3_quiz.setStyle("");
             answer_4_quiz.setStyle("");
-
         });
         back_menu_button_quiz.setOnAction(event -> {
             try {
@@ -134,10 +127,15 @@ public class ControllerQuizGame {
     }
 
     private void setWord(){
+        answer = "dog";
+        word_text_quiz.setText("pies");
+        word_sample_text_quiz.setText("Najlepszy przyjaciel człowieka");
         answer_1_quiz.setText("dog");
         answer_2_quiz.setText("snail");
         answer_3_quiz.setText("rabbit");
         answer_4_quiz.setText("lion");
+        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
+        image_word_quiz.setImage(imageWord);
     }
     private void blockButtons(boolean isLoading){
         answer_1_quiz.setDisable(isLoading);

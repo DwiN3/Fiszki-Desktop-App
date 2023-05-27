@@ -14,6 +14,7 @@
         <Label fx:id="word_text_wpis" alignment="CENTER" layoutX="340.0" layoutY="120.0" prefHeight="25.0" prefWidth="215.0" text="Dog" />
         <Label fx:id="word_sample_text_wpis" alignment="CENTER" layoutX="340.0" layoutY="220.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" />
         <TextField fx:id="your_word_text_wpis" layoutX="340.0" layoutY="280.0" prefHeight="25.0" prefWidth="215.0" />
+        <Label fx:id="answer_text_wpis" alignment="CENTER" layoutX="340.0" layoutY="280.0" prefHeight="25.0" prefWidth="215.0" />
         <Button fx:id="next_word_button_wpis" layoutX="340.0" layoutY="325.0" prefHeight="25.0" prefWidth="215.0" text="Sprawdź" />
         <Button fx:id="back_menu_button_wpis" layoutX="340.0" layoutY="365.0" prefHeight="25.0" prefWidth="215.0" text="Wróć do menu" />
     </children>

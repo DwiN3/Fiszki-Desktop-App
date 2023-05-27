@@ -23,7 +23,7 @@ public class ControllerWpisGame {
 
     @FXML
     private ImageView image_wpis, image_word_wpis;
-    private String answer = "dog";
+    private String answer = "";
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -35,27 +35,33 @@ public class ControllerWpisGame {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square.png"));
         image_wpis.setImage(image);
 
-        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
-        image_word_wpis.setImage(imageWord);
-
+        setWord();
 
         next_word_button_wpis.setOnAction(event -> {
             if(next_word_button_wpis.getText().equals("Sprawdź")){
                 your_word_text_wpis.setVisible(false);
                 your_word_text_wpis.setDisable(true);
-                if(your_word_text_wpis.getText().equals(answer)){
+                answer_text_wpis.setVisible(true);
+                answer_text_wpis.setDisable(false);
+                if (your_word_text_wpis.getText().equals(answer)) {
                     next_word_button_wpis.setText("Następne słowo");
+                    answer_text_wpis.setText("Tłumaczenie to: " + answer);
+                    answer_text_wpis.setStyle("-fx-text-fill: green;");
                     System.out.println("gratulacje");
-                }
-                else{
+                } else {
                     next_word_button_wpis.setText("Następne słowo");
-                    answer_text_wpis.setText("Poprawne słowo to: "+answer);
+                    answer_text_wpis.setText("Tłumaczenie to: " + answer);
+                    answer_text_wpis.setStyle("-fx-text-fill: red;");
                     System.out.println("złe słowo");
                 }
+
             }
             else{
                 your_word_text_wpis.setVisible(true);
                 your_word_text_wpis.setDisable(false);
+                answer_text_wpis.setVisible(false);
+                answer_text_wpis.setDisable(true);
+                your_word_text_wpis.setText("");
                 answer_text_wpis.setText("");
                 next_word_button_wpis.setText("Sprawdź");
             }
@@ -69,5 +75,11 @@ public class ControllerWpisGame {
         });
     }
 
-
+    private void setWord(){
+        answer = "dog";
+        word_text_wpis.setText("pies");
+        word_sample_text_wpis.setText("Najlepszy przyjaciel człowieka");
+        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
+        image_word_wpis.setImage(imageWord);
+    }
 }
