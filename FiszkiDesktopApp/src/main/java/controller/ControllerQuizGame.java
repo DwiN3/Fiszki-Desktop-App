@@ -6,22 +6,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import other.GameSettings;
 
 import java.io.IOException;
 
 public class ControllerQuizGame {
-
     @FXML
     private Label word_text_quiz, word_sample_text_quiz, flashcards_left_quiz;
-
     @FXML
     private Button answer_1_quiz, answer_2_quiz, answer_3_quiz, answer_4_quiz, next_word_button_quiz, back_menu_button_quiz;
-
     @FXML
     private ImageView image_quiz, image_word_quiz;
-    private String answer = "";
+    private String answer = "", category="";
     private int countScore=0, countWords=0;
-
+    private GameSettings gameSettings = GameSettings.getInstance();
     @FXML
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
@@ -31,7 +29,8 @@ public class ControllerQuizGame {
     private void initialize() {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square.png"));
         image_quiz.setImage(image);
-
+        category = gameSettings.getCategory();
+        System.out.println(category);
         setWord();
 
         answer_1_quiz.setOnAction(event -> {
@@ -52,6 +51,7 @@ public class ControllerQuizGame {
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+            setInfo();
         });
 
         answer_2_quiz.setOnAction(event -> {
@@ -72,6 +72,7 @@ public class ControllerQuizGame {
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+            setInfo();
         });
 
         answer_3_quiz.setOnAction(event -> {
@@ -92,6 +93,7 @@ public class ControllerQuizGame {
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+            setInfo();
         });
 
         answer_4_quiz.setOnAction(event -> {
@@ -112,6 +114,7 @@ public class ControllerQuizGame {
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+            setInfo();
         });
 
         next_word_button_quiz.setOnAction(event -> {
@@ -145,6 +148,12 @@ public class ControllerQuizGame {
         flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
         image_word_quiz.setImage(imageWord);
+    }
+
+    private void setInfo(){
+        gameSettings.setScoreWords(countScore);
+        gameSettings.setAllWords(countWords);
+        gameSettings.setPointsForGame(countScore*10);
     }
     private void blockButtons(boolean isLoading){
         answer_1_quiz.setDisable(isLoading);

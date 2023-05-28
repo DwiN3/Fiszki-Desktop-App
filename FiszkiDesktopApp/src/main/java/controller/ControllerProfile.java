@@ -11,10 +11,8 @@ import java.io.IOException;
 public class ControllerProfile {
     @FXML
     private Label nick_user_profile,lvl_profile,points_to_next_LVL_profile;
-
     @FXML
     private Button back_to_menu_button_profile;
-
     private Token token  = Token.getInstance();
     private int lvl = 2, points=256, pointsBorder = 500;
 

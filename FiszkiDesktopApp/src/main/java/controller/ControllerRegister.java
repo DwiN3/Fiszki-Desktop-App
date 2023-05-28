@@ -29,7 +29,6 @@ public class ControllerRegister {
     private Button register_button_register, back_button_register;
     @FXML
     private Label create_into_text_register;
-
     @FXML
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
@@ -44,8 +43,7 @@ public class ControllerRegister {
 
         back_button_register.setOnAction(event -> {
             try {
-                register_button_register.setVisible(true);
-                register_button_register.setDisable(false);
+
                 create_into_text_register.setVisible(false);
                 create_into_text_register.setDisable(true);
                 switchActivity("activity_first_screen");
