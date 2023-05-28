@@ -45,7 +45,7 @@ public class ControllerEndScreen {
     private void setTextFields(){
         score_end.setText("Poprawne odpowiedzi:  "+scoreEnd+"/"+lenWords);
         get_points_end.setText("Zdobytyte punkty:  "+getPoints+" pkt");
-        lvl_profile_end.setText("Poziom:   "+level+" lvl");
-        points_to_next_LVL_profile_end.setText("Punkty:  "+pointsToNextLVL+"/"+pointsBorder+" pkt");
+        lvl_profile_end.setText("Poziom:  "+level+" lvl");
+        points_to_next_LVL_profile_end.setText("Następny poziom:  "+pointsToNextLVL+"/"+pointsBorder+" pkt");
     }
 }
