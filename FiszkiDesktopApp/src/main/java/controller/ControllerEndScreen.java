@@ -26,8 +26,8 @@ public class ControllerEndScreen {
         getInfo();
         setTextFields();
         back_to_menu_button_profile_end.setOnAction(event -> {
+            clearInfo();
             try {
-                //clearInfo();
                 switchActivity("activity_main_menu");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -55,6 +55,7 @@ public class ControllerEndScreen {
 
     private void clearInfo(){
         gameSettings.setCategory("");
+        gameSettings.setTypeGame("");
         gameSettings.setScoreWords(0);
         gameSettings.setAllWords(0);
         gameSettings.setPointsForGame(0);
