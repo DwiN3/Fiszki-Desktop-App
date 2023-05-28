@@ -6,18 +6,21 @@
 <?import javafx.scene.layout.*?>
 
 <?import java.io.File?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerQuizGame">
     <children>
-
+      <Label fx:id="flashcards_left_quiz" alignment="CENTER" layoutX="340.0" layoutY="90.0" prefHeight="25.0" prefWidth="215.0" text="Skuteczność:  3/4" >
+        <font> <Font name="System Bold" size="12.0" /> </font>
+      </Label>
       <ImageView fx:id="image_quiz" fitHeight="128.0" fitWidth="222.0" layoutX="339.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true"></ImageView>
       <ImageView fx:id="image_word_quiz" fitHeight="70.0" fitWidth="70.0" layoutX="412.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
-        <Label fx:id="word_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="120.0" prefHeight="25.0" prefWidth="215.0" text="Dog" />
-        <Label fx:id="word_sample_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="220.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" />
-        <Button fx:id="answer_1_quiz" layoutX="340.0" layoutY="260.0" prefHeight="25.0" prefWidth="100.0" text="a" />
-        <Button fx:id="answer_2_quiz" layoutX="455.0" layoutY="260.0" prefHeight="25.0" prefWidth="100.0" text="b" />
-        <Button fx:id="answer_3_quiz" layoutX="340.0" layoutY="300.0" prefHeight="25.0" prefWidth="100.0" text="c" />
-        <Button fx:id="answer_4_quiz" layoutX="455.0" layoutY="300.0" prefHeight="25.0" prefWidth="100.0" text="d" />
-        <Button fx:id="next_word_button_quiz" layoutX="340.0" layoutY="340.0" prefHeight="25.0" prefWidth="215.0" text="Następne słowo" visible="false"/>
-        <Button fx:id="back_menu_button_quiz" layoutX="340.0" layoutY="380.0" prefHeight="25.0" prefWidth="215.0" text="Wróć do menu" />
+      <Label fx:id="word_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="120.0" prefHeight="25.0" prefWidth="215.0" text="Dog" />
+      <Label fx:id="word_sample_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="220.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" />
+      <Button fx:id="answer_1_quiz" layoutX="340.0" layoutY="260.0" prefHeight="25.0" prefWidth="100.0" text="a" />
+      <Button fx:id="answer_2_quiz" layoutX="455.0" layoutY="260.0" prefHeight="25.0" prefWidth="100.0" text="b" />
+      <Button fx:id="answer_3_quiz" layoutX="340.0" layoutY="300.0" prefHeight="25.0" prefWidth="100.0" text="c" />
+      <Button fx:id="answer_4_quiz" layoutX="455.0" layoutY="300.0" prefHeight="25.0" prefWidth="100.0" text="d" />
+      <Button fx:id="next_word_button_quiz" layoutX="340.0" layoutY="340.0" prefHeight="25.0" prefWidth="215.0" text="Następne słowo" visible="false"/>
+      <Button fx:id="back_menu_button_quiz" layoutX="340.0" layoutY="380.0" prefHeight="25.0" prefWidth="215.0" text="Wróć do menu" />
     </children>
 </AnchorPane>

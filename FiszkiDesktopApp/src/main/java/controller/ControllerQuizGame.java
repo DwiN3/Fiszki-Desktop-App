@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ControllerQuizGame {
 
     @FXML
-    private Label word_text_quiz, word_sample_text_quiz;
+    private Label word_text_quiz, word_sample_text_quiz, flashcards_left_quiz;
 
     @FXML
     private Button answer_1_quiz, answer_2_quiz, answer_3_quiz, answer_4_quiz, next_word_button_quiz, back_menu_button_quiz;
@@ -20,6 +20,7 @@ public class ControllerQuizGame {
     @FXML
     private ImageView image_quiz, image_word_quiz;
     private String answer = "";
+    private int countScore=0, countWords=0;
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -38,6 +39,7 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_1_quiz.getText())) {
+                countScore += 1;
                 answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_1_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
@@ -49,6 +51,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
+            flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         });
 
         answer_2_quiz.setOnAction(event -> {
@@ -56,6 +59,7 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_2_quiz.getText())) {
+                countScore += 1;
                 answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_2_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
@@ -67,6 +71,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
+            flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         });
 
         answer_3_quiz.setOnAction(event -> {
@@ -74,6 +79,7 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_3_quiz.getText())) {
+                countScore += 1;
                 answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_3_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
@@ -85,6 +91,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
+            flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         });
 
         answer_4_quiz.setOnAction(event -> {
@@ -92,6 +99,7 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_4_quiz.getText())) {
+                countScore += 1;
                 answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
             } else {
                 answer_4_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
@@ -103,6 +111,7 @@ public class ControllerQuizGame {
                     answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
+            flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         });
 
         next_word_button_quiz.setOnAction(event -> {
@@ -113,6 +122,7 @@ public class ControllerQuizGame {
             answer_2_quiz.setStyle("");
             answer_3_quiz.setStyle("");
             answer_4_quiz.setStyle("");
+            setWord();
         });
         back_menu_button_quiz.setOnAction(event -> {
             try {
@@ -131,6 +141,8 @@ public class ControllerQuizGame {
         answer_2_quiz.setText("snail");
         answer_3_quiz.setText("rabbit");
         answer_4_quiz.setText("lion");
+        countWords += 1;
+        flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
         Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
         image_word_quiz.setImage(imageWord);
     }

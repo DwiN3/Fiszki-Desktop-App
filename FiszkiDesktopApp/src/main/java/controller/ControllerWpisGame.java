@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ControllerWpisGame {
 
     @FXML
-    private Label word_text_wpis, word_sample_text_wpis, answer_text_wpis;
+    private Label word_text_wpis, word_sample_text_wpis, answer_text_wpis,  flashcards_left_wpis;
 
     @FXML
     private TextField your_word_text_wpis;
@@ -24,6 +24,7 @@ public class ControllerWpisGame {
     @FXML
     private ImageView image_wpis, image_word_wpis;
     private String answer = "";
+    private int countScore=0, countWords=0;
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -44,6 +45,7 @@ public class ControllerWpisGame {
                 answer_text_wpis.setVisible(true);
                 answer_text_wpis.setDisable(false);
                 if (your_word_text_wpis.getText().equals(answer)) {
+                    countScore += 1;
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: green;");
@@ -54,9 +56,10 @@ public class ControllerWpisGame {
                     answer_text_wpis.setStyle("-fx-text-fill: red;");
                     System.out.println("złe słowo");
                 }
-
+                flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
             }
             else{
+                setWord();
                 your_word_text_wpis.setVisible(true);
                 your_word_text_wpis.setDisable(false);
                 answer_text_wpis.setVisible(false);
@@ -76,10 +79,12 @@ public class ControllerWpisGame {
     }
 
     private void setWord(){
+        countWords += 1;
         answer = "dog";
         word_text_wpis.setText("pies");
         word_sample_text_wpis.setText("Najlepszy przyjaciel człowieka");
         Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
         image_word_wpis.setImage(imageWord);
+        flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
     }
 }
