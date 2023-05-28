@@ -24,9 +24,9 @@ public class ControllerProfile {
     }
 
     public void initialize(){
-        nick_user_profile.setText("Login: "+token.getUserName());
-        lvl_profile.setText("Poziom: "+lvl+" lvl");
-        points_to_next_LVL_profile.setText("Następny poziom: "+points+"/"+pointsBorder+"pkt");
+        nick_user_profile.setText("Login:  "+token.getUserName());
+        lvl_profile.setText("Poziom:  "+lvl+" lvl");
+        points_to_next_LVL_profile.setText("Następny poziom:  "+points+"/"+pointsBorder+" pkt");
         back_to_menu_button_profile.setOnAction(event -> {
             try {
                 switchActivity("activity_main_menu");

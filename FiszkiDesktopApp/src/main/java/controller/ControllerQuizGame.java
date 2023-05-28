@@ -105,9 +105,6 @@ public class ControllerQuizGame {
             }
         });
 
-
-
-
         next_word_button_quiz.setOnAction(event -> {
             blockButtons(false);
             next_word_button_quiz.setVisible(false);

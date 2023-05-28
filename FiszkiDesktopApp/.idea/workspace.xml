@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/drawable/flashcard_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerEndScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/activity_end_screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerQuizGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerQuizGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerWpisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerWpisGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_wpis_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_wpis_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerQuizGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ControllerQuizGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerWpisGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ControllerWpisGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerProfile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
