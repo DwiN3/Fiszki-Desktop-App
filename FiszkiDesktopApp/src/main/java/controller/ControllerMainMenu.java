@@ -66,29 +66,42 @@ public class ControllerMainMenu {
             }
         });
 
-        category_choice_box_menu.getItems().addAll("zwierzęta", "miejsca", "rzeczy", "zawody", "inne");
-        category_choice_box_menu.setValue("zwierzęta");
-        selectedCategory = "zwierzęta";
+        category_choice_box_menu.getItems().addAll("dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
+        category_choice_box_menu.setValue("dom");
+        selectedCategory = "dom";
         gameSettings.setCategory(selectedCategory);
         category_choice_box_menu.setOnAction(event -> {
             String selectedFunction = category_choice_box_menu.getSelectionModel().getSelectedItem();
             switch (selectedFunction) {
-                case "zwierzęta":
-                    selectedCategory = "zwierzęta";
+                case "dom":
+                    selectedCategory = "dom";
                     break;
-                case "miejsca":
-                    selectedCategory = "miejsca";
+                case "zakupy":
+                    selectedCategory = "zakupy";
                     break;
-                case "rzeczy":
-                    selectedCategory = "rzeczy";
+                case "praca":
+                    selectedCategory = "praca";
                     break;
-                case "zawody":
-                    selectedCategory = "zawody";
+                case "zdrowie":
+                    selectedCategory = "zdrowie";
+                    break;
+                case "czlowiek":
+                    selectedCategory = "czlowiek";
+                    break;
+                case "turystyka":
+                    selectedCategory = "turystyka";
+                    break;
+                case "jedzenie":
+                    selectedCategory = "jedzenie";
+                    break;
+                case "edukacja":
+                    selectedCategory = "edukacja";
                     break;
                 case "inne":
                     selectedCategory = "inne";
                     break;
             }
+            System.out.println(selectedCategory);
             gameSettings.setCategory(selectedCategory);
         });
 
