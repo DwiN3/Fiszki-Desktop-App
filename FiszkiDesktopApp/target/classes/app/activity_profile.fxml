@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerProfile">
+<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerProfile">
     <children>
         <Label fx:id="nick_user_profile" layoutX="340.0" layoutY="160.0"  prefHeight="17.0" prefWidth="221.0" text="Nazwa: " />
         <Label fx:id="lvl_profile" layoutX="340.0" layoutY="200.0"  prefHeight="17.0" prefWidth="221.0" text="LVL: " />

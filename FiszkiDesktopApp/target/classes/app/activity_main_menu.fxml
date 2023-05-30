@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMainMenu">
+<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMainMenu">
     <children>
 
         <Label fx:id="nick_user_menu" alignment="CENTER" layoutX="340.0" layoutY="120.0" prefHeight="17.0" prefWidth="215.0" text="Witaj">
