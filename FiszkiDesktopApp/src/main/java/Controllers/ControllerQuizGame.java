@@ -20,7 +20,7 @@ public class ControllerQuizGame {
     private ImageView image_quiz, image_word_quiz;
     private String answer = "", category="";
     private Image imageWord;
-    private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0;
+    private int countScore=0, countWords=0, scoreTrain = 0, bestTrain=0;
     private GameSettings gameSettings = GameSettings.getInstance();
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -41,7 +41,6 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_1_quiz.getText())) {
-                countScore += 1;
                 answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -64,7 +63,6 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_2_quiz.getText())) {
-                countScore += 1;
                 answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -87,7 +85,6 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_3_quiz.getText())) {
-                countScore += 1;
                 answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -110,7 +107,6 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_4_quiz.getText())) {
-                countScore += 1;
                 answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -132,13 +128,13 @@ public class ControllerQuizGame {
             blockButtons(false);
             next_word_button_quiz.setVisible(false);
             next_word_button_quiz.setDisable(true);
-            String resourcePath = "/drawable/flashcard_icon_png.png";
-            Image nextImage = new Image(getClass().getResourceAsStream(resourcePath));
-            image_word_quiz.setImage(nextImage);
             answer_1_quiz.setStyle("");
             answer_2_quiz.setStyle("");
             answer_3_quiz.setStyle("");
             answer_4_quiz.setStyle("");
+            String resourcePath = "/drawable/flashcard_icon_png.png";
+            Image nextImage = new Image(getClass().getResourceAsStream(resourcePath));
+            image_word_quiz.setImage(nextImage);
             setWord();
         });
         back_menu_button_quiz.setOnAction(event -> {
@@ -175,7 +171,7 @@ public class ControllerQuizGame {
         else if (scoreTrain >= 5)
             resourcePath = "/drawable/emoji_5.png";
         else
-            resourcePath = "/drawable/word_dog.png";
+            resourcePath = "/drawable/flashcard_icon_png.png";
 
         try (InputStream inputStream = getClass().getResourceAsStream(resourcePath)) {
             if (inputStream != null) {
@@ -192,7 +188,7 @@ public class ControllerQuizGame {
     }
 
     private void correctChoice(){
-        points += 1;
+        countScore += 1;
         if(scoreTrain < 0) scoreTrain = 1;
         else scoreTrain += 1;
         if(scoreTrain > bestTrain) bestTrain = scoreTrain;
@@ -217,7 +213,6 @@ public class ControllerQuizGame {
         answer_3_quiz.setText("rabbit");
         answer_4_quiz.setText("lion");
         countWords += 1;
-        flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
     }
 
     private void setInfo(){

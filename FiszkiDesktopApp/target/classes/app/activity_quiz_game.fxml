@@ -19,7 +19,7 @@
     <Button fx:id="answer_2_quiz" layoutX="456.0" layoutY="260.0" prefHeight="40.0" prefWidth="200.0" text="b" />
     <Button fx:id="answer_3_quiz" layoutX="241.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" text="c" />
     <Button fx:id="answer_4_quiz" layoutX="456.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" text="d" />
-    <Button fx:id="next_word_button_quiz" layoutX="342.0" layoutY="385.0" prefHeight="32.0" prefWidth="215.0" text="Następne słowo" />
-    <Button fx:id="back_menu_button_quiz" layoutX="342.0" layoutY="435.0" prefHeight="32.0" prefWidth="215.0" text="Wróć do menu" />
+    <Button fx:id="next_word_button_quiz" layoutX="342.0" layoutY="395.0" prefHeight="32.0" prefWidth="215.0" text="Następne słowo" />
+    <Button fx:id="back_menu_button_quiz" layoutX="342.0" layoutY="440.0" prefHeight="32.0" prefWidth="215.0" text="Wróć do menu" />
   </children>
 </AnchorPane>

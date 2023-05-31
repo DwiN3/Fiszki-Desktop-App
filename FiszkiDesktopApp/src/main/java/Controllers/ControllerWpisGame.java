@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import Other.GameSettings;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ControllerWpisGame {
     @FXML
@@ -20,8 +21,9 @@ public class ControllerWpisGame {
     private Button next_word_button_wpis, back_menu_button_wpis;
     @FXML
     private ImageView image_wpis, image_word_wpis;
+    private Image imageWord;
     private String answer = "",category="";
-    private int countScore=0, countWords=0;
+    private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0;
     private GameSettings gameSettings = GameSettings.getInstance();
 
     @FXML
@@ -31,8 +33,11 @@ public class ControllerWpisGame {
 
     @FXML
     private void initialize() {
-        Image image = new Image(getClass().getResourceAsStream("/drawable/square.png"));
-        image_wpis.setImage(image);
+        Image imageBackgroundStart = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
+        image_wpis.setImage(imageBackgroundStart);
+        Image imageIconStart = new Image(getClass().getResourceAsStream("/drawable/flashcard_icon_png.png"));
+        image_word_wpis.setImage(imageIconStart);
+
         category = gameSettings.getCategory();
         setWord();
 
@@ -43,18 +48,18 @@ public class ControllerWpisGame {
                 answer_text_wpis.setVisible(true);
                 answer_text_wpis.setDisable(false);
                 if (your_word_text_wpis.getText().equals(answer)) {
-                    countScore += 1;
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: green;");
+                    correctChoice();
                     System.out.println("gratulacje");
                 } else {
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: red;");
+                    inCorrectChoice();
                     System.out.println("złe słowo");
                 }
-                flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
             }
             else{
                 setWord();
@@ -65,6 +70,9 @@ public class ControllerWpisGame {
                 your_word_text_wpis.setText("");
                 answer_text_wpis.setText("");
                 next_word_button_wpis.setText("Sprawdź");
+                String resourcePathIcon = "/drawable/flashcard_icon_png.png";
+                Image nextImageIcon = new Image(getClass().getResourceAsStream(resourcePathIcon));
+                image_word_wpis.setImage(nextImageIcon);
             }
             setInfo();
         });
@@ -75,6 +83,62 @@ public class ControllerWpisGame {
                 throw new RuntimeException(e);
             }
         });
+    }
+    private void setEmoji() {
+        String resourcePath;
+        if (scoreTrain <= -5)
+            resourcePath = "/drawable/emoji_m5.png";
+        else if (scoreTrain == -4)
+            resourcePath = "/drawable/emoji_m4.png";
+        else if (scoreTrain == -3)
+            resourcePath = "/drawable/emoji_m3.png";
+        else if (scoreTrain == -2)
+            resourcePath = "/drawable/emoji_m2.png";
+        else if (scoreTrain == -1)
+            resourcePath = "/drawable/emoji_m1.png";
+        else if (scoreTrain == 0)
+            resourcePath = "/drawable/flashcard_icon_png.png";
+        else if (scoreTrain == 1)
+            resourcePath = "/drawable/emoji_1.png";
+        else if (scoreTrain == 2)
+            resourcePath = "/drawable/emoji_2.png";
+        else if (scoreTrain == 3)
+            resourcePath = "/drawable/emoji_3.png";
+        else if (scoreTrain == 4)
+            resourcePath = "/drawable/emoji_4.png";
+        else if (scoreTrain >= 5)
+            resourcePath = "/drawable/emoji_5.png";
+        else
+            resourcePath = "/drawable/flashcard_icon_png.png";
+
+        try (InputStream inputStream = getClass().getResourceAsStream(resourcePath)) {
+            if (inputStream != null) {
+                imageWord = new Image(inputStream);
+                image_word_wpis.setImage(imageWord);
+            } else {
+                // Obsłuż brak dostępu do zasobu lub inny problem
+                // Możesz ustawić domyślny obraz lub wyrzucić wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Obsłuż wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
+        }
+    }
+
+    private void correctChoice(){
+        countScore += 1;
+        if(scoreTrain < 0) scoreTrain = 1;
+        else scoreTrain += 1;
+        if(scoreTrain > bestTrain) bestTrain = scoreTrain;
+        setEmoji();
+        flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
+    }
+
+    private void inCorrectChoice(){
+        if (scoreTrain > 0) scoreTrain = -1;
+        else scoreTrain--;
+        setEmoji();
+        flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
     }
 
     private void setInfo(){
@@ -88,10 +152,5 @@ public class ControllerWpisGame {
         answer = "dog";
         word_text_wpis.setText("pies");
         word_sample_text_wpis.setText("Najlepszy przyjaciel człowieka");
-        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
-        image_word_wpis.setImage(imageWord);
-        flashcards_left_wpis.setText("Fiszki:  " + countScore + "/" + countWords);
     }
-
-
 }
