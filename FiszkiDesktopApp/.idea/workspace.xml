@@ -4,55 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerEndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEndScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerQuizGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerQuizGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerResetPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerResetPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerWpisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerWpisGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/GameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Other/GameSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/other/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Other/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/retrofit/JsonPlaceholderAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI/JsonUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/retrofit/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/LoginModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/retrofit/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/RegisterModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_end_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_end_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_quiz_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_quiz_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/JsonPlaceholderAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/Register.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_end_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_end_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_quiz_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_quiz_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_reset_password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_wpis_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_wpis_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerEndScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerFirstScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerFirstScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerMainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerProfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerQuizGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerRegister$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerResetPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ControllerWpisGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/other/GameSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/other/GameSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/other/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/other/Token.class" afterDir="false" />
-    </list>
+    <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
