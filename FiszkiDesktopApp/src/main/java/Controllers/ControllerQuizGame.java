@@ -29,7 +29,7 @@ public class ControllerQuizGame {
 
     @FXML
     private void initialize() {
-        Image image = new Image(getClass().getResourceAsStream("/drawable/square.png"));
+        Image image = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_quiz.setImage(image);
         category = gameSettings.getCategory();
         System.out.println(category);
@@ -132,6 +132,9 @@ public class ControllerQuizGame {
             blockButtons(false);
             next_word_button_quiz.setVisible(false);
             next_word_button_quiz.setDisable(true);
+            String resourcePath = "/drawable/flashcard_icon_png.png";
+            Image nextImage = new Image(getClass().getResourceAsStream(resourcePath));
+            image_word_quiz.setImage(nextImage);
             answer_1_quiz.setStyle("");
             answer_2_quiz.setStyle("");
             answer_3_quiz.setStyle("");
@@ -149,7 +152,6 @@ public class ControllerQuizGame {
 
     private void setEmoji() {
         String resourcePath;
-
         if (scoreTrain <= -5)
             resourcePath = "/drawable/emoji_m5.png";
         else if (scoreTrain == -4)
