@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import Other.GameSettings;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ControllerQuizGame {
     @FXML
@@ -18,7 +19,8 @@ public class ControllerQuizGame {
     @FXML
     private ImageView image_quiz, image_word_quiz;
     private String answer = "", category="";
-    private int countScore=0, countWords=0;
+    private Image imageWord;
+    private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0;
     private GameSettings gameSettings = GameSettings.getInstance();
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -31,6 +33,7 @@ public class ControllerQuizGame {
         image_quiz.setImage(image);
         category = gameSettings.getCategory();
         System.out.println(category);
+        setEmoji();
         setWord();
 
         answer_1_quiz.setOnAction(event -> {
@@ -40,7 +43,9 @@ public class ControllerQuizGame {
             if (answer.equals(answer_1_quiz.getText())) {
                 countScore += 1;
                 answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                correctChoice();
             } else {
+                inCorrectChoice();
                 answer_1_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
                 if (answer.equals(answer_2_quiz.getText())) {
                     answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
@@ -61,7 +66,9 @@ public class ControllerQuizGame {
             if (answer.equals(answer_2_quiz.getText())) {
                 countScore += 1;
                 answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                correctChoice();
             } else {
+                inCorrectChoice();
                 answer_2_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
@@ -82,7 +89,9 @@ public class ControllerQuizGame {
             if (answer.equals(answer_3_quiz.getText())) {
                 countScore += 1;
                 answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                correctChoice();
             } else {
+                inCorrectChoice();
                 answer_3_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
@@ -103,7 +112,9 @@ public class ControllerQuizGame {
             if (answer.equals(answer_4_quiz.getText())) {
                 countScore += 1;
                 answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                correctChoice();
             } else {
+                inCorrectChoice();
                 answer_4_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
                     answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
@@ -113,7 +124,7 @@ public class ControllerQuizGame {
                     answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
-            flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+
             setInfo();
         });
 
@@ -136,6 +147,65 @@ public class ControllerQuizGame {
         });
     }
 
+    private void setEmoji() {
+        String resourcePath;
+
+        if (scoreTrain <= -5)
+            resourcePath = "/drawable/emoji_m5.png";
+        else if (scoreTrain == -4)
+            resourcePath = "/drawable/emoji_m4.png";
+        else if (scoreTrain == -3)
+            resourcePath = "/drawable/emoji_m3.png";
+        else if (scoreTrain == -2)
+            resourcePath = "/drawable/emoji_m2.png";
+        else if (scoreTrain == -1)
+            resourcePath = "/drawable/emoji_m1.png";
+        else if (scoreTrain == 0)
+            resourcePath = "/drawable/flashcard_icon_png.png";
+        else if (scoreTrain == 1)
+            resourcePath = "/drawable/emoji_1.png";
+        else if (scoreTrain == 2)
+            resourcePath = "/drawable/emoji_2.png";
+        else if (scoreTrain == 3)
+            resourcePath = "/drawable/emoji_3.png";
+        else if (scoreTrain == 4)
+            resourcePath = "/drawable/emoji_4.png";
+        else if (scoreTrain >= 5)
+            resourcePath = "/drawable/emoji_5.png";
+        else
+            resourcePath = "/drawable/word_dog.png";
+
+        try (InputStream inputStream = getClass().getResourceAsStream(resourcePath)) {
+            if (inputStream != null) {
+                imageWord = new Image(inputStream);
+                image_word_quiz.setImage(imageWord);
+            } else {
+                // Obsłuż brak dostępu do zasobu lub inny problem
+                // Możesz ustawić domyślny obraz lub wyrzucić wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Obsłuż wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
+        }
+    }
+
+    private void correctChoice(){
+        points += 1;
+        if(scoreTrain < 0) scoreTrain = 1;
+        else scoreTrain += 1;
+        if(scoreTrain > bestTrain) bestTrain = scoreTrain;
+        setEmoji();
+        flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+    }
+
+    private void inCorrectChoice(){
+        if (scoreTrain > 0) scoreTrain = -1;
+        else scoreTrain--;
+        setEmoji();
+        flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
+    }
+
+
     private void setWord(){
         answer = "dog";
         word_text_quiz.setText("pies");
@@ -146,8 +216,6 @@ public class ControllerQuizGame {
         answer_4_quiz.setText("lion");
         countWords += 1;
         flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
-        Image imageWord = new Image(getClass().getResourceAsStream("/drawable/word_dog.png"));
-        image_word_quiz.setImage(imageWord);
     }
 
     private void setInfo(){
