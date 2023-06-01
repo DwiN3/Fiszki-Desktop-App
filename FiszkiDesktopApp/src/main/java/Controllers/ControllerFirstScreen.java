@@ -91,6 +91,7 @@ public class ControllerFirstScreen {
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
+                System.out.println("Serwer nie działa");
             }
         });
     }
