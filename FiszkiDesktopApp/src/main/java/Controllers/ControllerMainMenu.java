@@ -28,7 +28,7 @@ public class ControllerMainMenu {
 
     public void initialize(){
         nick_user_menu.setText("Witaj "+token.getUserName());
-
+        selectedCategory = "zwierzęta";
 
         profile_button_menu.setOnAction(event -> {
             try {
@@ -66,44 +66,14 @@ public class ControllerMainMenu {
             }
         });
 
-        category_choice_box_menu.getItems().addAll("dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
-        category_choice_box_menu.setValue("dom");
-        selectedCategory = "dom";
+        category_choice_box_menu.getItems().addAll("zwierzęta","dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
+        category_choice_box_menu.setValue("zwierzęta");
+        selectedCategory = "zwierzęta";
         gameSettings.setCategory(selectedCategory);
         category_choice_box_menu.setOnAction(event -> {
-            String selectedFunction = category_choice_box_menu.getSelectionModel().getSelectedItem();
-            switch (selectedFunction) {
-                case "dom":
-                    selectedCategory = "dom";
-                    break;
-                case "zakupy":
-                    selectedCategory = "zakupy";
-                    break;
-                case "praca":
-                    selectedCategory = "praca";
-                    break;
-                case "zdrowie":
-                    selectedCategory = "zdrowie";
-                    break;
-                case "czlowiek":
-                    selectedCategory = "czlowiek";
-                    break;
-                case "turystyka":
-                    selectedCategory = "turystyka";
-                    break;
-                case "jedzenie":
-                    selectedCategory = "jedzenie";
-                    break;
-                case "edukacja":
-                    selectedCategory = "edukacja";
-                    break;
-                case "inne":
-                    selectedCategory = "inne";
-                    break;
-            }
+            selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
             System.out.println(selectedCategory);
             gameSettings.setCategory(selectedCategory);
         });
-
     }
 }

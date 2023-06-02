@@ -91,6 +91,7 @@ public class ControllerFirstScreen {
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
+                if(t.getMessage().equals("timeout"))  blockButtons(false);
             }
         });
     }
