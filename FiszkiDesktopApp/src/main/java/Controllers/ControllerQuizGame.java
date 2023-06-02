@@ -20,7 +20,7 @@ public class ControllerQuizGame {
     private ImageView image_quiz, image_word_quiz;
     private String answer = "", category="";
     private Image imageWord;
-    private int countScore=0, countWords=0, scoreTrain = 0, bestTrain=0;
+    private int countScore=0, countWords=0, scoreTrain = 0, bestTrain=0, border=10;
     private GameSettings gameSettings = GameSettings.getInstance();
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -121,7 +121,6 @@ public class ControllerQuizGame {
                     answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
                 }
             }
-
             setInfo();
         });
 
@@ -136,7 +135,14 @@ public class ControllerQuizGame {
             String resourcePath = "/drawable/flashcard_icon_png.png";
             Image nextImage = new Image(getClass().getResourceAsStream(resourcePath));
             image_word_quiz.setImage(nextImage);
-            setWord();
+            if(!next_word_button_quiz.getText().equals("Podsumowanie")) setWord();
+            else{
+                try {
+                    switchActivity("activity_end_screen");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         });
         back_menu_button_quiz.setOnAction(event -> {
             try {
@@ -206,6 +212,7 @@ public class ControllerQuizGame {
 
 
     private void setWord(){
+        countWords++;
         answer = "dog";
         word_text_quiz.setText("pies");
         word_sample_text_quiz.setText("Najlepszy przyjaciel człowieka");
@@ -213,10 +220,10 @@ public class ControllerQuizGame {
         answer_2_quiz.setText("snail");
         answer_3_quiz.setText("rabbit");
         answer_4_quiz.setText("lion");
-        countWords += 1;
     }
 
     private void setInfo(){
+        if (countWords == border) next_word_button_quiz.setText("Podsumowanie");
         gameSettings.setScoreWords(countScore);
         gameSettings.setAllWords(countWords);
         gameSettings.setPointsForGame(countScore*10);

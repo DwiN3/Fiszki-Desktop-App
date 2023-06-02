@@ -23,7 +23,7 @@ public class ControllerWpisGame {
     private ImageView image_wpis, image_word_wpis;
     private Image imageWord;
     private String answer = "",category="";
-    private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0;
+    private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0, border=10;;
     private GameSettings gameSettings = GameSettings.getInstance();
 
     @FXML
@@ -43,6 +43,14 @@ public class ControllerWpisGame {
         setWord();
 
         next_word_button_wpis.setOnAction(event -> {
+            if(next_word_button_wpis.getText().equals("Podsumowanie")){
+                try {
+                    switchActivity("activity_end_screen");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
             if(next_word_button_wpis.getText().equals("Sprawdź")){
                 your_word_text_wpis.setVisible(false);
                 your_word_text_wpis.setDisable(true);
@@ -54,7 +62,7 @@ public class ControllerWpisGame {
                     answer_text_wpis.setStyle("-fx-text-fill: green;");
                     correctChoice();
                     System.out.println("gratulacje");
-                } else {
+                }else {
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: red;");
@@ -127,7 +135,7 @@ public class ControllerWpisGame {
     }
 
     private void correctChoice(){
-        countScore += 1;
+        countScore++;
         if(scoreTrain < 0) scoreTrain = 1;
         else scoreTrain += 1;
         if(scoreTrain > bestTrain) bestTrain = scoreTrain;
@@ -143,15 +151,17 @@ public class ControllerWpisGame {
     }
 
     private void setInfo(){
+        if (countWords == border) next_word_button_wpis.setText("Podsumowanie");
         gameSettings.setScoreWords(countScore);
         gameSettings.setAllWords(countWords);
         gameSettings.setPointsForGame(countScore*10);
     }
 
     private void setWord() {
-        countWords += 1;
+        countWords++;
         answer = "dog";
         word_text_wpis.setText("pies");
         word_sample_text_wpis.setText("Najlepszy przyjaciel człowieka");
+        flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
     }
 }
