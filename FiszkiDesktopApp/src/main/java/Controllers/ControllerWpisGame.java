@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import Other.GameSettings;
+import Other.GameSettingsInstance;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class ControllerWpisGame {
     private Image imageWord;
     private String answer = "",category="";
     private int countScore=0, countWords=0,points = 0, scoreTrain = 0, bestTrain=0, border=10;;
-    private GameSettings gameSettings = GameSettings.getInstance();
+    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
 
     @FXML
     private void switchActivity(String activity) throws IOException {
@@ -39,7 +39,7 @@ public class ControllerWpisGame {
         image_word_wpis.setImage(imageIconStart);
         flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
 
-        category = gameSettings.getCategory();
+        category = gameSettingsInstance.getCategory();
         setWord();
 
         next_word_button_wpis.setOnAction(event -> {
@@ -152,9 +152,10 @@ public class ControllerWpisGame {
 
     private void setInfo(){
         if (countWords == border) next_word_button_wpis.setText("Podsumowanie");
-        gameSettings.setScoreWords(countScore);
-        gameSettings.setAllWords(countWords);
-        gameSettings.setPointsForGame(countScore*10);
+        gameSettingsInstance.setScoreWords(countScore);
+        gameSettingsInstance.setAllWords(countWords);
+        gameSettingsInstance.setPointsForGame(countScore*10);
+        gameSettingsInstance.setBestTrain(bestTrain);
     }
 
     private void setWord() {

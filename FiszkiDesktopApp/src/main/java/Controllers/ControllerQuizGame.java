@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
-import Other.GameSettings;
+import Other.GameSettingsInstance;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +21,7 @@ public class ControllerQuizGame {
     private String answer = "", category="";
     private Image imageWord;
     private int countScore=0, countWords=0, scoreTrain = 0, bestTrain=0, border=10;
-    private GameSettings gameSettings = GameSettings.getInstance();
+    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     @FXML
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
@@ -31,7 +31,7 @@ public class ControllerQuizGame {
     private void initialize() {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_quiz.setImage(image);
-        category = gameSettings.getCategory();
+        category = gameSettingsInstance.getCategory();
         System.out.println(category);
         setEmoji();
         setWord();
@@ -224,9 +224,10 @@ public class ControllerQuizGame {
 
     private void setInfo(){
         if (countWords == border) next_word_button_quiz.setText("Podsumowanie");
-        gameSettings.setScoreWords(countScore);
-        gameSettings.setAllWords(countWords);
-        gameSettings.setPointsForGame(countScore*10);
+        gameSettingsInstance.setScoreWords(countScore);
+        gameSettingsInstance.setAllWords(countWords);
+        gameSettingsInstance.setPointsForGame(countScore*10);
+        gameSettingsInstance.setBestTrain(bestTrain);
     }
     private void blockButtons(boolean isLoading){
         answer_1_quiz.setDisable(isLoading);

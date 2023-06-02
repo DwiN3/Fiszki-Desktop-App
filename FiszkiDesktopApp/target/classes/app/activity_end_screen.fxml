@@ -5,7 +5,8 @@
 
 <AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerEndScreen">
     <children>
-        <Label fx:id="category_end" layoutX="340.0" layoutY="160.0"  prefHeight="17.0" prefWidth="221.0" text="Kategoria: " />
+        <Label fx:id="category_end" layoutX="340.0" layoutY="120.0"  prefHeight="17.0" prefWidth="221.0" text="Kategoria: " />
+        <Label fx:id="best_train_score_end" layoutX="340.0" layoutY="160.0"  prefHeight="17.0" prefWidth="221.0" text="Najlepsza passa: " />
         <Label fx:id="score_end" layoutX="340.0" layoutY="200.0"  prefHeight="17.0" prefWidth="221.0" text="Wynik poprawnych odpowiedzi: " />
         <Label fx:id="get_points_end" layoutX="340.0" layoutY="240.0"  prefHeight="17.0" prefWidth="221.0" text="Ilość zdobytych punktów: " />
         <Label fx:id="lvl_profile_end" layoutX="340.0" layoutY="280.0"  prefHeight="17.0" prefWidth="221.0" text="LVL: " />
