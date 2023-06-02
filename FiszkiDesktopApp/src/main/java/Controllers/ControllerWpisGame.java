@@ -37,6 +37,7 @@ public class ControllerWpisGame {
         image_wpis.setImage(imageBackgroundStart);
         Image imageIconStart = new Image(getClass().getResourceAsStream("/drawable/flashcard_icon_png.png"));
         image_word_wpis.setImage(imageIconStart);
+        flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
 
         category = gameSettings.getCategory();
         setWord();

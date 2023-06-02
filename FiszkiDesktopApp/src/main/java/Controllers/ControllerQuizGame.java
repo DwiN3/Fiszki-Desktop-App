@@ -35,6 +35,7 @@ public class ControllerQuizGame {
         System.out.println(category);
         setEmoji();
         setWord();
+        flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
 
         answer_1_quiz.setOnAction(event -> {
             blockButtons(true);
