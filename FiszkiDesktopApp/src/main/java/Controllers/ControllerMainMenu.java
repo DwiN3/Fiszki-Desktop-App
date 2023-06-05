@@ -7,6 +7,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import Other.GameSettingsInstance;
 import Other.Token;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 

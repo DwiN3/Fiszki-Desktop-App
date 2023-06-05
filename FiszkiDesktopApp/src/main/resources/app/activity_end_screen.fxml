@@ -6,6 +6,10 @@
 
 <AnchorPane prefHeight="600" prefWidth="850" style="-fx-background-color: #048ad4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerEndScreen">
     <children>
+        <Label alignment="CENTER" layoutX="340.0" layoutY="80.0" prefHeight="17.0" prefWidth="221.0" text="Podsumowanie" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font></Label>
         <Label fx:id="category_end" layoutX="340.0" layoutY="120.0" prefHeight="17.0" prefWidth="221.0" text="Kategoria: " textFill="WHITE">
          <font>
             <Font size="13.0" />

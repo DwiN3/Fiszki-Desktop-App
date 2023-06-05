@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600" prefWidth="850" style="-fx-background-color: #048ad4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerQuizGame">
   <children>
-    <Label fx:id="flashcards_left_quiz" alignment="CENTER" layoutX="340.0" layoutY="48.0" prefHeight="25.0" prefWidth="215.0" text="Skuteczność:  3/4" textFill="WHITE">
+    <Label fx:id="flashcards_left_quiz" alignment="CENTER" layoutX="340.0" layoutY="50.0" prefHeight="25.0" prefWidth="215.0" text="Skuteczność:  3/4" textFill="WHITE">
       <font>
         <Font name="System Bold" size="16.0" />
       </font>
@@ -18,31 +18,31 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-    <Label fx:id="word_sample_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="212.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" textFill="WHITE">
+    <Label fx:id="word_sample_text_quiz" alignment="CENTER" layoutX="340.0" layoutY="216.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-    <Button fx:id="answer_1_quiz" layoutX="240.0" layoutY="260.0" prefHeight="40.0" prefWidth="200.0" text="a">
+    <Button fx:id="answer_1_quiz" layoutX="240.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0" text="a">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_2_quiz" layoutX="456.0" layoutY="260.0" prefHeight="40.0" prefWidth="200.0" text="b">
+    <Button fx:id="answer_2_quiz" layoutX="456.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0" text="b">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_3_quiz" layoutX="241.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" text="c">
+    <Button fx:id="answer_3_quiz" layoutX="241.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0" text="c">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_4_quiz" layoutX="456.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" text="d">
+    <Button fx:id="answer_4_quiz" layoutX="456.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0" text="d">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="next_word_button_quiz" layoutX="342.0" layoutY="395.0" prefHeight="32.0" prefWidth="215.0" text="Następne słowo">
+    <Button fx:id="next_word_button_quiz" layoutX="342.0" layoutY="400.0" prefHeight="32.0" prefWidth="215.0" text="Następne słowo">
          <font>
             <Font size="13.0" />
          </font></Button>
-    <Button fx:id="back_menu_button_quiz" layoutX="342.0" layoutY="440.0" prefHeight="32.0" prefWidth="215.0" text="Wróć do menu">
+    <Button fx:id="back_menu_button_quiz" layoutX="342.0" layoutY="444.0" prefHeight="32.0" prefWidth="215.0" text="Wróć do menu">
          <font>
             <Font size="13.0" />
          </font></Button>
