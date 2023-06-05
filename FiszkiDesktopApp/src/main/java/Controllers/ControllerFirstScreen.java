@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import Other.Token;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,6 +19,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 
 public class ControllerFirstScreen {
+    @FXML
+    private ImageView background_first;
     @FXML
     private TextField name_first;
     @FXML
@@ -31,6 +35,8 @@ public class ControllerFirstScreen {
     private Token token = Token.getInstance();
 
     public void initialize(){
+        Image image = new Image(getClass().getResourceAsStream("/drawable/background.png"));
+        background_first.setImage(image);
         login_button_first.setOnAction(event -> {
             blockButtons(true);
             checkAccount();
