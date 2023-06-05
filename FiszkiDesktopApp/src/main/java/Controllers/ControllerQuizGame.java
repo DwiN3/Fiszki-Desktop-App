@@ -45,17 +45,17 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_1_quiz.getText())) {
-                answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
                 inCorrectChoice();
-                answer_1_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+                answer_1_quiz.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;");
                 if (answer.equals(answer_2_quiz.getText())) {
-                    answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
-                    answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_4_quiz.getText())) {
-                    answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
@@ -67,17 +67,17 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_2_quiz.getText())) {
-                answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
                 inCorrectChoice();
-                answer_2_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+                answer_2_quiz.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
-                    answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
-                    answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_4_quiz.getText())) {
-                    answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
@@ -89,17 +89,17 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_3_quiz.getText())) {
-                answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
                 inCorrectChoice();
-                answer_3_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+                answer_3_quiz.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
-                    answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_2_quiz.getText())) {
-                    answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_4_quiz.getText())) {
-                    answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
             flashcards_left_quiz.setText("Fiszki:  "+countScore+"/"+countWords);
@@ -111,17 +111,17 @@ public class ControllerQuizGame {
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             if (answer.equals(answer_4_quiz.getText())) {
-                answer_4_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
                 inCorrectChoice();
-                answer_4_quiz.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+                answer_4_quiz.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;");
                 if (answer.equals(answer_1_quiz.getText())) {
-                    answer_1_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_2_quiz.getText())) {
-                    answer_2_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
-                    answer_3_quiz.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+                    answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
             setInfo();
@@ -233,9 +233,19 @@ public class ControllerQuizGame {
         gameSettingsInstance.setBestTrain(bestTrain);
     }
     private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
+
         answer_1_quiz.setDisable(isLoading);
+        answer_1_quiz.setOpacity(buttonOpacity);
+
         answer_2_quiz.setDisable(isLoading);
+        answer_2_quiz.setOpacity(buttonOpacity);
+
         answer_3_quiz.setDisable(isLoading);
+        answer_3_quiz.setOpacity(buttonOpacity);
+
         answer_4_quiz.setDisable(isLoading);
+        answer_4_quiz.setOpacity(buttonOpacity);
+
     }
 }

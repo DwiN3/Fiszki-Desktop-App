@@ -20,8 +20,6 @@ import Retrofit.JsonPlaceholderAPI.JsonUser;
 
 public class ControllerFirstScreen {
     @FXML
-    private ImageView background_first;
-    @FXML
     private TextField name_first;
     @FXML
     private PasswordField password_first;
@@ -35,8 +33,6 @@ public class ControllerFirstScreen {
     private Token token = Token.getInstance();
 
     public void initialize(){
-        Image image = new Image(getClass().getResourceAsStream("/drawable/background.png"));
-        background_first.setImage(image);
         login_button_first.setOnAction(event -> {
             blockButtons(true);
             checkAccount();

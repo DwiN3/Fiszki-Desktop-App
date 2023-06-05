@@ -5,12 +5,12 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerFirstScreen">
+<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerFirstScreen"  style="-fx-background-color: #048ad4;">
    <children>
       <ImageView fx:id="background_first"  fitHeight="600" fitWidth="850" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" />
-      <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" />
+      <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" textFill="WHITE" />
       <TextField fx:id="name_first" layoutX="340.0" layoutY="160.0" prefHeight="25.0" prefWidth="215.0" />
-      <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="203.0" prefHeight="17.0" prefWidth="131.0" text="Hasło" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="203.0" prefHeight="17.0" prefWidth="131.0" text="Hasło" textFill="WHITE" />
       <PasswordField fx:id="password_first" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" />
       <Button fx:id="login_button_first" layoutX="340.0" layoutY="240.0" prefHeight="25.0" prefWidth="215.0" text="Logowanie" />
       <Button fx:id="register_button_first" layoutX="340.0" layoutY="280.0" prefHeight="25.0" prefWidth="215.0" text="Rejestracja" />
