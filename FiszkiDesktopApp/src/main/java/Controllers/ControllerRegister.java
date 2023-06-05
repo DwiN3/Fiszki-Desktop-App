@@ -39,7 +39,6 @@ public class ControllerRegister {
 
         back_button_register.setOnAction(event -> {
             try {
-
                 create_into_text_register.setVisible(false);
                 create_into_text_register.setDisable(true);
                 switchActivity("activity_first_screen");
@@ -85,7 +84,10 @@ public class ControllerRegister {
         });
     }
     private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
         register_button_register.setDisable(isLoading);
+        register_button_register.setOpacity(buttonOpacity);
         back_button_register.setDisable(isLoading);
+        back_button_register.setOpacity(buttonOpacity);
     }
 }

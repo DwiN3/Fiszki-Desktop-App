@@ -98,8 +98,12 @@ public class ControllerFirstScreen {
     }
 
     private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
         login_button_first.setDisable(isLoading);
+        login_button_first.setOpacity(buttonOpacity);
         register_button_first.setDisable(isLoading);
+        register_button_first.setOpacity(buttonOpacity);
         reset_button_first.setDisable(isLoading);
+        reset_button_first.setOpacity(buttonOpacity);
     }
 }

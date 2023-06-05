@@ -8,18 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerQuizGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerQuizGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_end_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_end_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_main_menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_quiz_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_quiz_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerWpisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerWpisGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_wpis_game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_first_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/activity_main_menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

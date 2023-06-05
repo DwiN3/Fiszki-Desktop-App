@@ -4,15 +4,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600" prefWidth="850" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerRegister"  style="-fx-background-color: #048ad4;">
+<AnchorPane prefHeight="600" prefWidth="850" style="-fx-background-color: #048ad4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerRegister">
     <children>
-        <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" textFill="WHITE"/>
+        <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" textFill="WHITE" />
         <TextField fx:id="name_register" layoutX="340.0" layoutY="160.0" prefHeight="25.0" prefWidth="215.0" />
-        <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="203.0" prefHeight="17.0" prefWidth="131.0" text="Email" textFill="WHITE"/>
+        <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="203.0" prefHeight="17.0" prefWidth="131.0" text="Email" textFill="WHITE" />
         <TextField fx:id="email_register" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" />
-        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="243.0" prefHeight="17.0" prefWidth="131.0" text="Hasło" textFill="WHITE"/>
+        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="243.0" prefHeight="17.0" prefWidth="131.0" text="Hasło" textFill="WHITE" />
         <PasswordField fx:id="password_register" layoutX="340.0" layoutY="240.0" prefHeight="25.0" prefWidth="215.0" />
-        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="283.0" prefHeight="17.0" prefWidth="131.0" text="Powtórz Hasło" textFill="WHITE"/>
+        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="190.0" layoutY="283.0" prefHeight="17.0" prefWidth="131.0" text="Powtórz hasło" textFill="WHITE" />
         <PasswordField fx:id="password_re_register" layoutX="340.0" layoutY="280.0" prefHeight="25.0" prefWidth="215.0" />
         <Button fx:id="register_button_register" layoutX="340.0" layoutY="320.0" prefHeight="25.0" prefWidth="215.0" text="Rejestracja" />
         <Button fx:id="back_button_register" layoutX="340.0" layoutY="360.0" prefHeight="25.0" prefWidth="215.0" text="Wróć do logowania" />
