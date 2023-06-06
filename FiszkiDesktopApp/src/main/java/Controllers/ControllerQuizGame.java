@@ -234,18 +234,13 @@ public class ControllerQuizGame {
     }
     private void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
-
         answer_1_quiz.setDisable(isLoading);
         answer_1_quiz.setOpacity(buttonOpacity);
-
         answer_2_quiz.setDisable(isLoading);
         answer_2_quiz.setOpacity(buttonOpacity);
-
         answer_3_quiz.setDisable(isLoading);
         answer_3_quiz.setOpacity(buttonOpacity);
-
         answer_4_quiz.setDisable(isLoading);
         answer_4_quiz.setOpacity(buttonOpacity);
-
     }
 }

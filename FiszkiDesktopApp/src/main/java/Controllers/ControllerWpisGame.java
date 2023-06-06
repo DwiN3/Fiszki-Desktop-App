@@ -61,13 +61,13 @@ public class ControllerWpisGame {
                 if (your_word_text_wpis.getText().equals(answer)) {
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
-                    answer_text_wpis.setStyle("-fx-text-fill: green;");
+                    answer_text_wpis.setStyle("-fx-text-fill: #00FF00;");
                     correctChoice();
                     System.out.println("gratulacje");
                 }else {
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
-                    answer_text_wpis.setStyle("-fx-text-fill: red;");
+                    answer_text_wpis.setStyle("-fx-text-fill: FF0000;");
                     inCorrectChoice();
                     System.out.println("złe słowo");
                 }

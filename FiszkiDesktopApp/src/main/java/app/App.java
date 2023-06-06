@@ -19,7 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("activity_first_screen"), 850, 600);
+        scene = new Scene(loadFXML("activity_first_screen"), 850, 580);
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/drawable/flashcard_icon.png"))));
         stage.setTitle("Fiszki");
         stage.setScene(scene);
