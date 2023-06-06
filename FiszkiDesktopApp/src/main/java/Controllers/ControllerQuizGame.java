@@ -62,7 +62,7 @@ public class ControllerQuizGame {
 
         answer_1_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
-            sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
+            sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
             if (answer != null && answer.equals(answer_1_quiz.getText()) && !markTheAnswer) {
                 answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
@@ -81,7 +81,7 @@ public class ControllerQuizGame {
 
         answer_2_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
-            sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
+            sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
             if (answer != null && answer.equals(answer_2_quiz.getText()) && !markTheAnswer) {
                 answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
@@ -100,7 +100,7 @@ public class ControllerQuizGame {
 
         answer_3_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
-            sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
+            sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
             if (answer != null && answer.equals(answer_3_quiz.getText()) && !markTheAnswer) {
                 answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
@@ -119,7 +119,7 @@ public class ControllerQuizGame {
 
         answer_4_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
-            sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
+            sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
             if (answer != null && answer.equals(answer_4_quiz.getText()) && !markTheAnswer) {
                 answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
@@ -221,7 +221,7 @@ public class ControllerQuizGame {
             answer_3_quiz.setText(game.getAns3(numberWord));
             answer_4_quiz.setText(game.getAns4(numberWord));
             answer = game.getCorrectANS(numberWord);
-            sticks_left_quiz.setText("" + (game.getBorrder() - nrWords));
+            sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
         });
     }
 
