@@ -78,6 +78,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_2_quiz.setOnAction(event -> {
@@ -97,6 +98,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_3_quiz.setOnAction(event -> {
@@ -116,6 +118,7 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_4_quiz.setOnAction(event -> {
@@ -135,6 +138,7 @@ public class ControllerQuizGame {
                     answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         next_word_button_quiz.setOnAction(event -> {
@@ -226,6 +230,7 @@ public class ControllerQuizGame {
             answer_4_quiz.setText(game.getAns4(numberWord));
             answer = game.getCorrectANS(numberWord);
             sticks_left_quiz.setText("Pozostało: " + (game.getBorrder() - nrWords));
+            word_sample_text_quiz.setText(game.getSentense(numberWord));
         });
     }
 
