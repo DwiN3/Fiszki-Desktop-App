@@ -27,19 +27,19 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-    <Button fx:id="answer_1_quiz" layoutX="240.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0" text="a">
+    <Button fx:id="answer_1_quiz" layoutX="240.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_2_quiz" layoutX="456.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0" text="b">
+    <Button fx:id="answer_2_quiz" layoutX="456.0" layoutY="264.0" prefHeight="40.0" prefWidth="200.0">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_3_quiz" layoutX="241.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0" text="c">
+    <Button fx:id="answer_3_quiz" layoutX="241.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0">
          <font>
             <Font size="14.0" />
          </font></Button>
-    <Button fx:id="answer_4_quiz" layoutX="456.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0" text="d">
+    <Button fx:id="answer_4_quiz" layoutX="456.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0">
          <font>
             <Font size="14.0" />
          </font></Button>
