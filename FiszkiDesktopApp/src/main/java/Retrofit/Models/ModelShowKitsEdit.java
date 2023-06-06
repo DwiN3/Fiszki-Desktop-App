@@ -1,4 +1,4 @@
-package com.kdbk.fiszki.RecyclerView.Model;
+package Retrofit.Models;
 
 public class ModelShowKitsEdit {
     private String word, translateWord,sentens,sentensTranslate, wordID;

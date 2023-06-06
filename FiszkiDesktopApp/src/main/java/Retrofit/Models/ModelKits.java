@@ -1,6 +1,6 @@
 package Retrofit.Models;
 
-import com.kdbk.fiszki.Retrofit.Models.FlashcardID;
+import Retrofit.Models.FlashcardID;
 import java.util.ArrayList;
 
 public class ModelKits {

@@ -1,4 +1,4 @@
-package com.kdbk.fiszki.Retrofit.Models;
+package Retrofit.Models;
 
 import com.google.gson.annotations.SerializedName;
 
