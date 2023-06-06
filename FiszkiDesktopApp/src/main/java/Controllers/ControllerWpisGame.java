@@ -252,11 +252,11 @@ public class ControllerWpisGame {
         for (List<FlashcardID> elementList : elementLists) {
             int id_count=0;
             for (FlashcardID element : elementList) {
-                System.out.println("\n"+element.get_id());
-                System.out.println(element.getWord());
-                System.out.println(element.getTranslatedWord());
-                System.out.println(element.getExample());
-                System.out.println(element.getTranslatedExample());
+//                System.out.println("\n"+element.get_id());
+//                System.out.println(element.getWord());
+//                System.out.println(element.getTranslatedWord());
+//                System.out.println(element.getExample());
+//                System.out.println(element.getTranslatedExample());
                 wordsListKit.add(new ModelShowKitsEdit(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
                 id_count++;
             }
