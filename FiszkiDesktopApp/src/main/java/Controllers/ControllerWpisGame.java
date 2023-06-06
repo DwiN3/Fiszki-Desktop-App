@@ -41,7 +41,7 @@ public class ControllerWpisGame {
         flashcards_left_wpis.setText("Fiszki:  "+countScore+"/"+countWords);
         next_word_button_wpis.getText().equals("Sprawdź");
 
-        category = gameSettingsInstance.getCategory();
+        category = gameSettingsInstance.getName();
         setWord();
 
         next_word_button_wpis.setOnAction(event -> {
@@ -154,10 +154,8 @@ public class ControllerWpisGame {
     }
 
     private void setInfo(){
-
-        gameSettingsInstance.setScoreWords(countScore);
+        gameSettingsInstance.setPoints(countScore);
         gameSettingsInstance.setAllWords(countWords);
-        gameSettingsInstance.setPointsForGame(countScore*10);
         gameSettingsInstance.setBestTrain(bestTrain);
     }
 

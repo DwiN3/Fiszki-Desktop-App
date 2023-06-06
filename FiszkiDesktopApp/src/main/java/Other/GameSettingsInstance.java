@@ -1,34 +1,65 @@
 package Other;
 
 public class GameSettingsInstance {
-    private static String category ="", typeGame="";
-    private static int scoreWords=0, allWords=0, pointsForGame=0, bestTrain = 0;
     private static GameSettingsInstance instance = null;
+    private static String gameMode = "", name = "", language ="", selectData ="";
+    private static int bestTrain = 0, points=0, allWords=0, borderMaxFlashcards =15, borderMinFlashcardQuiz=10;
+
+
     public static GameSettingsInstance getInstance() {
         if (instance == null) {
             instance = new GameSettingsInstance();
         }
         return instance;
     }
-    public String getCategory() { return category; }
-    public String getTypeGame() { return typeGame; }
-    public int getScoreWords() {
-        return scoreWords;
+
+
+    public String getGameMode() {
+        return gameMode;
     }
-    public int getAllWords() { return allWords; }
-    public int getPointsForGame() { return pointsForGame; }
-    public void setCategory(String category) {
-        GameSettingsInstance.category = category;
+
+    public void setGameMode(String gameMode) {
+        GameSettingsInstance.gameMode = gameMode;
     }
-    public void setScoreWords(int scoreWords) {
-        GameSettingsInstance.scoreWords = scoreWords;
+
+    public String getName() {
+        return name;
     }
+
+    public void setName(String nameCategory) {
+        GameSettingsInstance.name = nameCategory;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        GameSettingsInstance.language = language;
+    }
+
+    public String getSelectData() {
+        return selectData;
+    }
+
+    public void setSelectData(String selectData) {
+        GameSettingsInstance.selectData = selectData;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        GameSettingsInstance.points = points;
+    }
+
+    public int getAllWords() {
+        return allWords;
+    }
+
     public void setAllWords(int allWords) {
         GameSettingsInstance.allWords = allWords;
-    }
-    public void setPointsForGame(int pointsForGame) { GameSettingsInstance.pointsForGame = pointsForGame; }
-    public void setTypeGame(String typeGame) {
-        GameSettingsInstance.typeGame = typeGame;
     }
 
     public int getBestTrain() {
@@ -37,5 +68,21 @@ public class GameSettingsInstance {
 
     public void setBestTrain(int bestTrain) {
         GameSettingsInstance.bestTrain = bestTrain;
+    }
+
+    public int getBorderMaxFlashcards() {
+        return borderMaxFlashcards;
+    }
+
+    public void setBorderMaxFlashcards(int borderMaxFlashcards) {
+        GameSettingsInstance.borderMaxFlashcards = borderMaxFlashcards;
+    }
+
+    public int getBorderMinFlashcardQuiz() {
+        return borderMinFlashcardQuiz;
+    }
+
+    public void setBorderMinFlashcardQuiz(int borderMinFlashcardQuiz) {
+        GameSettingsInstance.borderMinFlashcardQuiz = borderMinFlashcardQuiz;
     }
 }

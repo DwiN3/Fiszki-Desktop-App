@@ -40,7 +40,7 @@ public class ControllerMainMenu {
 
         game_quiz_button_menu.setOnAction(event -> {
             try {
-                gameSettingsInstance.setTypeGame("quiz");
+                gameSettingsInstance.setGameMode("quiz");
                 switchActivity("activity_quiz_game");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -49,7 +49,7 @@ public class ControllerMainMenu {
 
         game_wpis_button_menu.setOnAction(event -> {
             try {
-                gameSettingsInstance.setTypeGame("wpis");
+                gameSettingsInstance.setGameMode(("wpis"));
                 switchActivity("activity_wpis_game");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -69,11 +69,11 @@ public class ControllerMainMenu {
         category_choice_box_menu.getItems().addAll("zwierzęta","dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
         category_choice_box_menu.setValue("zwierzęta");
         selectedCategory = "zwierzęta";
-        gameSettingsInstance.setCategory(selectedCategory);
+        gameSettingsInstance.setName(selectedCategory);
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
             System.out.println(selectedCategory);
-            gameSettingsInstance.setCategory(selectedCategory);
+            gameSettingsInstance.setName(selectedCategory);
         });
     }
 }

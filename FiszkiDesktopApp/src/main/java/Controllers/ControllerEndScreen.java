@@ -36,10 +36,10 @@ public class ControllerEndScreen {
     }
 
     private void getInfo(){
-        category = gameSettingsInstance.getCategory();
-        scoreEnd = gameSettingsInstance.getScoreWords();
+        category = gameSettingsInstance.getName();
+        scoreEnd = gameSettingsInstance.getPoints();
         lenWords = gameSettingsInstance.getAllWords();
-        getPoints = gameSettingsInstance.getPointsForGame();
+        getPoints = gameSettingsInstance.getPoints()*10;
         bestTrainScore = gameSettingsInstance.getBestTrain();
         level = 2;
         pointsToNextLVL = 290;
@@ -56,11 +56,10 @@ public class ControllerEndScreen {
     }
 
     private void clearInfo(){
-        gameSettingsInstance.setCategory("");
-        gameSettingsInstance.setTypeGame("");
-        gameSettingsInstance.setScoreWords(0);
+        gameSettingsInstance.setName("");
+        gameSettingsInstance.setGameMode("");
+        gameSettingsInstance.setPoints(0);
         gameSettingsInstance.setAllWords(0);
-        gameSettingsInstance.setPointsForGame(0);
         gameSettingsInstance.setBestTrain(0);
     }
 }

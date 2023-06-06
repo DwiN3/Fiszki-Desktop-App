@@ -31,7 +31,7 @@ public class ControllerQuizGame {
     private void initialize() {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_quiz.setImage(image);
-        category = gameSettingsInstance.getCategory();
+        category = gameSettingsInstance.getName();
         System.out.println(category);
         setEmoji();
         setWord();
@@ -227,9 +227,8 @@ public class ControllerQuizGame {
 
     private void setInfo(){
         if (countWords == border) next_word_button_quiz.setText("Podsumowanie");
-        gameSettingsInstance.setScoreWords(countScore);
+        gameSettingsInstance.setPoints(countScore);
         gameSettingsInstance.setAllWords(countWords);
-        gameSettingsInstance.setPointsForGame(countScore*10);
         gameSettingsInstance.setBestTrain(bestTrain);
     }
     private void blockButtons(boolean isLoading){

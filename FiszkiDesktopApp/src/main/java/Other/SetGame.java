@@ -1,8 +1,7 @@
-package com.kdbk.fiszki.Other;
+package Other;
 
 
-import com.kdbk.fiszki.Instance.GameSettingsInstance;
-import com.kdbk.fiszki.R;
+import Other.GameSettingsInstance;
 import com.kdbk.fiszki.RecyclerView.Model.ModelShowKitsEdit;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ public class SetGame {
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     private String[] NameWord, correctANS, sentense, sentenseTra;
     private String[] ans1, ans2, ans3, ans4;
-    private int imgPL = R.drawable.flagpl, imgENG = R.drawable.flagang;
     private int listSize =0, borrder=0;
     private ArrayList<ModelShowKitsEdit> wordsList;
 
@@ -113,11 +111,5 @@ public class SetGame {
     }
     public int getBorrder() {
         return borrder;
-    }
-    public int getImgPL() {
-        return imgPL;
-    }
-    public int getImgENG() {
-        return imgENG;
     }
 }
