@@ -57,7 +57,8 @@ public class ControllerQuizGame {
         selectedName = gameSettingsInstance.getName();
         selectedData = "category";
         getWordFromCateogryRetrofit();
-        System.out.println(category);
+        next_word_button_quiz.setVisible(false);
+        next_word_button_quiz.setDisable(true);
         setEmoji();
 
         answer_1_quiz.setOnAction(event -> {
@@ -140,6 +141,9 @@ public class ControllerQuizGame {
             String resourcePath = "/drawable/flashcard_icon_png.png";
             Image nextImage = new Image(getClass().getResourceAsStream(resourcePath));
             image_word_quiz.setImage(nextImage);
+            next_word_button_quiz.setVisible(false);
+            next_word_button_quiz.setDisable(true);
+            blockButtons(false);
             if (nrWords != game.getBorrder() - 1) {
                 nrWords += 1;
                 clearButtons();
@@ -313,6 +317,9 @@ public class ControllerQuizGame {
             setEmoji();
             markTheAnswer = true;
             userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+            next_word_button_quiz.setVisible(true);
+            next_word_button_quiz.setDisable(false);
+            blockButtons(true);
         });
     }
 
@@ -323,6 +330,9 @@ public class ControllerQuizGame {
             setEmoji();
             markTheAnswer = true;
             userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+            next_word_button_quiz.setVisible(true);
+            next_word_button_quiz.setDisable(false);
+            blockButtons(true);
         });
     }
 }
