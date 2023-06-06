@@ -35,11 +35,10 @@ public class ControllerQuizGame {
     @FXML
     private ImageView image_quiz, image_word_quiz;
     private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private String answer = "", category="";
     private Image imageWord;
     private SetGame game;
-    private int points =0, nrWords =0, scoreTrain = 0, bestTrain=0, border=10, allWords;
-    private String selectedLanguage = "", selectedName = "", selectedData = "";
+    private int points =0, nrWords =0, scoreTrain = 0, bestTrain=0, allWords;
+    private String selectedLanguage = "", selectedName = "", selectedData = "",answer = "";
     private boolean markTheAnswer = false;
     private ArrayList<ModelShowKitsEdit> wordsListKit = new ArrayList<>();
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
@@ -59,7 +58,6 @@ public class ControllerQuizGame {
         getWordFromCateogryRetrofit();
         next_word_button_quiz.setVisible(false);
         next_word_button_quiz.setDisable(true);
-        setEmoji();
 
         answer_1_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
@@ -78,7 +76,6 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
-            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_2_quiz.setOnAction(event -> {
@@ -98,7 +95,6 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
-            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_3_quiz.setOnAction(event -> {
@@ -118,7 +114,6 @@ public class ControllerQuizGame {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
-            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         answer_4_quiz.setOnAction(event -> {
@@ -138,7 +133,6 @@ public class ControllerQuizGame {
                     answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
-            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
         });
 
         next_word_button_quiz.setOnAction(event -> {
@@ -322,6 +316,7 @@ public class ControllerQuizGame {
             setEmoji();
             markTheAnswer = true;
             userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             blockButtons(true);
@@ -335,6 +330,7 @@ public class ControllerQuizGame {
             setEmoji();
             markTheAnswer = true;
             userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+            word_sample_text_quiz.setText(game.getSentenseTra(nrWords));
             next_word_button_quiz.setVisible(true);
             next_word_button_quiz.setDisable(false);
             blockButtons(true);
