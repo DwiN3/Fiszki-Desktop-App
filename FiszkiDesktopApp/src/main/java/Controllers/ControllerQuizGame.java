@@ -63,7 +63,7 @@ public class ControllerQuizGame {
         answer_1_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
             sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
-            if (answer.equals(answer_1_quiz.getText()) && !markTheAnswer) {
+            if (answer != null && answer.equals(answer_1_quiz.getText()) && !markTheAnswer) {
                 answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -82,7 +82,7 @@ public class ControllerQuizGame {
         answer_2_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
             sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
-            if (answer.equals(answer_2_quiz.getText()) && !markTheAnswer) {
+            if (answer != null && answer.equals(answer_2_quiz.getText()) && !markTheAnswer) {
                 answer_2_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -92,7 +92,7 @@ public class ControllerQuizGame {
                     answer_1_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 } else if (answer.equals(answer_3_quiz.getText())) {
                     answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
-                } else if (answer.equals(answer_4_quiz.getText())) {
+                } else if (answer.equals(answer_4_quiz.getText()) ) {
                     answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 }
             }
@@ -101,7 +101,7 @@ public class ControllerQuizGame {
         answer_3_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
             sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
-            if (answer.equals(answer_3_quiz.getText()) && !markTheAnswer) {
+            if (answer != null && answer.equals(answer_3_quiz.getText()) && !markTheAnswer) {
                 answer_3_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -120,7 +120,7 @@ public class ControllerQuizGame {
         answer_4_quiz.setOnAction(event -> {
             if (nrWords == game.getBorrder() - 1) next_word_button_quiz.setText("PODSUMOWANIE");
             sticks_left_quiz.setText(String.valueOf(game.getBorrder() - nrWords - 1));
-            if (answer.equals(answer_4_quiz.getText()) && !markTheAnswer) {
+            if (answer != null && answer.equals(answer_4_quiz.getText()) && !markTheAnswer) {
                 answer_4_quiz.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
                 correctChoice();
             } else {
@@ -254,11 +254,13 @@ public class ControllerQuizGame {
                     if (elementLists != null) {
                         // Przekazanie elementów do innej metody lub klasy
                         processElements(elementLists);
-                        game = new SetGame(selectedData,"quiz", selectedLanguage, wordsListKit);
+                        game = new SetGame(selectedData,"quiz", "pl", wordsListKit);
                         scoreTrain = 0;
                         nrWords = 0;
                         allWords = game.getListSize();
-                        userPKT_quiz.setText("Punkty:    "+points+"/"+allWords);
+                        Platform.runLater(() -> {
+                            userPKT_quiz.setText("Punkty:    " + String.valueOf(points) + "/" + String.valueOf(allWords));
+                        });
                         setEmoji();
                         setQuestion(nrWords);
                     }
@@ -302,21 +304,25 @@ public class ControllerQuizGame {
         answer_4_quiz.setOpacity(buttonOpacity);
     }
 
-    private void correctChoice(){
-        points += 1;
-        if(scoreTrain < 0) scoreTrain = 1;
-        else scoreTrain += 1;
-        if(scoreTrain > bestTrain) bestTrain = scoreTrain;
-        setEmoji();
-        markTheAnswer = true;
-        userPKT_quiz.setText("Punkty:    "+points+"/"+allWords);
+    private void correctChoice() {
+        Platform.runLater(() -> {
+            points += 1;
+            if (scoreTrain < 0) scoreTrain = 1;
+            else scoreTrain += 1;
+            if (scoreTrain > bestTrain) bestTrain = scoreTrain;
+            setEmoji();
+            markTheAnswer = true;
+            userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+        });
     }
 
-    private void inCorrectChoice(){
-        if (scoreTrain > 0) scoreTrain = -1;
-        else scoreTrain--;
-        setEmoji();
-        markTheAnswer = true;
-        userPKT_quiz.setText("Punkty:    "+points+"/"+allWords);
+    private void inCorrectChoice() {
+        Platform.runLater(() -> {
+            if (scoreTrain > 0) scoreTrain = -1;
+            else scoreTrain--;
+            setEmoji();
+            markTheAnswer = true;
+            userPKT_quiz.setText("Punkty:    " + points + "/" + allWords);
+        });
     }
 }
