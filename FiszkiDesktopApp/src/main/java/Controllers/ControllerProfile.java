@@ -4,7 +4,7 @@ import app.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import Other.Token;
+import Other.TokenInstance;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ public class ControllerProfile {
     private Label nick_user_profile,lvl_profile,points_to_next_LVL_profile;
     @FXML
     private Button back_to_menu_button_profile;
-    private Token token  = Token.getInstance();
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
     private int lvl = 2, points=256, pointsBorder = 500;
 
     @FXML
@@ -22,7 +22,7 @@ public class ControllerProfile {
     }
 
     public void initialize(){
-        nick_user_profile.setText("Login:  "+token.getUserName());
+        nick_user_profile.setText("Login:  "+ tokenInstance.getUserName());
         lvl_profile.setText("Poziom:  "+lvl+" lvl");
         points_to_next_LVL_profile.setText("Następny poziom:  "+points+"/"+pointsBorder+" pkt");
         back_to_menu_button_profile.setOnAction(event -> {

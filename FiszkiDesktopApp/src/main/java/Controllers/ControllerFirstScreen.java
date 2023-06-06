@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import Other.Token;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import Other.TokenInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,7 +28,7 @@ public class ControllerFirstScreen {
         App.setRoot(activity);
     }
 
-    private Token token = Token.getInstance();
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
 
     public void initialize(){
         login_button_first.setOnAction(event -> {
@@ -75,8 +73,8 @@ public class ControllerFirstScreen {
                 if(response.code() == 200){
                     Login post = response.body();
                     String TokenFromRetrofit = post.getToken();
-                    token.setToken(TokenFromRetrofit);
-                    token.setUserName(name_first.getText().toString());
+                    tokenInstance.setToken(TokenFromRetrofit);
+                    tokenInstance.setUserName(name_first.getText().toString());
                     blockButtons(false);
                     try {
                         switchActivity("activity_main_menu");

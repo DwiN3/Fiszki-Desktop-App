@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import Other.GameSettingsInstance;
-import Other.Token;
+import Other.TokenInstance;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class ControllerMainMenu {
     private ChoiceBox<String> category_choice_box_menu;
     @FXML
     private Button profile_button_menu,game_quiz_button_menu,game_wpis_button_menu,log_out_button_menu;
-    private Token token  = Token.getInstance();
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     private String selectedCategory;
 
@@ -27,7 +27,7 @@ public class ControllerMainMenu {
     }
 
     public void initialize(){
-        nick_user_menu.setText("Witaj "+token.getUserName());
+        nick_user_menu.setText("Witaj "+ tokenInstance.getUserName());
         selectedCategory = "zwierzęta";
 
         profile_button_menu.setOnAction(event -> {
@@ -57,8 +57,8 @@ public class ControllerMainMenu {
         });
 
         log_out_button_menu.setOnAction(event -> {
-            token.setToken("");
-            token.setUserName("");
+            tokenInstance.setToken("");
+            tokenInstance.setUserName("");
             try {
                 switchActivity("activity_first_screen");
             } catch (IOException e) {
