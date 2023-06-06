@@ -96,6 +96,7 @@ public class ControllerWpisGame {
                 if (nrWords == game.getBorrder() - 1) {
                     next_word_button_wpis.setText("Podsumowanie");
                 }
+                sticks_left_wpis.setText("Pozostało: " + (game.getBorrder() - nrWords-1));
             } else {
                 nrWords += 1;
                 setQuestion(nrWords);
@@ -192,7 +193,6 @@ public class ControllerWpisGame {
         Platform.runLater(() -> {
             word_text_wpis.setText(game.getNameWord(numberWord));
             answer = game.getCorrectANS(numberWord);
-            sticks_left_wpis.setText("Pozostało: " + (game.getBorrder() - nrWords));
             word_sample_text_wpis.setText(game.getSentense(numberWord));
         });
     }
@@ -232,6 +232,7 @@ public class ControllerWpisGame {
                         allWords = game.getListSize();
                         Platform.runLater(() -> {
                             userPKT_wpis.setText("Punkty:    " + String.valueOf(points) + "/" + String.valueOf(allWords));
+                            sticks_left_wpis.setText("Pozostało: "+game.getBorrder());
                         });
                         setEmoji();
                         setQuestion(nrWords);

@@ -8,23 +8,23 @@
 <AnchorPane prefHeight="600" prefWidth="850" style="-fx-background-color: #048ad4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerWpisGame">
     <children>
 
-        <Label fx:id="sticks_left_wpis" alignment="CENTER" layoutX="340.0" layoutY="14.0" prefHeight="25.0" prefWidth="215.0" text="Pozostało: " textFill="WHITE">
+        <Label fx:id="sticks_left_wpis" alignment="CENTER" layoutX="340.0" layoutY="15.0" prefHeight="25.0" prefWidth="215.0" text=": " textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <Label fx:id="userPKT_wpis" alignment="CENTER" layoutX="340.0" layoutY="50.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
+        <Label fx:id="userPKT_wpis" alignment="CENTER" layoutX="340.0" layoutY="45.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Label>
         <ImageView fx:id="image_wpis" fitHeight="160.0" fitWidth="420.0" layoutX="237.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
         <ImageView fx:id="image_word_wpis" fitHeight="100" fitWidth="100" layoutX="399.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" />
-        <Label fx:id="word_text_wpis" alignment="CENTER" layoutX="341.0" layoutY="80.0" prefHeight="25.0" prefWidth="215.0" text="Dog" textFill="WHITE">
+        <Label fx:id="word_text_wpis" alignment="CENTER" layoutX="341.0" layoutY="80.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font></Label>
-        <Label fx:id="word_sample_text_wpis" alignment="CENTER" layoutX="340.0" layoutY="216.0" prefHeight="25.0" prefWidth="215.0" text="Pies lubi szczekać" textFill="WHITE">
+        <Label fx:id="word_sample_text_wpis" alignment="CENTER" layoutX="340.0" layoutY="216.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font></Label>
