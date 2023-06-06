@@ -4,8 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserLVL {
 
-    private int result, lvl,points, borderPoints;
+    private int result, level, requiredPoints, points;
     private String content;
+
+
 
     @SerializedName("body")
     private String text;
@@ -21,6 +23,23 @@ public class UserLVL {
     public String getContent() {
         return content;
     }
+
+    public void setResult(int result) {
+        this.result = result;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getRequiredPoints() {
+        return requiredPoints;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
 
     public String getText() {
         return text;
