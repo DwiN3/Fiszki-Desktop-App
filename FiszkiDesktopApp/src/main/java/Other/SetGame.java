@@ -1,8 +1,7 @@
 package Other;
 
 
-import Other.GameSettingsInstance;
-import com.kdbk.fiszki.RecyclerView.Model.ModelShowKitsEdit;
+import Retrofit.Models.ModelShowKitsEdit;
 
 import java.util.ArrayList;
 import java.util.HashSet;

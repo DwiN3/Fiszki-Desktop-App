@@ -66,9 +66,9 @@ public class ControllerMainMenu {
             }
         });
 
-        category_choice_box_menu.getItems().addAll("zwierzęta","dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
-        category_choice_box_menu.setValue("zwierzęta");
-        selectedCategory = "zwierzęta";
+        category_choice_box_menu.getItems().addAll("zwierzeta","dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
+        category_choice_box_menu.setValue("zwierzeta");
+        selectedCategory = "zwierzeta";
         gameSettingsInstance.setName(selectedCategory);
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
