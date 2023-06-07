@@ -24,11 +24,16 @@ public class ControllerFirstScreen {
     @FXML
     private Button login_button_first, register_button_first, reset_button_first;
     @FXML
+<<<<<<< Updated upstream
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
     }
 
     private Token token = Token.getInstance();
+=======
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
+>>>>>>> Stashed changes
 
     public void initialize(){
         login_button_first.setOnAction(event -> {

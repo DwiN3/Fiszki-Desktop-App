@@ -14,6 +14,7 @@ public class ControllerEndScreen {
     @FXML
     private Button back_to_menu_button_profile_end;
     @FXML
+<<<<<<< Updated upstream
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
     }
@@ -21,6 +22,13 @@ public class ControllerEndScreen {
     private String category;
     private GameSettings gameSettings = GameSettings.getInstance();
 
+=======
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
+    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private int scoreEnd, points, allWords, bestTrainScore;
+    private String category;
+>>>>>>> Stashed changes
 
     public void initialize() {
         getInfo();

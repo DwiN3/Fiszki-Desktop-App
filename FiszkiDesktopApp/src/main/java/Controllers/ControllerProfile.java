@@ -13,13 +13,15 @@ public class ControllerProfile {
     private Label nick_user_profile,lvl_profile,points_to_next_LVL_profile;
     @FXML
     private Button back_to_menu_button_profile;
+<<<<<<< Updated upstream
     private Token token  = Token.getInstance();
     private int lvl = 2, points=256, pointsBorder = 500;
 
+=======
+>>>>>>> Stashed changes
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
 
     public void initialize(){
         nick_user_profile.setText("Login:  "+token.getUserName());
