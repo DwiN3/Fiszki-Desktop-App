@@ -33,7 +33,7 @@ public class ControllerResetPassword {
         });
         back_button_reset.setOnAction(event -> {
             try {
-                switchActivity("activity_main_menu");
+                switchActivity("activity_first_screen");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
