@@ -7,8 +7,6 @@ public class UserLVL {
     private int result, level, requiredPoints, points;
     private String content;
 
-
-
     @SerializedName("body")
     private String text;
 

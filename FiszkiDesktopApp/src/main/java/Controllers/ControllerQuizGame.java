@@ -4,7 +4,6 @@ import Other.SetGame;
 import Other.TokenInstance;
 import Retrofit.JsonPlaceholderAPI.JsonFlashcardsCollections;
 import Retrofit.Models.FlashcardID;
-import Retrofit.Models.ModelShowKitsEdit;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -42,7 +41,7 @@ public class ControllerQuizGame {
     private int points = 0, nrWords = 0, scoreTrain = 0, bestTrain = 0, allWords = 0;
     private String selectedName = "", selectedData = "category", selectedLanguage = "pl", answer = "";
     private boolean markTheAnswer = false;
-    private ArrayList<ModelShowKitsEdit> wordsListKit = new ArrayList<>();
+    private ArrayList<FlashcardID> wordsListKit = new ArrayList<>();
 
     @FXML
     private void initialize() {
@@ -308,7 +307,7 @@ public class ControllerQuizGame {
         for (List<FlashcardID> elementList : elementLists) {
             int id_count=0;
             for (FlashcardID element : elementList) {
-                wordsListKit.add(new ModelShowKitsEdit(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
+                wordsListKit.add(new FlashcardID(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
                 id_count++;
             }
         }

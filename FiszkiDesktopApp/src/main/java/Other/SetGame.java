@@ -1,7 +1,7 @@
 package Other;
 
 
-import Retrofit.Models.ModelShowKitsEdit;
+import Retrofit.Models.FlashcardID;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,14 +13,14 @@ public class SetGame {
     private String[] NameWord, correctANS, sentense, sentenseTra;
     private String[] ans1, ans2, ans3, ans4;
     private int listSize = 0, borrder = 0;
-    private ArrayList<ModelShowKitsEdit> wordsList;
+    private ArrayList<FlashcardID> wordsList;
 
-    public SetGame(String data, String mode, String language, ArrayList<ModelShowKitsEdit> wordsListAll) {
+    public SetGame(String data, String mode, String language, ArrayList<FlashcardID> wordsListAll) {
         borrder = gameSettingsInstance.getBorderMaxFlashcards();
         if (mode.equals("quiz")) {
             Random randomWords = new Random();
             Set<Integer> selectedIndices = new HashSet<>();
-            ArrayList<ModelShowKitsEdit> selectedWords = new ArrayList<>();
+            ArrayList<FlashcardID> selectedWords = new ArrayList<>();
             if (wordsListAll.size() <= borrder) borrder = wordsListAll.size();
 
             while (selectedIndices.size() < borrder) {
@@ -47,13 +47,13 @@ public class SetGame {
         for (int i = 0; i < wordsList.size(); i++) {
             if (language.equals("pl")) {
                 NameWord[i] = wordsList.get(i).getWord();
-                correctANS[i] = wordsList.get(i).getTranslateWord();
+                correctANS[i] = wordsList.get(i).getTranslatedWord();
             } else {
-                NameWord[i] = wordsList.get(i).getTranslateWord();
+                NameWord[i] = wordsList.get(i).getTranslatedWord();
                 correctANS[i] = wordsList.get(i).getWord();
             }
-            sentense[i] = wordsList.get(i).getSentens();
-            sentenseTra[i] = wordsList.get(i).getSentensTranslate();
+            sentense[i] = wordsList.get(i).getExample();
+            sentenseTra[i] = wordsList.get(i).getTranslatedExample();
 
             if (mode.equals("quiz")) {
                 Set<String> uniqueWords = new HashSet<>();
@@ -62,7 +62,7 @@ public class SetGame {
                 while (uniqueWords.size() < 4) {
                     int randomIndex = random.nextInt(wordsList.size());
                     String randomWord;
-                    if (language.equals("pl")) randomWord = wordsList.get(randomIndex).getTranslateWord();
+                    if (language.equals("pl")) randomWord = wordsList.get(randomIndex).getTranslatedWord();
                     else randomWord = wordsList.get(randomIndex).getWord();
                     uniqueWords.add(randomWord);
                 }
