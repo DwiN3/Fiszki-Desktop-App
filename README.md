@@ -1,5 +1,5 @@
 # Fiszki Desktop App
- 
+
 "Fiszki Desktop App" to aplikacja desktopowa która umożliwia skuteczną naukę języków obcych w sposób interaktywny i przyjemny. Aplikacja polega na wyświetlaniu słów w wybranym języku, a zadaniem użytkownika jest wpisanie ich tłumaczenia lub wybranie jednej odpowiedzi w zależności od wybranego trybu. 
 
 Użytkownik w aplikacji "Fiszki" może wybrać tematykę słówek, z których chce się uczyć w danym momencie. Dzięki temu, nauka jest bardziej skuteczna i dostosowana do indywidualnych potrzeb i preferencji użytkownika. Aplikacja oferuje szeroki wybór tematów, takich jak podróżowanie, jedzenie, sport czy praca. 
