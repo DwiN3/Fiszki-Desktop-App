@@ -27,9 +27,7 @@ public class ControllerFirstScreen {
     @FXML
     private Button login_button_first, register_button_first, reset_button_first;
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private TokenInstance tokenInstance = TokenInstance.getInstance();
 
     public void initialize(){

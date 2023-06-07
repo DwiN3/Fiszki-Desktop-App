@@ -26,9 +26,7 @@ public class ControllerRegister {
     @FXML
     private Button register_button_register, back_button_register;
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
 
     public void initialize(){
         register_button_register.setOnAction(event -> {
@@ -83,13 +81,22 @@ public class ControllerRegister {
 
             @Override
             public void onFailure(Call<Register> call, Throwable t) {
-                Platform.runLater(() -> {
-                    info_register.setStyle("-fx-text-fill: #00FF00;");
-                    info_register.setText("Utworzono konto pomyślnie");
-                    info_register.setVisible(true);
-                    register_button_register.setVisible(false);
-                    blockButtons(false);
-                });
+                if(t.getMessage().equals("timeout")){
+                    Platform.runLater(() -> {
+                        info_register.setStyle("-fx-text-fill: #FF0000;");
+                        info_register.setText("Uruchamianie serwera");
+                        info_register.setVisible(true);
+                        blockButtons(false);
+                    });
+                }else{
+                    Platform.runLater(() -> {
+                        info_register.setStyle("-fx-text-fill: #00FF00;");
+                        info_register.setText("Utworzono konto pomyślnie");
+                        info_register.setVisible(true);
+                        register_button_register.setVisible(false);
+                        blockButtons(false);
+                    });
+                }
             }
         });
     }

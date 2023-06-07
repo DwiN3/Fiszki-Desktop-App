@@ -24,15 +24,12 @@ public class ControllerEndScreen {
     private Label score_end,get_points_end,lvl_profile_end,points_to_next_LVL_profile_end, category_end, best_train_score_end;
     @FXML
     private Button back_to_menu_button_profile_end;
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
+    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     private int scoreEnd, points, allWords, bestTrainScore;
     private String category;
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
-
 
     public void initialize() {
         getInfo();
@@ -88,19 +85,11 @@ public class ControllerEndScreen {
         call.enqueue(new Callback<UserLVL>() {
             @Override
             public void onResponse(Call<UserLVL> call, Response<UserLVL> response) {
-                if(response.isSuccessful()){
-                    //System.out.println("Wysłano "+points);
-                }
             }
 
             @Override
             public void onFailure(Call<UserLVL> call, Throwable t) {
-                if(t.getMessage().equals("timeout")){
-                    //Toast.makeText(ActivityQuizEnd.this,"Uruchamianie serwera", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    getUserLVL();
-                }
+                if(!t.getMessage().equals("timeout"))  getUserLVL();
             }
         });
     }
@@ -140,14 +129,7 @@ public class ControllerEndScreen {
             }
 
             @Override
-            public void onFailure(Call<UserLVL> call, Throwable t) {
-                if(t.getMessage().equals("timeout")){
-                    //Toast.makeText(ActivityQuizEnd.this,"Uruchamianie serwera", Toast.LENGTH_SHORT).show();
-                }
-
-                else{
-                }
-            }
+            public void onFailure(Call<UserLVL> call, Throwable t) { }
         });
     }
 }

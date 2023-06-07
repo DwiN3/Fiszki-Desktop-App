@@ -23,9 +23,7 @@ public class ControllerResetPassword {
     @FXML
     private Button reset_button_reset, back_button_reset;
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
 
     public void initialize(){
         reset_button_reset.setOnAction(event -> {

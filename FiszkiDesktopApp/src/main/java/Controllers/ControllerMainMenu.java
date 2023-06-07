@@ -16,18 +16,16 @@ public class ControllerMainMenu {
     private ChoiceBox<String> category_choice_box_menu;
     @FXML
     private Button profile_button_menu, game_quiz_button_menu, game_wpis_button_menu, log_out_button_menu;
+    @FXML
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private TokenInstance tokenInstance = TokenInstance.getInstance();
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     private String selectedCategory;
 
-    @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
-
     public void initialize(){
         nick_user_menu.setText("Witaj "+ tokenInstance.getUserName());
-        selectedCategory = "zwierzęta";
+        selectedCategory = "zwierzeta";
+        gameSettingsInstance.setName(selectedCategory);
 
         profile_button_menu.setOnAction(event -> {
             try {
@@ -71,7 +69,6 @@ public class ControllerMainMenu {
 
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
-            System.out.println(selectedCategory);
             gameSettingsInstance.setName(selectedCategory);
         });
     }

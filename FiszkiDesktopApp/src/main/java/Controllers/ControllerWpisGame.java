@@ -22,7 +22,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -37,18 +36,15 @@ public class ControllerWpisGame {
     private Button next_word_button_wpis, back_menu_button_wpis;
     @FXML
     private ImageView image_wpis, image_word_wpis;
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private Image imageWord;
-    private SetGame game;
-    private int points =0, nrWords =0, scoreTrain = 0, bestTrain=0, border=0, allWords;
-    private String selectedLanguage = "", selectedName = "", selectedData = "",answer = "";
-    private ArrayList<ModelShowKitsEdit> wordsListKit = new ArrayList<>();
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
-
     @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private Image imageWord;
+    private TokenInstance tokenInstance = TokenInstance.getInstance();
+    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private SetGame game;
+    private int points = 0, nrWords = 0, scoreTrain = 0, bestTrain = 0, allWords = 0;
+    private String selectedLanguage = "pl", selectedName = "", selectedData = "category", answer = "";
+    private ArrayList<ModelShowKitsEdit> wordsListKit = new ArrayList<>();
 
     @FXML
     private void initialize() {
@@ -57,10 +53,7 @@ public class ControllerWpisGame {
         Image imageIconStart = new Image(getClass().getResourceAsStream("/drawable/flashcard_icon_png.png"));
         image_word_wpis.setImage(imageIconStart);
 
-        border = 14;
-        selectedLanguage = "pl";
         selectedName = gameSettingsInstance.getName();
-        selectedData = "category";
         getWordFromCateogryRetrofit();
 
         next_word_button_wpis.setOnAction(event -> {
@@ -84,13 +77,11 @@ public class ControllerWpisGame {
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: #00FF00;");
                     correctChoice();
-                    System.out.println("gratulacje");
                 } else {
                     next_word_button_wpis.setText("Następne słowo");
                     answer_text_wpis.setText("Tłumaczenie to: " + answer);
                     answer_text_wpis.setStyle("-fx-text-fill: FF0000;");
                     inCorrectChoice();
-                    System.out.println("złe słowo");
                 }
 
                 if (nrWords == game.getBorrder() - 1) {
@@ -113,7 +104,6 @@ public class ControllerWpisGame {
             }
         });
 
-
         back_menu_button_wpis.setOnAction(event -> {
             try {
                 switchActivity("activity_main_menu");
@@ -122,6 +112,33 @@ public class ControllerWpisGame {
             }
         });
     }
+
+    private void correctChoice(){
+        Platform.runLater(() -> {
+            points += 1;
+            if (scoreTrain < 0) scoreTrain = 1;
+            else scoreTrain += 1;
+            if (scoreTrain > bestTrain) bestTrain = scoreTrain;
+            setEmoji();
+            userPKT_wpis.setText("Punkty:    " + points + "/" + allWords);
+            word_sample_text_wpis.setText(game.getSentenseTra(nrWords));
+            next_word_button_wpis.setVisible(true);
+            next_word_button_wpis.setDisable(false);
+        });
+    }
+
+    private void inCorrectChoice(){
+        Platform.runLater(() -> {
+            if (scoreTrain > 0) scoreTrain = -1;
+            else scoreTrain--;
+            setEmoji();
+            userPKT_wpis.setText("Punkty:    " + points + "/" + allWords);
+            word_sample_text_wpis.setText(game.getSentenseTra(nrWords));
+            next_word_button_wpis.setVisible(true);
+            next_word_button_wpis.setDisable(false);
+        });
+    }
+
     private void setEmoji() {
         String resourcePath;
         if (scoreTrain <= -5)
@@ -153,40 +170,10 @@ public class ControllerWpisGame {
             if (inputStream != null) {
                 imageWord = new Image(inputStream);
                 image_word_wpis.setImage(imageWord);
-            } else {
-                // Obsłuż brak dostępu do zasobu lub inny problem
-                // Możesz ustawić domyślny obraz lub wyrzucić wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
             }
         } catch (IOException e) {
             e.printStackTrace();
-            // Obsłuż wyjątek, jeśli to odpowiednie dla twojej logiki aplikacji
         }
-    }
-
-    private void correctChoice(){
-        Platform.runLater(() -> {
-            points += 1;
-            if (scoreTrain < 0) scoreTrain = 1;
-            else scoreTrain += 1;
-            if (scoreTrain > bestTrain) bestTrain = scoreTrain;
-            setEmoji();
-            userPKT_wpis.setText("Punkty:    " + points + "/" + allWords);
-            word_sample_text_wpis.setText(game.getSentenseTra(nrWords));
-            next_word_button_wpis.setVisible(true);
-            next_word_button_wpis.setDisable(false);
-        });
-    }
-
-    private void inCorrectChoice(){
-        Platform.runLater(() -> {
-            if (scoreTrain > 0) scoreTrain = -1;
-            else scoreTrain--;
-            setEmoji();
-            userPKT_wpis.setText("Punkty:    " + points + "/" + allWords);
-            word_sample_text_wpis.setText(game.getSentenseTra(nrWords));
-            next_word_button_wpis.setVisible(true);
-            next_word_button_wpis.setDisable(false);
-        });
     }
 
     void setQuestion(int numberWord) {
@@ -226,26 +213,22 @@ public class ControllerWpisGame {
                     if (elementLists != null) {
                         // Przekazanie elementów do innej metody lub klasy
                         processElements(elementLists);
-                        game = new SetGame(selectedData,"quiz", "pl", wordsListKit);
+                        game = new SetGame(selectedData,"quiz", selectedLanguage, wordsListKit);
                         scoreTrain = 0;
                         nrWords = 0;
                         allWords = game.getListSize();
                         Platform.runLater(() -> {
-                            userPKT_wpis.setText("Punkty:    " + String.valueOf(points) + "/" + String.valueOf(allWords));
+                            userPKT_wpis.setText("Punkty:    " + points + "/" + allWords);
                             sticks_left_wpis.setText("Pozostało: "+game.getBorrder());
                         });
                         setEmoji();
                         setQuestion(nrWords);
                     }
-                } else {
-                    //Log.e("API Error", "Response code: " + response.message());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<List<FlashcardID>>> call, Throwable t) {
-                //Log.e("API Error", "Request failed: " + t.getMessage());
-            }
+            public void onFailure(Call<List<List<FlashcardID>>> call, Throwable t) { }
         });
     }
 
@@ -253,15 +236,9 @@ public class ControllerWpisGame {
         for (List<FlashcardID> elementList : elementLists) {
             int id_count=0;
             for (FlashcardID element : elementList) {
-//                System.out.println("\n"+element.get_id());
-//                System.out.println(element.getWord());
-//                System.out.println(element.getTranslatedWord());
-//                System.out.println(element.getExample());
-//                System.out.println(element.getTranslatedExample());
                 wordsListKit.add(new ModelShowKitsEdit(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
                 id_count++;
             }
         }
     }
-
 }

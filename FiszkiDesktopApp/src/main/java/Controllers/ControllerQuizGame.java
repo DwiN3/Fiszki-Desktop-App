@@ -21,7 +21,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -34,6 +33,8 @@ public class ControllerQuizGame {
     private Button answer_1_quiz, answer_2_quiz, answer_3_quiz, answer_4_quiz, next_word_button_quiz, back_menu_button_quiz;
     @FXML
     private ImageView image_quiz, image_word_quiz;
+    @FXML
+    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private Image imageWord;
     private TokenInstance tokenInstance = TokenInstance.getInstance();
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
@@ -42,11 +43,6 @@ public class ControllerQuizGame {
     private String selectedName = "", selectedData = "category", selectedLanguage = "pl", answer = "";
     private boolean markTheAnswer = false;
     private ArrayList<ModelShowKitsEdit> wordsListKit = new ArrayList<>();
-
-    @FXML
-    private void switchActivity(String activity) throws IOException {
-        App.setRoot(activity);
-    }
 
     @FXML
     private void initialize() {
