@@ -72,7 +72,7 @@ public class ControllerRegister {
                 if(!response.isSuccessful()){
                     Platform.runLater(() -> {
                         info_register.setStyle("-fx-text-fill: #FF0000;");
-                        info_register.setText("Błąd danych");
+                        info_register.setText("Błędne dane");
                         info_register.setVisible(true);
                         blockButtons(false);
                     });
