@@ -67,10 +67,10 @@ public class ControllerFirstScreen {
     }
 
     private void loginAccountRetrofit() {
-        //String loginString = String.valueOf(name_first.getText());
-        //String passwordString= String.valueOf(password_first.getText());
-        String loginString = "dwin333";
-        String passwordString= "qwerty123";
+        String loginString = String.valueOf(name_first.getText());
+        String passwordString= String.valueOf(password_first.getText());
+        //String loginString = "dwin333";
+        //String passwordString= "qwerty123";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
