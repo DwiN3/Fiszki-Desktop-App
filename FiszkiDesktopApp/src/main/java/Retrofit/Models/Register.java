@@ -15,6 +15,11 @@ public class Register {
         this.nick = nick;
     }
 
+    public Register(String password, String repeatedPassword) {
+        this.password = password;
+        this.repeatedPassword = repeatedPassword;
+    }
+
     public String getNick() {
         return nick;
     }
