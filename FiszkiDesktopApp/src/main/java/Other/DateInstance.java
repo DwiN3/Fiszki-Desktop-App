@@ -1,14 +1,19 @@
 package Other;
 
-public class GameSettingsInstance {
-    private static GameSettingsInstance instance = null;
+public class DateInstance {
+    private static DateInstance instance = null;
+
+    // Token
+    private static String userName ="", token="";
+
+    // Game
     private static String gameMode = "", name = "", language ="", selectData ="";
     private static int bestTrain = 0, points=0, allWords=0, borderMaxFlashcards =15, borderMinFlashcardQuiz=10;
 
 
-    public static GameSettingsInstance getInstance() {
+    public static DateInstance getInstance() {
         if (instance == null) {
-            instance = new GameSettingsInstance();
+            instance = new DateInstance();
         }
         return instance;
     }
@@ -19,7 +24,7 @@ public class GameSettingsInstance {
     }
 
     public void setGameMode(String gameMode) {
-        GameSettingsInstance.gameMode = gameMode;
+        DateInstance.gameMode = gameMode;
     }
 
     public String getName() {
@@ -27,7 +32,7 @@ public class GameSettingsInstance {
     }
 
     public void setName(String nameCategory) {
-        GameSettingsInstance.name = nameCategory;
+        DateInstance.name = nameCategory;
     }
 
     public String getLanguage() {
@@ -35,7 +40,7 @@ public class GameSettingsInstance {
     }
 
     public void setLanguage(String language) {
-        GameSettingsInstance.language = language;
+        DateInstance.language = language;
     }
 
     public String getSelectData() {
@@ -43,7 +48,7 @@ public class GameSettingsInstance {
     }
 
     public void setSelectData(String selectData) {
-        GameSettingsInstance.selectData = selectData;
+        DateInstance.selectData = selectData;
     }
 
     public int getPoints() {
@@ -51,7 +56,7 @@ public class GameSettingsInstance {
     }
 
     public void setPoints(int points) {
-        GameSettingsInstance.points = points;
+        DateInstance.points = points;
     }
 
     public int getAllWords() {
@@ -59,7 +64,7 @@ public class GameSettingsInstance {
     }
 
     public void setAllWords(int allWords) {
-        GameSettingsInstance.allWords = allWords;
+        DateInstance.allWords = allWords;
     }
 
     public int getBestTrain() {
@@ -67,7 +72,7 @@ public class GameSettingsInstance {
     }
 
     public void setBestTrain(int bestTrain) {
-        GameSettingsInstance.bestTrain = bestTrain;
+        DateInstance.bestTrain = bestTrain;
     }
 
     public int getBorderMaxFlashcards() {
@@ -75,7 +80,7 @@ public class GameSettingsInstance {
     }
 
     public void setBorderMaxFlashcards(int borderMaxFlashcards) {
-        GameSettingsInstance.borderMaxFlashcards = borderMaxFlashcards;
+        DateInstance.borderMaxFlashcards = borderMaxFlashcards;
     }
 
     public int getBorderMinFlashcardQuiz() {
@@ -83,6 +88,22 @@ public class GameSettingsInstance {
     }
 
     public void setBorderMinFlashcardQuiz(int borderMinFlashcardQuiz) {
-        GameSettingsInstance.borderMinFlashcardQuiz = borderMinFlashcardQuiz;
+        DateInstance.borderMinFlashcardQuiz = borderMinFlashcardQuiz;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setUserName(String userName) {
+        DateInstance.userName = userName;
+    }
+
+    public void setToken(String token) {
+        DateInstance.token = token;
     }
 }

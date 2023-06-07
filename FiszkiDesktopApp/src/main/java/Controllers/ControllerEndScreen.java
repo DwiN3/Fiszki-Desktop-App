@@ -1,6 +1,5 @@
 package Controllers;
 
-import Other.TokenInstance;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 import Retrofit.Models.UserLVL;
 import app.App;
@@ -8,7 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import Other.GameSettingsInstance;
+import Other.DateInstance;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -26,8 +25,7 @@ public class ControllerEndScreen {
     private Button back_to_menu_button_profile_end;
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
     private int scoreEnd, points, allWords, bestTrainScore;
     private String category;
 
@@ -46,19 +44,19 @@ public class ControllerEndScreen {
     }
 
     private void getInfo(){
-        category = gameSettingsInstance.getName();
-        scoreEnd = gameSettingsInstance.getPoints();
-        allWords = gameSettingsInstance.getAllWords();
-        points = gameSettingsInstance.getPoints()*10;
-        bestTrainScore = gameSettingsInstance.getBestTrain();
+        category = dateInstance.getName();
+        scoreEnd = dateInstance.getPoints();
+        allWords = dateInstance.getAllWords();
+        points = dateInstance.getPoints()*10;
+        bestTrainScore = dateInstance.getBestTrain();
     }
 
     private void clearInfo(){
-        gameSettingsInstance.setName("");
-        gameSettingsInstance.setGameMode("");
-        gameSettingsInstance.setPoints(0);
-        gameSettingsInstance.setAllWords(0);
-        gameSettingsInstance.setBestTrain(0);
+        dateInstance.setName("");
+        dateInstance.setGameMode("");
+        dateInstance.setPoints(0);
+        dateInstance.setAllWords(0);
+        dateInstance.setBestTrain(0);
     }
 
     private void sendPoints() {
@@ -66,7 +64,7 @@ public class ControllerEndScreen {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request newRequest = chain.request().newBuilder()
-                        .addHeader("Authorization", "Bearer " + tokenInstance.getToken())
+                        .addHeader("Authorization", "Bearer " + dateInstance.getToken())
                         .build();
                 return chain.proceed(newRequest);
             }
@@ -99,7 +97,7 @@ public class ControllerEndScreen {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request newRequest = chain.request().newBuilder()
-                        .addHeader("Authorization", "Bearer " + tokenInstance.getToken())
+                        .addHeader("Authorization", "Bearer " + dateInstance.getToken())
                         .build();
                 return chain.proceed(newRequest);
             }

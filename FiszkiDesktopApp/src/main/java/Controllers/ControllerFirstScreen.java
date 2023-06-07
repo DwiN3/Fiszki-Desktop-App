@@ -1,6 +1,8 @@
 package Controllers;
 
 import java.io.IOException;
+
+import Other.DateInstance;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import Other.TokenInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,7 +29,8 @@ public class ControllerFirstScreen {
     private Button login_button_first, register_button_first, reset_button_first;
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
+
 
     public void initialize(){
         login_button_first.setOnAction(event -> {
@@ -84,8 +86,8 @@ public class ControllerFirstScreen {
                     Platform.runLater(() -> {
                         Login post = response.body();
                         String TokenFromRetrofit = post.getToken();
-                        tokenInstance.setToken(TokenFromRetrofit);
-                        tokenInstance.setUserName(name_first.getText().toString());
+                        dateInstance.setToken(TokenFromRetrofit);
+                        dateInstance.setUserName(name_first.getText().toString());
                     });
                     blockButtons(false);
                     try {

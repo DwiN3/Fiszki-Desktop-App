@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import Other.GameSettingsInstance;
-import Other.TokenInstance;
+import Other.DateInstance;
+
 import java.io.IOException;
 
 public class ControllerMainMenu {
@@ -18,14 +18,13 @@ public class ControllerMainMenu {
     private Button profile_button_menu, game_quiz_button_menu, game_wpis_button_menu, log_out_button_menu;
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
     private String selectedCategory;
 
     public void initialize(){
-        nick_user_menu.setText("Witaj "+ tokenInstance.getUserName());
+        nick_user_menu.setText("Witaj "+ dateInstance.getUserName());
         selectedCategory = "zwierzeta";
-        gameSettingsInstance.setName(selectedCategory);
+        dateInstance.setName(selectedCategory);
 
         profile_button_menu.setOnAction(event -> {
             try {
@@ -37,7 +36,7 @@ public class ControllerMainMenu {
 
         game_quiz_button_menu.setOnAction(event -> {
             try {
-                gameSettingsInstance.setGameMode("quiz");
+                dateInstance.setGameMode("quiz");
                 switchActivity("activity_quiz_game");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -46,7 +45,7 @@ public class ControllerMainMenu {
 
         game_wpis_button_menu.setOnAction(event -> {
             try {
-                gameSettingsInstance.setGameMode(("wpis"));
+                dateInstance.setGameMode(("wpis"));
                 switchActivity("activity_wpis_game");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -54,8 +53,8 @@ public class ControllerMainMenu {
         });
 
         log_out_button_menu.setOnAction(event -> {
-            tokenInstance.setToken("");
-            tokenInstance.setUserName("");
+            dateInstance.setToken("");
+            dateInstance.setUserName("");
             try {
                 switchActivity("activity_first_screen");
             } catch (IOException e) {
@@ -69,7 +68,7 @@ public class ControllerMainMenu {
 
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
-            gameSettingsInstance.setName(selectedCategory);
+            dateInstance.setName(selectedCategory);
         });
     }
 }

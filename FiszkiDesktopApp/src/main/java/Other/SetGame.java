@@ -9,14 +9,14 @@ import java.util.Random;
 import java.util.Set;
 
 public class SetGame {
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
     private String[] NameWord, correctANS, sentense, sentenseTra;
     private String[] ans1, ans2, ans3, ans4;
     private int listSize = 0, borrder = 0;
     private ArrayList<FlashcardID> wordsList;
 
     public SetGame(String data, String mode, String language, ArrayList<FlashcardID> wordsListAll) {
-        borrder = gameSettingsInstance.getBorderMaxFlashcards();
+        borrder = dateInstance.getBorderMaxFlashcards();
         if (mode.equals("quiz")) {
             Random randomWords = new Random();
             Set<Integer> selectedIndices = new HashSet<>();

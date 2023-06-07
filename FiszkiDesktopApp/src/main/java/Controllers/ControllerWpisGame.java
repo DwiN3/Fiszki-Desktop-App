@@ -1,7 +1,6 @@
 package Controllers;
 
 import Other.SetGame;
-import Other.TokenInstance;
 import Retrofit.JsonPlaceholderAPI.JsonFlashcardsCollections;
 import Retrofit.Models.FlashcardID;
 import app.App;
@@ -12,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import Other.GameSettingsInstance;
+import Other.DateInstance;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -38,8 +37,7 @@ public class ControllerWpisGame {
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private Image imageWord;
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
     private SetGame game;
     private int points = 0, nrWords = 0, scoreTrain = 0, bestTrain = 0, allWords = 0;
     private String selectedLanguage = "pl", selectedName = "", selectedData = "category", answer = "";
@@ -52,14 +50,14 @@ public class ControllerWpisGame {
         Image imageIconStart = new Image(getClass().getResourceAsStream("/drawable/flashcard_icon_png.png"));
         image_word_wpis.setImage(imageIconStart);
 
-        selectedName = gameSettingsInstance.getName();
+        selectedName = dateInstance.getName();
         getWordFromCateogryRetrofit();
 
         next_word_button_wpis.setOnAction(event -> {
             if (next_word_button_wpis.getText().equals("Podsumowanie")) {
-                gameSettingsInstance.setBestTrain(bestTrain);
-                gameSettingsInstance.setPoints(points);
-                gameSettingsInstance.setAllWords(allWords);
+                dateInstance.setBestTrain(bestTrain);
+                dateInstance.setPoints(points);
+                dateInstance.setAllWords(allWords);
                 try {
                     switchActivity("activity_end_screen");
                 } catch (IOException e) {
@@ -189,7 +187,7 @@ public class ControllerWpisGame {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request newRequest = chain.request().newBuilder()
-                        .addHeader("Authorization", "Bearer " + tokenInstance.getToken())
+                        .addHeader("Authorization", "Bearer " + dateInstance.getToken())
                         .build();
                 return chain.proceed(newRequest);
             }

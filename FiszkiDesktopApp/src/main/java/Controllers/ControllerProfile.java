@@ -1,5 +1,6 @@
 package Controllers;
 
+import Other.DateInstance;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 import Retrofit.Models.UserLVL;
 import app.App;
@@ -7,7 +8,6 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import Other.TokenInstance;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -25,7 +25,7 @@ public class ControllerProfile {
     private Button back_to_menu_button_profile;
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
-    private TokenInstance tokenInstance = TokenInstance.getInstance();
+    private DateInstance dateInstance = DateInstance.getInstance();
 
     public void initialize(){
         getInfoUserRetrofit();
@@ -44,7 +44,7 @@ public class ControllerProfile {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request newRequest = chain.request().newBuilder()
-                        .addHeader("Authorization", "Bearer " + tokenInstance.getToken())
+                        .addHeader("Authorization", "Bearer " + dateInstance.getToken())
                         .build();
                 return chain.proceed(newRequest);
             }
@@ -63,7 +63,7 @@ public class ControllerProfile {
             public void onResponse(Call<UserLVL> call, Response<UserLVL> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Platform.runLater(() -> {
-                        nick_user_profile.setText("Login: " + tokenInstance.getUserName());
+                        nick_user_profile.setText("Login: " + dateInstance.getUserName());
                         lvl_profile.setText("Poziom: " + response.body().getLevel() + " lvl");
                         points_to_next_LVL_profile.setText("Następny poziom: " + response.body().getPoints() + "/" + response.body().getRequiredPoints() + " pkt");
                     });
