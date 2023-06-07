@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="600" prefWidth="850" style="-fx-background-color: #048ad4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerWpisGame">
     <children>
 
-        <Label fx:id="sticks_left_wpis" alignment="CENTER" layoutX="340.0" layoutY="15.0" prefHeight="25.0" prefWidth="215.0" text=": " textFill="WHITE">
+        <Label fx:id="sticks_left_wpis" alignment="CENTER" layoutX="340.0" layoutY="15.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
@@ -31,7 +31,7 @@
         <TextField fx:id="your_word_text_wpis" layoutX="342.0" layoutY="276.0" prefHeight="25.0" prefWidth="215.0" />
         <Label fx:id="answer_text_wpis" alignment="CENTER" layoutX="342.0" layoutY="276.0" prefHeight="25.0" prefWidth="215.0" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Label>
         <Button fx:id="next_word_button_wpis" layoutX="342.0" layoutY="340.0" prefHeight="32.0" prefWidth="215.0" text="Sprawdź">
          <font>
