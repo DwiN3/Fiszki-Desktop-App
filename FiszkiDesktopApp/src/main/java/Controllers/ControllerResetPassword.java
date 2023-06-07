@@ -1,7 +1,6 @@
 package Controllers;
 
 import java.io.IOException;
-
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 import Retrofit.Models.Register;
 import app.App;
@@ -43,6 +42,13 @@ public class ControllerResetPassword {
         });
     }
 
+    private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
+        reset_button_reset.setDisable(isLoading);
+        reset_button_reset.setOpacity(buttonOpacity);
+        back_button_reset.setDisable(isLoading);
+        back_button_reset.setOpacity(buttonOpacity);
+    }
 
     private void resetPasswordRetrofit(){
         String emailString = String.valueOf(email_reset.getText());
@@ -91,12 +97,5 @@ public class ControllerResetPassword {
                 }
             }
         });
-    }
-    private void blockButtons(boolean isLoading){
-        double buttonOpacity = isLoading ? 1.0 : 1.0;
-        reset_button_reset.setDisable(isLoading);
-        reset_button_reset.setOpacity(buttonOpacity);
-        back_button_reset.setDisable(isLoading);
-        back_button_reset.setOpacity(buttonOpacity);
     }
 }

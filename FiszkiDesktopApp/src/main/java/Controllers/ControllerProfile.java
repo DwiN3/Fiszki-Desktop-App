@@ -16,7 +16,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 import java.io.IOException;
 
 public class ControllerProfile {
@@ -25,15 +24,13 @@ public class ControllerProfile {
     @FXML
     private Button back_to_menu_button_profile;
     private TokenInstance tokenInstance = TokenInstance.getInstance();
-    private int lvl = 2, points=256, pointsBorder = 500;
-
     @FXML
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
     }
 
     public void initialize(){
-        getUserLVL();
+        getInfoUserRetrofit();
 
         back_to_menu_button_profile.setOnAction(event -> {
             try {
@@ -44,7 +41,7 @@ public class ControllerProfile {
         });
     }
 
-    private void getUserLVL() {
+    private void getInfoUserRetrofit() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
@@ -76,9 +73,7 @@ public class ControllerProfile {
             }
 
             @Override
-            public void onFailure(Call<UserLVL> call, Throwable t) {
-                // Obsługa błędu
-            }
+            public void onFailure(Call<UserLVL> call, Throwable t) { }
         });
     }
 }

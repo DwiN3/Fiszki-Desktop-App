@@ -36,9 +36,9 @@ public class ControllerFirstScreen {
         login_button_first.setOnAction(event -> {
             blockButtons(true);
             info_first.setStyle("-fx-text-fill: #00FF00;");
-            info_first.setVisible(true);
             info_first.setText("Trwa logowanie");
-            checkAccount();
+            info_first.setVisible(true);
+            loginAccountRetrofit();
         });
         register_button_first.setOnAction(event -> {
             try {
@@ -56,7 +56,17 @@ public class ControllerFirstScreen {
         });
     }
 
-    private void checkAccount() {
+    private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
+        login_button_first.setDisable(isLoading);
+        login_button_first.setOpacity(buttonOpacity);
+        register_button_first.setDisable(isLoading);
+        register_button_first.setOpacity(buttonOpacity);
+        reset_button_first.setDisable(isLoading);
+        reset_button_first.setOpacity(buttonOpacity);
+    }
+
+    private void loginAccountRetrofit() {
         //String loginString = String.valueOf(name_first.getText());
         //String passwordString= String.valueOf(password_first.getText());
         String loginString = "dwin333";
@@ -107,15 +117,5 @@ public class ControllerFirstScreen {
                 }
             }
         });
-    }
-
-    private void blockButtons(boolean isLoading){
-        double buttonOpacity = isLoading ? 1.0 : 1.0;
-        login_button_first.setDisable(isLoading);
-        login_button_first.setOpacity(buttonOpacity);
-        register_button_first.setDisable(isLoading);
-        register_button_first.setOpacity(buttonOpacity);
-        reset_button_first.setDisable(isLoading);
-        reset_button_first.setOpacity(buttonOpacity);
     }
 }

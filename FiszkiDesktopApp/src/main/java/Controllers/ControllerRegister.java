@@ -1,7 +1,6 @@
 package Controllers;
 
 import java.io.IOException;
-
 import Retrofit.Models.Register;
 import app.App;
 import javafx.application.Platform;
@@ -35,7 +34,7 @@ public class ControllerRegister {
         register_button_register.setOnAction(event -> {
             blockButtons(true);
             info_register.setVisible(false);
-            createAccount();
+            registerAccountRetrofit();
         });
 
         back_button_register.setOnAction(event -> {
@@ -47,12 +46,19 @@ public class ControllerRegister {
         });
     }
 
-    private void createAccount(){
+    private void blockButtons(boolean isLoading){
+        double buttonOpacity = isLoading ? 1.0 : 1.0;
+        register_button_register.setDisable(isLoading);
+        register_button_register.setOpacity(buttonOpacity);
+        back_button_register.setDisable(isLoading);
+        back_button_register.setOpacity(buttonOpacity);
+    }
+
+    private void registerAccountRetrofit(){
         String loginString = String.valueOf(name_register.getText());
         String emailString = String.valueOf(email_register.getText());
         String passwordString= String.valueOf(password_register.getText());
         String passwordReString= String.valueOf(password_re_register.getText());
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
@@ -67,11 +73,11 @@ public class ControllerRegister {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(!response.isSuccessful()){
                     Platform.runLater(() -> {
-                    info_register.setStyle("-fx-text-fill: #FF0000;");
-                    info_register.setVisible(true);
-                    info_register.setText("Błąd danych");
+                        info_register.setStyle("-fx-text-fill: #FF0000;");
+                        info_register.setText("Błąd danych");
+                        info_register.setVisible(true);
+                        blockButtons(false);
                     });
-                    blockButtons(false);
                 }
             }
 
@@ -79,19 +85,12 @@ public class ControllerRegister {
             public void onFailure(Call<Register> call, Throwable t) {
                 Platform.runLater(() -> {
                     info_register.setStyle("-fx-text-fill: #00FF00;");
-                    info_register.setVisible(true);
                     info_register.setText("Utworzono konto pomyślnie");
+                    info_register.setVisible(true);
+                    register_button_register.setVisible(false);
+                    blockButtons(false);
                 });
-                register_button_register.setVisible(false);
-                blockButtons(false);
             }
         });
-    }
-    private void blockButtons(boolean isLoading){
-        double buttonOpacity = isLoading ? 1.0 : 1.0;
-        register_button_register.setDisable(isLoading);
-        register_button_register.setOpacity(buttonOpacity);
-        back_button_register.setDisable(isLoading);
-        back_button_register.setOpacity(buttonOpacity);
     }
 }

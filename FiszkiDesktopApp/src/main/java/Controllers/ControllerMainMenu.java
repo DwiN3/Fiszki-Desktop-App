@@ -7,7 +7,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import Other.GameSettingsInstance;
 import Other.TokenInstance;
-
 import java.io.IOException;
 
 public class ControllerMainMenu {
@@ -16,7 +15,7 @@ public class ControllerMainMenu {
     @FXML
     private ChoiceBox<String> category_choice_box_menu;
     @FXML
-    private Button profile_button_menu,game_quiz_button_menu,game_wpis_button_menu,log_out_button_menu;
+    private Button profile_button_menu, game_quiz_button_menu, game_wpis_button_menu, log_out_button_menu;
     private TokenInstance tokenInstance = TokenInstance.getInstance();
     private GameSettingsInstance gameSettingsInstance = GameSettingsInstance.getInstance();
     private String selectedCategory;
@@ -69,7 +68,7 @@ public class ControllerMainMenu {
         category_choice_box_menu.getItems().addAll("zwierzeta","dom", "zakupy", "praca", "zdrowie", "czlowiek", "turystyka","jedzenie","edukacja", "inne");
         category_choice_box_menu.setValue("zwierzeta");
         selectedCategory = "zwierzeta";
-        gameSettingsInstance.setName(selectedCategory);
+
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
             System.out.println(selectedCategory);
