@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerResetPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerResetPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_first_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_reset_password.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

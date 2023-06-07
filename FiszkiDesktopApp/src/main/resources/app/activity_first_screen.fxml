@@ -10,7 +10,13 @@
       <Label alignment="CENTER" layoutX="340.0" layoutY="80" prefHeight="21.0" prefWidth="215.0" text="Fiszki" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
-         </font></Label>
+         </font>
+      </Label>
+      <Label fx:id="info_first" alignment="CENTER" layoutX="340.0" layoutY="120" prefHeight="21.0" prefWidth="215.0" textFill="WHITE" visible="false">
+         <font>
+            <Font  size="14.0" />
+         </font>
+      </Label>
       <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" textFill="WHITE">
          <font>
             <Font size="14.0" />

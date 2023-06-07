@@ -1,10 +1,11 @@
 package Controllers;
 
 import java.io.IOException;
-
 import app.App;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import Other.TokenInstance;
@@ -18,6 +19,8 @@ import Retrofit.JsonPlaceholderAPI.JsonUser;
 
 public class ControllerFirstScreen {
     @FXML
+    private Label info_first;
+    @FXML
     private TextField name_first;
     @FXML
     private PasswordField password_first;
@@ -27,15 +30,16 @@ public class ControllerFirstScreen {
     private void switchActivity(String activity) throws IOException {
         App.setRoot(activity);
     }
-
     private TokenInstance tokenInstance = TokenInstance.getInstance();
 
     public void initialize(){
         login_button_first.setOnAction(event -> {
             blockButtons(true);
+            info_first.setStyle("-fx-text-fill: #00FF00;");
+            info_first.setVisible(true);
+            info_first.setText("Trwa logowanie");
             checkAccount();
         });
-
         register_button_first.setOnAction(event -> {
             try {
                 switchActivity("activity_register");
@@ -43,7 +47,6 @@ public class ControllerFirstScreen {
                 throw new RuntimeException(e);
             }
         });
-
         reset_button_first.setOnAction(event -> {
             try {
                 switchActivity("activity_reset_password");
@@ -51,7 +54,6 @@ public class ControllerFirstScreen {
                 throw new RuntimeException(e);
             }
         });
-
     }
 
     private void checkAccount() {
@@ -71,26 +73,38 @@ public class ControllerFirstScreen {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
                 if(response.code() == 200){
-                    Login post = response.body();
-                    String TokenFromRetrofit = post.getToken();
-                    tokenInstance.setToken(TokenFromRetrofit);
-                    tokenInstance.setUserName(name_first.getText().toString());
+                    Platform.runLater(() -> {
+                        Login post = response.body();
+                        String TokenFromRetrofit = post.getToken();
+                        tokenInstance.setToken(TokenFromRetrofit);
+                        tokenInstance.setUserName(name_first.getText().toString());
+                    });
                     blockButtons(false);
                     try {
                         switchActivity("activity_main_menu");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
-                }
-                else{
-                    System.out.println("Błędne dane");
-                    blockButtons(false);
+                } else{
+                    Platform.runLater(() -> {
+                        info_first.setStyle("-fx-text-fill: #FF0000;");
+                        info_first.setText("Błędne dane");
+                        info_first.setVisible(true);
+                        blockButtons(false);
+                    });
                 }
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
-                if(t.getMessage().equals("timeout"))  blockButtons(false);
+                if(t.getMessage().equals("timeout")){
+                    Platform.runLater(() -> {
+                        info_first.setStyle("-fx-text-fill: #FF0000;");
+                        info_first.setText("Uruchamianie serwera");
+                        info_first.setVisible(true);
+                        blockButtons(false);
+                    });
+                }
             }
         });
     }
