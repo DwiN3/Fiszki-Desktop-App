@@ -39,7 +39,7 @@ public class ControllerProfile {
         });
     }
 
-    private void getInfoUserRetrofit() {
+    public void getInfoUserRetrofit() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {

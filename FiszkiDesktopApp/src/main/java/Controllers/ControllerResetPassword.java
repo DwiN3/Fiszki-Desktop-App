@@ -40,7 +40,7 @@ public class ControllerResetPassword {
         });
     }
 
-    private void blockButtons(boolean isLoading){
+    public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         reset_button_reset.setDisable(isLoading);
         reset_button_reset.setOpacity(buttonOpacity);
@@ -48,7 +48,7 @@ public class ControllerResetPassword {
         back_button_reset.setOpacity(buttonOpacity);
     }
 
-    private void resetPasswordRetrofit(){
+    public void resetPasswordRetrofit(){
         String emailString = String.valueOf(email_reset.getText());
         String passwordString= String.valueOf(password_reset.getText());
         String passwordReString= String.valueOf(password_re_reset.getText());

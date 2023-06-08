@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- *  Fiszki App
+ * This is an application class
+ *
  */
 public class App extends Application {
     private static Scene scene;

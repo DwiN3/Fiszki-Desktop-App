@@ -13,13 +13,6 @@ public class FlashcardID {
 
     }
 
-    public FlashcardID(String word, String translatedWord, String example, String translatedExample) {
-        this.word = word;
-        this.translatedWord = translatedWord;
-        this.example = example;
-        this.translatedExample = translatedExample;
-    }
-
     public FlashcardID(String word, String translatedWord, String example, String translatedExample, int countID, String _id){
         this.word = word;
         this.translatedWord = translatedWord;

@@ -44,7 +44,7 @@ public class ControllerWpisGame {
     private ArrayList<FlashcardID> wordsListKit = new ArrayList<>();
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         Image imageBackgroundStart = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_wpis.setImage(imageBackgroundStart);
         Image imageIconStart = new Image(getClass().getResourceAsStream("/drawable/flashcard_icon_png.png"));
@@ -110,7 +110,7 @@ public class ControllerWpisGame {
         });
     }
 
-    private void correctChoice(){
+    public void correctChoice(){
         Platform.runLater(() -> {
             points += 1;
             if (scoreTrain < 0) scoreTrain = 1;
@@ -124,7 +124,7 @@ public class ControllerWpisGame {
         });
     }
 
-    private void inCorrectChoice(){
+    public void inCorrectChoice(){
         Platform.runLater(() -> {
             if (scoreTrain > 0) scoreTrain = -1;
             else scoreTrain--;
@@ -136,7 +136,7 @@ public class ControllerWpisGame {
         });
     }
 
-    private void setEmoji() {
+    public void setEmoji() {
         String resourcePath;
         if (scoreTrain <= -5)
             resourcePath = "/drawable/emoji_m5.png";
@@ -173,7 +173,7 @@ public class ControllerWpisGame {
         }
     }
 
-    void setQuestion(int numberWord) {
+    public void setQuestion(int numberWord) {
         Platform.runLater(() -> {
             word_text_wpis.setText(game.getNameWord(numberWord));
             answer = game.getCorrectANS(numberWord);
@@ -181,7 +181,7 @@ public class ControllerWpisGame {
         });
     }
 
-    private void getWordFromCateogryRetrofit() {
+    public void getWordFromCateogryRetrofit() {
         wordsListKit.clear();
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
@@ -229,7 +229,7 @@ public class ControllerWpisGame {
         });
     }
 
-    private void processElements(List<List<FlashcardID>> elementLists) {
+    public void processElements(List<List<FlashcardID>> elementLists) {
         for (List<FlashcardID> elementList : elementLists) {
             int id_count=0;
             for (FlashcardID element : elementList) {

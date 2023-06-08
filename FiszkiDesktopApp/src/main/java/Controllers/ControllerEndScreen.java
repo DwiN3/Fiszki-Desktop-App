@@ -43,7 +43,7 @@ public class ControllerEndScreen {
         });
     }
 
-    private void getInfo(){
+    public void getInfo(){
         category = dateInstance.getName();
         scoreEnd = dateInstance.getPoints();
         allWords = dateInstance.getAllWords();
@@ -51,7 +51,7 @@ public class ControllerEndScreen {
         bestTrainScore = dateInstance.getBestTrain();
     }
 
-    private void clearInfo(){
+    public void clearInfo(){
         dateInstance.setName("");
         dateInstance.setGameMode("");
         dateInstance.setPoints(0);
@@ -59,7 +59,7 @@ public class ControllerEndScreen {
         dateInstance.setBestTrain(0);
     }
 
-    private void sendPoints() {
+    public void sendPoints() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
@@ -92,7 +92,7 @@ public class ControllerEndScreen {
         });
     }
 
-    private void getUserLVL() {
+    public void getUserLVL() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {

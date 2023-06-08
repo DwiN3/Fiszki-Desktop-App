@@ -42,7 +42,7 @@ public class ControllerQuizGame {
     private ArrayList<FlashcardID> wordsListKit = new ArrayList<>();
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_quiz.setImage(image);
 
@@ -157,7 +157,7 @@ public class ControllerQuizGame {
         });
     }
 
-    private void blockButtons(boolean isLoading){
+    public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         answer_1_quiz.setDisable(isLoading);
         answer_1_quiz.setOpacity(buttonOpacity);
@@ -176,7 +176,7 @@ public class ControllerQuizGame {
         answer_4_quiz.setStyle("");
     }
 
-    private void correctChoice() {
+    public void correctChoice() {
         Platform.runLater(() -> {
             points += 1;
             if (scoreTrain < 0) scoreTrain = 1;
@@ -191,7 +191,7 @@ public class ControllerQuizGame {
         });
     }
 
-    private void inCorrectChoice() {
+    public void inCorrectChoice() {
         Platform.runLater(() -> {
             if (scoreTrain > 0) scoreTrain = -1;
             else scoreTrain--;
@@ -204,7 +204,7 @@ public class ControllerQuizGame {
         });
     }
 
-    private void setEmoji() {
+    public void setEmoji() {
         String resourcePath;
         if (scoreTrain <= -5)
             resourcePath = "/drawable/emoji_m5.png";
@@ -241,7 +241,7 @@ public class ControllerQuizGame {
         }
     }
 
-    void setQuestion(int numberWord) {
+    public void setQuestion(int numberWord) {
         Platform.runLater(() -> {
             markTheAnswer = false;
             word_text_quiz.setText(game.getNameWord(numberWord));
@@ -254,7 +254,7 @@ public class ControllerQuizGame {
         });
     }
 
-    private void getWordFromCateogryRetrofit() {
+    public void getWordFromCateogryRetrofit() {
         wordsListKit.clear();
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override

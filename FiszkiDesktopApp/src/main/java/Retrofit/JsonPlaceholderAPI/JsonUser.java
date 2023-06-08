@@ -1,6 +1,5 @@
 package Retrofit.JsonPlaceholderAPI;
 
-
 import Retrofit.Models.Login;
 import Retrofit.Models.Register;
 import Retrofit.Models.UserLVL;

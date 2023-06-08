@@ -56,7 +56,7 @@ public class ControllerFirstScreen {
         });
     }
 
-    private void blockButtons(boolean isLoading){
+    public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         login_button_first.setDisable(isLoading);
         login_button_first.setOpacity(buttonOpacity);
@@ -66,7 +66,7 @@ public class ControllerFirstScreen {
         reset_button_first.setOpacity(buttonOpacity);
     }
 
-    private void loginAccountRetrofit() {
+    public void loginAccountRetrofit() {
         String loginString = String.valueOf(name_first.getText());
         String passwordString= String.valueOf(password_first.getText());
         //String loginString = "dwin333";

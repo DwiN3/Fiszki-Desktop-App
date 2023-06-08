@@ -44,7 +44,7 @@ public class ControllerRegister {
         });
     }
 
-    private void blockButtons(boolean isLoading){
+    public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         register_button_register.setDisable(isLoading);
         register_button_register.setOpacity(buttonOpacity);
@@ -52,7 +52,7 @@ public class ControllerRegister {
         back_button_register.setOpacity(buttonOpacity);
     }
 
-    private void registerAccountRetrofit(){
+    public void registerAccountRetrofit(){
         String loginString = String.valueOf(name_register.getText());
         String emailString = String.valueOf(email_register.getText());
         String passwordString= String.valueOf(password_register.getText());
