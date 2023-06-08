@@ -16,6 +16,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 
+/**
+ * This class is the controller for the register screen
+ * This section allows you to create a user account
+ */
 public class ControllerRegister {
     @FXML
     private Label info_register;
@@ -28,6 +32,9 @@ public class ControllerRegister {
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
 
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         register_button_register.setOnAction(event -> {
             blockButtons(true);
@@ -44,6 +51,10 @@ public class ControllerRegister {
         });
     }
 
+    /**
+     * Disables or enables the buttons based on the specified isLoading value
+     * @param isLoading true to disable the buttons and show loading state, false otherwise
+     */
     public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         register_button_register.setDisable(isLoading);
@@ -52,6 +63,9 @@ public class ControllerRegister {
         back_button_register.setOpacity(buttonOpacity);
     }
 
+    /**
+     * Performs user registrations through retrofit
+     */
     public void registerAccountRetrofit(){
         String loginString = String.valueOf(name_register.getText());
         String emailString = String.valueOf(email_register.getText());

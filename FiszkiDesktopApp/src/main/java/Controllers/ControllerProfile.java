@@ -18,6 +18,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 
+/**
+ * This class is the controller for the profile screen
+ * The screen displays information about the username, the current level and the number of points to the next level
+ */
 public class ControllerProfile {
     @FXML
     private Label nick_user_profile,lvl_profile,points_to_next_LVL_profile;
@@ -27,6 +31,9 @@ public class ControllerProfile {
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private DateInstance dateInstance = DateInstance.getInstance();
 
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         getInfoUserRetrofit();
 
@@ -39,6 +46,9 @@ public class ControllerProfile {
         });
     }
 
+    /**
+     * Retrieving user data using retrofit
+     */
     public void getInfoUserRetrofit() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override

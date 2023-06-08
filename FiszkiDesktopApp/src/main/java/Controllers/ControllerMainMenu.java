@@ -9,6 +9,10 @@ import Other.DateInstance;
 
 import java.io.IOException;
 
+/**
+ * This class is the controller for the main menu screen
+ * It handles user interactions and manages the behavior of the main menu UI elements
+ */
 public class ControllerMainMenu {
     @FXML
     private Label nick_user_menu;
@@ -21,10 +25,13 @@ public class ControllerMainMenu {
     private DateInstance dateInstance = DateInstance.getInstance();
     private String selectedCategory;
 
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         nick_user_menu.setText("Witaj "+ dateInstance.getUserName());
         selectedCategory = "zwierzeta";
-        dateInstance.setName(selectedCategory);
+        dateInstance.setCategoryName(selectedCategory);
 
         profile_button_menu.setOnAction(event -> {
             try {
@@ -68,7 +75,7 @@ public class ControllerMainMenu {
 
         category_choice_box_menu.setOnAction(event -> {
             selectedCategory = category_choice_box_menu.getSelectionModel().getSelectedItem();
-            dateInstance.setName(selectedCategory);
+            dateInstance.setCategoryName(selectedCategory);
         });
     }
 }

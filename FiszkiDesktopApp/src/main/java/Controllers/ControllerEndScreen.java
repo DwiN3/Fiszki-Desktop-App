@@ -18,6 +18,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 
+/**
+ * This class is the controller for the end screen
+ * After completing the quiz or entry game mode, information about the number of correct answers, current lvl, high streak, category name and how much lvl the user needs to level up will be displayed here
+ */
 public class ControllerEndScreen {
     @FXML
     private Label score_end,get_points_end,lvl_profile_end,points_to_next_LVL_profile_end, category_end, best_train_score_end;
@@ -29,9 +33,12 @@ public class ControllerEndScreen {
     private int scoreEnd, points, allWords, bestTrainScore;
     private String category;
 
+    /**
+     * Initializes the controller
+     */
     public void initialize() {
         getInfo();
-        sendPoints();
+        sendPointsRetrofit();
 
         back_to_menu_button_profile_end.setOnAction(event -> {
             clearInfo();
@@ -43,23 +50,32 @@ public class ControllerEndScreen {
         });
     }
 
+    /**
+     * Retrieves information from the DateInstance instance
+     */
     public void getInfo(){
-        category = dateInstance.getName();
+        category = dateInstance.getCategoryName();
         scoreEnd = dateInstance.getPoints();
         allWords = dateInstance.getAllWords();
         points = dateInstance.getPoints()*10;
         bestTrainScore = dateInstance.getBestTrain();
     }
 
+    /**
+     * Clears the information in the DateInstance instance
+     */
     public void clearInfo(){
-        dateInstance.setName("");
+        dateInstance.setCategoryName("");
         dateInstance.setGameMode("");
         dateInstance.setPoints(0);
         dateInstance.setAllWords(0);
         dateInstance.setBestTrain(0);
     }
 
-    public void sendPoints() {
+    /**
+     * Sends the user's points to the server
+     */
+    public void sendPointsRetrofit() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
@@ -92,6 +108,9 @@ public class ControllerEndScreen {
         });
     }
 
+    /**
+     * Retrieves the user's level information from the server
+     */
     public void getUserLVL() {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override

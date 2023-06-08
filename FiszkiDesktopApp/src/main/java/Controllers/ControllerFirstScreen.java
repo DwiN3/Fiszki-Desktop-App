@@ -18,6 +18,10 @@ import Retrofit.Models.Login;
 import retrofit2.converter.gson.GsonConverterFactory;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 
+/**
+ * This class is the controller for the first screen
+ * This is the first screen of the application where the user can log in or go to the password change or registration section
+ */
 public class ControllerFirstScreen {
     @FXML
     private Label info_first;
@@ -31,7 +35,9 @@ public class ControllerFirstScreen {
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private DateInstance dateInstance = DateInstance.getInstance();
 
-
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         login_button_first.setOnAction(event -> {
             blockButtons(true);
@@ -56,6 +62,10 @@ public class ControllerFirstScreen {
         });
     }
 
+    /**
+     * Disables or enables the buttons based on the specified isLoading value
+     * @param isLoading true to disable the buttons and show loading state, false otherwise
+     */
     public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         login_button_first.setDisable(isLoading);
@@ -66,11 +76,12 @@ public class ControllerFirstScreen {
         reset_button_first.setOpacity(buttonOpacity);
     }
 
+    /**
+     * Performs login using Retrofit
+     */
     public void loginAccountRetrofit() {
         String loginString = String.valueOf(name_first.getText());
         String passwordString= String.valueOf(password_first.getText());
-        //String loginString = "dwin333";
-        //String passwordString= "qwerty123";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())

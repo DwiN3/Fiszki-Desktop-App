@@ -2,7 +2,7 @@ package Controllers;
 
 import Other.SetGame;
 import Retrofit.JsonPlaceholderAPI.JsonFlashcardsCollections;
-import Retrofit.Models.FlashcardID;
+import Retrofit.Models.Flashcard;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -24,6 +24,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is the controller for the quiz game screen
+ * Responsible for controlling the game in quiz mode
+ */
 public class ControllerQuizGame {
     @FXML
     private Label word_text_quiz, word_sample_text_quiz, sticks_left_quiz, userPKT_quiz;
@@ -39,14 +43,17 @@ public class ControllerQuizGame {
     private int points = 0, nrWords = 0, scoreTrain = 0, bestTrain = 0, allWords = 0;
     private String selectedName = "", selectedData = "category", selectedLanguage = "pl", answer = "";
     private boolean markTheAnswer = false;
-    private ArrayList<FlashcardID> wordsListKit = new ArrayList<>();
+    private ArrayList<Flashcard> wordsListKit = new ArrayList<>();
 
+    /**
+     * Initializes the controller
+     */
     @FXML
     public void initialize() {
         Image image = new Image(getClass().getResourceAsStream("/drawable/square_big.png"));
         image_quiz.setImage(image);
 
-        selectedName = dateInstance.getName();
+        selectedName = dateInstance.getCategoryName();
         getWordFromCateogryRetrofit();
         next_word_button_quiz.setVisible(false);
 
@@ -157,6 +164,10 @@ public class ControllerQuizGame {
         });
     }
 
+    /**
+     * Disables or enables the buttons based on the specified isLoading value
+     * @param isLoading true to disable the buttons and show loading state, false otherwise
+     */
     public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         answer_1_quiz.setDisable(isLoading);
@@ -169,6 +180,9 @@ public class ControllerQuizGame {
         answer_4_quiz.setOpacity(buttonOpacity);
     }
 
+    /**
+     * function clears button styles
+     */
     public void clearButtons() {
         answer_1_quiz.setStyle("");
         answer_2_quiz.setStyle("");
@@ -176,6 +190,9 @@ public class ControllerQuizGame {
         answer_4_quiz.setStyle("");
     }
 
+    /**
+     * The function is executed after selecting the correct answer
+     */
     public void correctChoice() {
         Platform.runLater(() -> {
             points += 1;
@@ -191,6 +208,9 @@ public class ControllerQuizGame {
         });
     }
 
+    /**
+     * The function is executed after selecting the incorrect answer
+     */
     public void inCorrectChoice() {
         Platform.runLater(() -> {
             if (scoreTrain > 0) scoreTrain = -1;
@@ -204,6 +224,9 @@ public class ControllerQuizGame {
         });
     }
 
+    /**
+     * The function for setting emoji images
+     */
     public void setEmoji() {
         String resourcePath;
         if (scoreTrain <= -5)
@@ -241,6 +264,9 @@ public class ControllerQuizGame {
         }
     }
 
+    /**
+     * Question setting function
+     */
     public void setQuestion(int numberWord) {
         Platform.runLater(() -> {
             markTheAnswer = false;
@@ -254,6 +280,9 @@ public class ControllerQuizGame {
         });
     }
 
+    /**
+     * Retrieve a set of words using Retrofit
+     */
     public void getWordFromCateogryRetrofit() {
         wordsListKit.clear();
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
@@ -273,13 +302,13 @@ public class ControllerQuizGame {
                 .build();
 
         JsonFlashcardsCollections jsonFlashcardsCollections = retrofit.create(JsonFlashcardsCollections.class);
-        Call<List<List<FlashcardID>>> call = jsonFlashcardsCollections.getCategory(selectedName);
+        Call<List<List<Flashcard>>> call = jsonFlashcardsCollections.getCategory(selectedName);
 
-        call.enqueue(new Callback<List<List<FlashcardID>>>() {
+        call.enqueue(new Callback<List<List<Flashcard>>>() {
             @Override
-            public void onResponse(Call<List<List<FlashcardID>>> call, Response<List<List<FlashcardID>>> response) {
+            public void onResponse(Call<List<List<Flashcard>>> call, Response<List<List<Flashcard>>> response) {
                 if (response.isSuccessful()) {
-                    List<List<FlashcardID>> elementLists = response.body();
+                    List<List<Flashcard>> elementLists = response.body();
                     if (elementLists != null) {
                         processElements(elementLists);
                         game = new SetGame(selectedData,"quiz", selectedLanguage, wordsListKit);
@@ -297,15 +326,18 @@ public class ControllerQuizGame {
             }
 
             @Override
-            public void onFailure(Call<List<List<FlashcardID>>> call, Throwable t) {}
+            public void onFailure(Call<List<List<Flashcard>>> call, Throwable t) {}
         });
     }
 
-    private void processElements(List<List<FlashcardID>> elementLists) {
-        for (List<FlashcardID> elementList : elementLists) {
+    /**
+     * The fetched words function adds to the list of all words
+     */
+    public void processElements(List<List<Flashcard>> elementLists) {
+        for (List<Flashcard> elementList : elementLists) {
             int id_count=0;
-            for (FlashcardID element : elementList) {
-                wordsListKit.add(new FlashcardID(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
+            for (Flashcard element : elementList) {
+                wordsListKit.add(new Flashcard(element.getWord(), element.getTranslatedWord(), element.getExample(), element.getTranslatedExample(), id_count, element.get_id()));
                 id_count++;
             }
         }

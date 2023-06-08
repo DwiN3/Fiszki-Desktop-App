@@ -15,6 +15,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * This class is the controller for the reset password screen
+ * This section allows you to reset the user's password
+ */
 public class ControllerResetPassword {
     @FXML
     private Label info_reset_password;
@@ -25,6 +29,9 @@ public class ControllerResetPassword {
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
 
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         reset_button_reset.setOnAction(event -> {
             info_reset_password.setVisible(false);
@@ -40,6 +47,10 @@ public class ControllerResetPassword {
         });
     }
 
+    /**
+     * Disables or enables the buttons based on the specified isLoading value
+     * @param isLoading true to disable the buttons and show loading state, false otherwise
+     */
     public void blockButtons(boolean isLoading){
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         reset_button_reset.setDisable(isLoading);
@@ -48,6 +59,9 @@ public class ControllerResetPassword {
         back_button_reset.setOpacity(buttonOpacity);
     }
 
+    /**
+     * Performs a user password reset using Retrofit
+     */
     public void resetPasswordRetrofit(){
         String emailString = String.valueOf(email_reset.getText());
         String passwordString= String.valueOf(password_reset.getText());

@@ -8,12 +8,46 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEndScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerFirstScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerQuizGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerQuizGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerResetPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerResetPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerWpisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerWpisGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Other/DateInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Other/DateInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Other/SetGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Other/SetGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI/JsonFlashcardsCollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI/JsonFlashcardsCollections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI/JsonUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/JsonPlaceholderAPI/JsonUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Models/FlashcardID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Flashcard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Retrofit/Models/UserLVL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Retrofit/Models/UserLVL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEndScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerFirstScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerMainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerQuizGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerRegister$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerRegister$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerResetPassword$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerResetPassword$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerResetPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerResetPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerWpisGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Other/DateInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Other/DateInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Other/SetGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Other/SetGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Retrofit/Models/FlashcardID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Retrofit/Models/FlashcardID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/App.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

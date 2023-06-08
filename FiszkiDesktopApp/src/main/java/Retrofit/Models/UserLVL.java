@@ -2,44 +2,63 @@ package Retrofit.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Model class representing user level information
+ */
 public class UserLVL {
-
     private int result, level, requiredPoints, points;
     private String content;
 
     @SerializedName("body")
     private String text;
 
+    /**
+     * Constructs a UserLVL object with the result value
+     * @param result the result value
+     */
     public UserLVL(int result) {
         this.result = result;
     }
 
-    public int getResult() {
-        return result;
-    }
+    /**
+     * Returns the result value
+     * @return the result value
+     */
+    public int getResult() { return result; }
 
-    public String getContent() {
-        return content;
-    }
+    /**
+     * Returns the content
+     * @return the content
+     */
+    public String getContent() { return content; }
 
-    public void setResult(int result) {
-        this.result = result;
-    }
+    /**
+     * Sets the result value
+     * @param result the result value to set
+     */
+    public void setResult(int result) { this.result = result; }
 
-    public int getLevel() {
-        return level;
-    }
+    /**
+     * Returns the level
+     * @return the level
+     */
+    public int getLevel() { return level; }
 
-    public int getRequiredPoints() {
-        return requiredPoints;
-    }
+    /**
+     * Returns the required points for the level
+     * @return the required points for the level
+     */
+    public int getRequiredPoints() { return requiredPoints; }
 
-    public int getPoints() {
-        return points;
-    }
+    /**
+     * Returns the points
+     * @return the points
+     */
+    public int getPoints() { return points; }
 
-
-    public String getText() {
-        return text;
-    }
+    /**
+     * Returns the text
+     * @return the text
+     */
+    public String getText() {return text; }
 }
