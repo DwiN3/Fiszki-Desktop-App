@@ -1,3 +1,6 @@
+/**
+ * This module defines dependencies and specifies the open and exported packages for the application.
+ */
 module org.example {
     requires javafx.controls;
     requires javafx.fxml;

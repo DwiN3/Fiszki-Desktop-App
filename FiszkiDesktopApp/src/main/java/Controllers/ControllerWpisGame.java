@@ -191,6 +191,7 @@ public class ControllerWpisGame {
 
     /**
      * Question setting function
+     * @param numberWord is number of word
      */
     public void setQuestion(int numberWord) {
         Platform.runLater(() -> {
@@ -253,6 +254,7 @@ public class ControllerWpisGame {
 
     /**
      * The fetched words function adds to the list of all words
+     * @param elementLists is list of item lists
      */
     public void processElements(List<List<Flashcard>> elementLists) {
         for (List<Flashcard> elementList : elementLists) {

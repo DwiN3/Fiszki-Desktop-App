@@ -2,6 +2,9 @@ package Retrofit.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Model class representing a login request
+ */
 public class Login {
     private String nick, password, content, token;
 
