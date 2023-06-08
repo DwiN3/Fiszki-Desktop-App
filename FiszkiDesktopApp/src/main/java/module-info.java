@@ -11,6 +11,7 @@ module org.example {
 
     opens app to javafx.fxml;
     opens Controllers to javafx.fxml;
+    opens Other;
     opens Retrofit.Models;
     opens Retrofit.JsonPlaceholderAPI;
     exports Controllers;
