@@ -30,7 +30,7 @@ public class ControllerFirstScreen {
     @FXML
     private PasswordField password_first;
     @FXML
-    private Button login_button_first, register_button_first, reset_button_first;
+    private Button login_button_first, register_button_first, reset_button_first, remind_button_first;
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
     private DateInstance dateInstance = DateInstance.getInstance();
@@ -39,6 +39,7 @@ public class ControllerFirstScreen {
      * Initializes the controller
      */
     public void initialize(){
+        reset_button_first.setStyle("-fx-background-color: transparent;");
         login_button_first.setOnAction(event -> {
             blockButtons(true);
             info_first.setStyle("-fx-text-fill: #00FF00;");
@@ -53,9 +54,16 @@ public class ControllerFirstScreen {
                 throw new RuntimeException(e);
             }
         });
-        reset_button_first.setOnAction(event -> {
+        remind_button_first.setOnAction(event -> {
             try {
                 switchActivity("activity_password_reminder");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        reset_button_first.setOnAction(event -> {
+            try {
+                switchActivity("activity_reset_password");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
