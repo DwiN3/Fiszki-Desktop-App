@@ -55,7 +55,7 @@ public class ControllerFirstScreen {
         });
         reset_button_first.setOnAction(event -> {
             try {
-                switchActivity("activity_reset_password");
+                switchActivity("activity_password_reminder");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -30,7 +30,7 @@ public class ControllerPasswordReminder {
         button_reminder.setOnAction(event -> {
             info_password_reminder.setVisible(false);
             blockButtons(true);
-            reminderPasswordRetrofit();
+            //reminderPasswordRetrofit();
         });
         back_button_reminder.setOnAction(event -> {
             try {
@@ -69,6 +69,7 @@ public class ControllerPasswordReminder {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
+                        String password = response.body().getPassword();
                         info_password_reminder.setStyle("-fx-text-fill: #00FF00;");
                         info_password_reminder.setText("Hasło zostało wysłane na maila");
                         info_password_reminder.setVisible(true);
