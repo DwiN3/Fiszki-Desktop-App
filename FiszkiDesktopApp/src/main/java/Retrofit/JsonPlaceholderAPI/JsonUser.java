@@ -41,15 +41,16 @@ public interface JsonUser {
     @GET("users/password-reminder")
     Call<User> getPassword(@Body User user);
 
-//    /**
-//     * Sends a points request to update the user's level
-//     * @param userLVL        the UserLVL object containing level information
-//     * @return a Call object containing a UserLVL object
-//     */
-//    @PUT("users/users-level")
-//    Call<UserLVL> points(@Body UserLVL userLVL);
+    /**
+     * Sends a points request to update the user's level
+    * @param userLVL        the UserLVL object containing level information
+     * @return a Call object containing a UserLVL object
+    */
+    @PUT("users/users-level")
+    Call<UserLVL> points(@Body UserLVL userLVL);
     
     /**
+     * DO WYWALENIA
      * Sends a points request to update the user's level
      * @param userLVL        the UserLVL object containing level information
      * @return a Call object containing a UserLVL object
