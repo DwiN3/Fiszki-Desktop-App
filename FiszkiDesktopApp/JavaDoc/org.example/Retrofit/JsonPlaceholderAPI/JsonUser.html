@@ -122,12 +122,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Sends a points request to update the user's level</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>retrofit2.Call&lt;<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#register(Retrofit.Models.Register)" class="member-name-link">register</a><wbr>(<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;register)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#user(Retrofit.Models.Register)" class="member-name-link">user</a><wbr>(<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;user)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Sends a register request</div>
+<div class="block">Sends a user request</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>retrofit2.Call&lt;<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resetPassword(Retrofit.Models.Register)" class="member-name-link">resetPassword</a><wbr>(<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;register)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resetPassword(Retrofit.Models.Register)" class="member-name-link">resetPassword</a><wbr>(<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;user)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends a password reset request</div>
 </div>
@@ -161,15 +161,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="register(Retrofit.Models.Register)">
-<h3>register</h3>
+<section class="detail" id="user(Retrofit.Models.Register)">
+<h3>user</h3>
 <div class="member-signature"><span class="annotations">@POST("users/sing-up")
-</span><span class="return-type">retrofit2.Call&lt;<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&gt;</span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(@Body
- <a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;register)</span></div>
-<div class="block">Sends a register request</div>
+</span><span class="return-type">retrofit2.Call&lt;<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&gt;</span>&nbsp;<span class="element-name">user</span><wbr><span class="parameters">(@Body
+ <a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;user)</span></div>
+<div class="block">Sends a user request</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>register</code> - the Register object containing registration information</dd>
+<dd><code>user</code> - the Register object containing registration information</dd>
 <dt>Returns:</dt>
 <dd>a Call object containing a Register object</dd>
 </dl>
@@ -180,11 +180,11 @@ loadScripts(document, 'script');</script>
 <h3>resetPassword</h3>
 <div class="member-signature"><span class="annotations">@PUT("users/password-reset")
 </span><span class="return-type">retrofit2.Call&lt;<a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&gt;</span>&nbsp;<span class="element-name">resetPassword</span><wbr><span class="parameters">(@Body
- <a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;register)</span></div>
+ <a href="../Models/Register.html" title="class in Retrofit.Models">Register</a>&nbsp;user)</span></div>
 <div class="block">Sends a password reset request</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>register</code> - the Register object containing password reset information</dd>
+<dd><code>user</code> - the Register object containing password reset information</dd>
 <dt>Returns:</dt>
 <dd>a Call object containing a Register object</dd>
 </dl>

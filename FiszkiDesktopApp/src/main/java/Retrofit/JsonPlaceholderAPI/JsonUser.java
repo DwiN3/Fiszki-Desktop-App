@@ -1,7 +1,6 @@
 package Retrofit.JsonPlaceholderAPI;
 
-import Retrofit.Models.Login;
-import Retrofit.Models.Register;
+import Retrofit.Models.User;
 import Retrofit.Models.UserLVL;
 import retrofit2.Call;
 import retrofit2.http.*;
@@ -16,30 +15,30 @@ public interface JsonUser {
      * @return a Call object containing a Login object
      */
     @POST("users/login")
-    Call<Login> login(@Body Login login);
+    Call<User> login(@Body User user);
 
     /**
      * Sends a register request
-     * @param register the Register object containing registration information
+     * @param user the Register object containing registration information
      * @return a Call object containing a Register object
      */
     @POST("users/sing-up")
-    Call<Register> register(@Body Register register);
+    Call<User> register(@Body User user);
 
     /**
      * Sends a password reset request
-     * @param register the Register object containing password reset information
+     * @param user the Register object containing password reset information
      * @return a Call object containing a Register object
      */
     @PUT("users/password-reset")
-    Call<Register> resetPassword(@Body Register register);
+    Call<User> resetPassword(@Body User user);
 
     /**
      * Retrieves the user's password and login
      * @return a Call object containing a Register object
      */
     @GET("users/password-reminder")
-    Call<Register> getPassword(@Body Register register);
+    Call<User> getPassword(@Body User user);
 
     /**
      * Sends a points request to update the user's level

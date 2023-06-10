@@ -1,7 +1,7 @@
 package Controllers;
 
 import java.io.IOException;
-import Retrofit.Models.Register;
+import Retrofit.Models.User;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -77,12 +77,12 @@ public class ControllerRegister {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
-        Register post = new Register(emailString, passwordString, passwordReString, loginString);
-        Call<Register> call = jsonUser.register(post);
+        User post = new User(emailString, passwordString, passwordReString, loginString);
+        Call<User> call = jsonUser.register(post);
 
-        call.enqueue(new Callback<Register>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Register> call, Response<Register> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if(!response.isSuccessful()){
                     Platform.runLater(() -> {
                         info_register.setStyle("-fx-text-fill: #FF0000;");
@@ -94,7 +94,7 @@ public class ControllerRegister {
             }
 
             @Override
-            public void onFailure(Call<Register> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 if(t.getMessage().equals("timeout")){
                     Platform.runLater(() -> {
                         info_register.setStyle("-fx-text-fill: #FF0000;");

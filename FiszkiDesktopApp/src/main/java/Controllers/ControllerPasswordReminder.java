@@ -2,7 +2,7 @@ package Controllers;
 
 import Mail.SendEmailTLS;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
-import Retrofit.Models.Register;
+import Retrofit.Models.User;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -76,12 +76,12 @@ public class ControllerPasswordReminder {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
-        Register post = new Register(emailString);
-        Call<Register> call = jsonUser.getPassword(post);
+        User post = new User(emailString);
+        Call<User> call = jsonUser.getPassword(post);
 
-        call.enqueue(new Callback<Register>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Register> call, Response<Register> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
                         String message = "Nazwa:   "+ response.body().getNick()+"\nHasło:     "+ response.body().getPassword();;
@@ -110,7 +110,7 @@ public class ControllerPasswordReminder {
             }
 
             @Override
-            public void onFailure(Call<Register> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 if(t.getMessage().equals("timeout")){
                     Platform.runLater(() -> {
                         info_password_reminder.setStyle("-fx-text-fill: #FF0000;");

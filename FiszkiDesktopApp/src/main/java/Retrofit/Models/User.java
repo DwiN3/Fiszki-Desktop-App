@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Model class representing a registration request
  */
-public class Register {
-    private String nick,email,password, repeatedPassword, content;
+public class User {
+    private String nick,email,password, repeatedPassword, token, content;
 
     @SerializedName("body")
     private String text;
@@ -15,8 +15,19 @@ public class Register {
      * The constructor is responsible for sending a password reminder query
      * @param email            the email
      */
-    public Register(String email) {
+    public User(String email) {
         this.email = email;
+    }
+
+
+    /**
+     * The constructor is responsible for sending a login request
+     * @param nick          the password
+     * @param password      the repeated password
+     */
+    public User(String nick, String password){
+        this.nick = nick;
+        this.password = password;
     }
 
     /**
@@ -24,7 +35,7 @@ public class Register {
      * @param password          the password
      * @param repeatedPassword  the repeated password
      */
-    public Register(String email, String password, String repeatedPassword) {
+    public User(String email, String password, String repeatedPassword) {
         this.email = email;
         this.password = password;
         this.repeatedPassword = repeatedPassword;
@@ -37,7 +48,7 @@ public class Register {
      * @param repeatedPassword  the repeated password
      * @param nick              the nickname
      */
-    public Register(String email, String password, String repeatedPassword, String nick) {
+    public User(String email, String password, String repeatedPassword, String nick) {
         this.email = email;
         this.password = password;
         this.repeatedPassword = repeatedPassword;
@@ -79,6 +90,12 @@ public class Register {
      * @return the text
      */
     public String getText() { return text; }
+
+    /**
+     * Returns the token
+     * @return the token
+     */
+    public String getToken() { return token; }
 }
 
 

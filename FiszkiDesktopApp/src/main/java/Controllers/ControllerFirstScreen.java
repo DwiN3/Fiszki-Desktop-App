@@ -3,6 +3,7 @@ package Controllers;
 import java.io.IOException;
 
 import Other.DateInstance;
+import Retrofit.Models.User;
 import app.App;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -14,7 +15,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import Retrofit.Models.Login;
 import retrofit2.converter.gson.GsonConverterFactory;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 
@@ -95,15 +95,15 @@ public class ControllerFirstScreen {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
-        Login post = new Login(loginString, passwordString);
-        Call<Login> call = jsonUser.login(post);
+        User post = new User(loginString, passwordString);
+        Call<User> call = jsonUser.login(post);
 
-        call.enqueue(new Callback<Login>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Login> call, Response<Login> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
-                        Login post = response.body();
+                        User post = response.body();
                         String TokenFromRetrofit = post.getToken();
                         dateInstance.setToken(TokenFromRetrofit);
                         dateInstance.setUserName(name_first.getText().toString());
@@ -125,7 +125,7 @@ public class ControllerFirstScreen {
             }
 
             @Override
-            public void onFailure(Call<Login> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 if(t.getMessage().equals("timeout")){
                     Platform.runLater(() -> {
                         info_first.setStyle("-fx-text-fill: #FF0000;");
