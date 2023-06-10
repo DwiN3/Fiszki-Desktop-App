@@ -40,7 +40,7 @@ public class SetGame {
                 }
             }
             wordsList = selectedWords;
-        } else wordsList = wordsListAll; 
+        } else wordsList = wordsListAll;
 
         this.NameWord = new String[wordsList.size()];
         this.correctANS = new String[wordsList.size()];

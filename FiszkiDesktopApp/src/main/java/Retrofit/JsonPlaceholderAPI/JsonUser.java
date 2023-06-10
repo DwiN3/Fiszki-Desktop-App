@@ -11,7 +11,7 @@ import retrofit2.http.*;
 public interface JsonUser {
     /**
      * Sends a login request
-     * @param login the Login object containing login information
+     * @param user the User object containing login information
      * @return a Call object containing a Login object
      */
     @POST("users/login")
@@ -19,7 +19,7 @@ public interface JsonUser {
 
     /**
      * Sends a register request
-     * @param user the Register object containing registration information
+     * @param user the User object containing registration information
      * @return a Call object containing a Register object
      */
     @POST("users/sing-up")
@@ -27,7 +27,7 @@ public interface JsonUser {
 
     /**
      * Sends a password reset request
-     * @param user the Register object containing password reset information
+     * @param user the User object containing password reset information
      * @return a Call object containing a Register object
      */
     @PUT("users/password-reset")
@@ -35,14 +35,22 @@ public interface JsonUser {
 
     /**
      * Retrieves the user's password and login
+     * @param user the User object containing password reset information
      * @return a Call object containing a Register object
      */
     @GET("users/password-reminder")
     Call<User> getPassword(@Body User user);
 
+//    /**
+//     * Sends a points request to update the user's level
+//     * @param userLVL        the UserLVL object containing level information
+//     * @return a Call object containing a UserLVL object
+//     */
+//    @PUT("users/users-level")
+//    Call<UserLVL> points(@Body UserLVL userLVL);
+    
     /**
      * Sends a points request to update the user's level
-     * @param collectionName the name of the collection
      * @param userLVL        the UserLVL object containing level information
      * @return a Call object containing a UserLVL object
      */
