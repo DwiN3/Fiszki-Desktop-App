@@ -1,5 +1,6 @@
 package Controllers;
 
+import Mail.SendEmailTLS;
 import Retrofit.JsonPlaceholderAPI.JsonUser;
 import Retrofit.Models.Register;
 import app.App;
@@ -55,6 +56,7 @@ public class ControllerPasswordReminder {
 
     public void reminderPasswordRetrofit(){
         String emailString = String.valueOf(email_reminder.getText());
+        String subject = "Przypomnienie hasła w aplikacji fiszki";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
@@ -69,7 +71,9 @@ public class ControllerPasswordReminder {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
-                        String password = response.body().getPassword();
+                        String message = "Nazwa: "+ response.body().getNick()+"\nHasło: "+ response.body().getPassword();;
+                        SendEmailTLS sendEmailTLS = new SendEmailTLS(emailString, subject, message);
+                        sendEmailTLS.sendMessage();
                         info_password_reminder.setStyle("-fx-text-fill: #00FF00;");
                         info_password_reminder.setText("Hasło zostało wysłane na maila");
                         info_password_reminder.setVisible(true);

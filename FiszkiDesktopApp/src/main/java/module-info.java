@@ -8,6 +8,7 @@ module org.example {
     requires retrofit2.converter.gson;
     requires com.google.gson;
     requires okhttp3;
+    requires java.mail;
 
     opens app to javafx.fxml;
     opens Controllers to javafx.fxml;
