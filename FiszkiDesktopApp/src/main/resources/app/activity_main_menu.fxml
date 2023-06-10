@@ -13,11 +13,11 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-        <Button fx:id="game_quiz_button_menu" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" text="Game Quiz">
+        <Button fx:id="game_quiz_button_menu" layoutX="340.0" layoutY="200.0" prefHeight="25.0" prefWidth="215.0" text="Quiz">
          <font>
             <Font size="13.0" />
          </font></Button>
-        <Button fx:id="game_wpis_button_menu" layoutX="340.0" layoutY="240" prefHeight="25.0" prefWidth="215.0" text="Game Wpis">
+        <Button fx:id="game_wpis_button_menu" layoutX="340.0" layoutY="240" prefHeight="25.0" prefWidth="215.0" text="Wpis">
          <font>
             <Font size="13.0" />
          </font></Button>

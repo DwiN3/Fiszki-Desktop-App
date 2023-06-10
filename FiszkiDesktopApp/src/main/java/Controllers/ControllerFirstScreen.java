@@ -80,6 +80,8 @@ public class ControllerFirstScreen {
         login_button_first.setOpacity(buttonOpacity);
         register_button_first.setDisable(isLoading);
         register_button_first.setOpacity(buttonOpacity);
+        remind_button_first.setDisable(isLoading);
+        remind_button_first.setOpacity(buttonOpacity);
         reset_button_first.setDisable(isLoading);
         reset_button_first.setOpacity(buttonOpacity);
     }

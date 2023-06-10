@@ -53,7 +53,7 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-        <Button fx:id="back_button_register" layoutX="340.0" layoutY="360.0" prefHeight="25.0" prefWidth="215.0" text="Wróć do logowania">
+        <Button fx:id="back_button_register" layoutX="340.0" layoutY="360.0" prefHeight="25.0" prefWidth="215.0" text="Powrót do logowania">
          <font>
             <Font size="13.0" />
          </font></Button>
