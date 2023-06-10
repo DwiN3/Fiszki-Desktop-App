@@ -17,6 +17,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.io.IOException;
 
+/**
+ * This class is the controller for the reminder password screen
+ * This class handles the view logic responsible for remembering the user's password
+ */
 public class ControllerPasswordReminder {
     @FXML
     private Label info_password_reminder;
@@ -27,11 +31,17 @@ public class ControllerPasswordReminder {
     @FXML
     private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
 
+    /**
+     * Initializes the controller
+     */
     public void initialize(){
         button_reminder.setOnAction(event -> {
             info_password_reminder.setVisible(false);
-            blockButtons(true);
-            //reminderPasswordRetrofit();
+
+            if(!email_reminder.getText().isEmpty()){
+                reminderPasswordRetrofit();
+                blockButtons(true);
+            }
         });
         back_button_reminder.setOnAction(event -> {
             try {
@@ -54,6 +64,9 @@ public class ControllerPasswordReminder {
         back_button_reminder.setOpacity(buttonOpacity);
     }
 
+    /**
+     * Performs a user password reminder using Retrofit
+     */
     public void reminderPasswordRetrofit(){
         String emailString = String.valueOf(email_reminder.getText());
         String subject = "Przypomnienie hasła w aplikacji fiszki";
@@ -71,8 +84,13 @@ public class ControllerPasswordReminder {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
-                        String message = "Nazwa: "+ response.body().getNick()+"\nHasło: "+ response.body().getPassword();;
-                        SendEmailTLS sendEmailTLS = new SendEmailTLS(emailString, subject, message);
+                        String message = "Nazwa:   "+ response.body().getNick()+"\nHasło:     "+ response.body().getPassword();;
+                        SendEmailTLS sendEmailTLS = null;
+                        try {
+                            sendEmailTLS = new SendEmailTLS(emailString, subject, message);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                         sendEmailTLS.sendMessage();
                         info_password_reminder.setStyle("-fx-text-fill: #00FF00;");
                         info_password_reminder.setText("Hasło zostało wysłane na maila");

@@ -3,18 +3,38 @@ package Mail;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Properties;
 
+/**
+ * This class provides functionality to send an email using TLS (Transport Layer Security) protocol.
+ * It uses the JavaMail API to connect to an SMTP server and send the email.
+ */
 public class SendEmailTLS {
-
     private String mailToSend, subjectToSend, messageToSend;
-    private String myMail ="student35196ans@gmail.com", myPassword="plwjpeasxptkbstk";
-    public SendEmailTLS(String _mail, String _subject, String _message){
+    private File passwordFile = new File("password.txt");
+    private String password = new String(Files.readAllBytes(passwordFile.toPath()));
+    private String myMail ="fiszkiapp@gmail.com", myPassword=password;
+
+    /**
+     * Constructs a new SendEmailTLS object with the specified email details.
+     *
+     * @param _mail    the email address to send the email to
+     * @param _subject the subject of the email
+     * @param _message the content of the email
+     * @throws IOException if an I/O error occurs while reading the password from file
+     */
+    public SendEmailTLS(String _mail, String _subject, String _message) throws IOException {
         mailToSend = _mail;
         subjectToSend = _subject;
         messageToSend = _message;
     }
 
+    /**
+     * Sends the email using the provided email details.
+     */
     public void sendMessage() {
         final String username = myMail;
         final String password = myPassword;
@@ -33,7 +53,6 @@ public class SendEmailTLS {
                 });
 
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myMail));
             message.setRecipients(
@@ -42,10 +61,8 @@ public class SendEmailTLS {
             );
             message.setSubject(subjectToSend);
             message.setText(messageToSend);
-
             Transport.send(message);
-
-            System.out.println("Done");
+            //System.out.println("Done");
 
         } catch (MessagingException e) {
             e.printStackTrace();

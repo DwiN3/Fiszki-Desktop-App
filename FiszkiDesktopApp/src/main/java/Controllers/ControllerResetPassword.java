@@ -72,7 +72,7 @@ public class ControllerResetPassword {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
-        Register post = new Register(passwordString, passwordReString);
+        Register post = new Register(emailString,passwordString, passwordReString);
         Call<Register> call = jsonUser.resetPassword(post);
 
         call.enqueue(new Callback<Register>() {

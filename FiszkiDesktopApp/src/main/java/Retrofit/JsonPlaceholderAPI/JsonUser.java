@@ -35,6 +35,13 @@ public interface JsonUser {
     Call<Register> resetPassword(@Body Register register);
 
     /**
+     * Retrieves the user's password and login
+     * @return a Call object containing a Register object
+     */
+    @GET("users/password-reminder")
+    Call<Register> getPassword(@Body Register register);
+
+    /**
      * Sends a points request to update the user's level
      * @param collectionName the name of the collection
      * @param userLVL        the UserLVL object containing level information
@@ -49,7 +56,4 @@ public interface JsonUser {
      */
     @GET("users/users-level")
     Call<UserLVL> getUserLVL();
-
-    @GET("users/password-reminder")
-    Call<Register> getPassword(@Body Register register);
 }

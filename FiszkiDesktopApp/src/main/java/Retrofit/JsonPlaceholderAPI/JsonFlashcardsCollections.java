@@ -10,6 +10,7 @@ import java.util.List;
  * Interface representing the JSON Flashcards Collections API
  */
 public interface JsonFlashcardsCollections {
+
     /**
      * Retrieves the flashcards from a specific category
      * @param collectionName the name of the flashcards collection category

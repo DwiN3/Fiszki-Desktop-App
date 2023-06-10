@@ -12,7 +12,7 @@ public class Register {
     private String text;
 
     /**
-     * Constructs a Register object with only email
+     * The constructor is responsible for sending a password reminder query
      * @param email            the email
      */
     public Register(String email) {
@@ -20,17 +20,18 @@ public class Register {
     }
 
     /**
-     * Constructs a Register object with only password and repeatedPassword
+     * The constructor is responsible for sending a password reset request
      * @param password          the password
      * @param repeatedPassword  the repeated password
      */
-    public Register(String password, String repeatedPassword) {
+    public Register(String email, String password, String repeatedPassword) {
+        this.email = email;
         this.password = password;
         this.repeatedPassword = repeatedPassword;
     }
 
     /**
-     * Constructs a Register object with all registration information
+     * The constructor is responsible for sending user registration related queries
      * @param email             the email
      * @param password          the password
      * @param repeatedPassword  the repeated password
