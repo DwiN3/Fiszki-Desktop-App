@@ -12,6 +12,14 @@ public class Register {
     private String text;
 
     /**
+     * Constructs a Register object with only email
+     * @param email            the email
+     */
+    public Register(String email) {
+        this.email = email;
+    }
+
+    /**
      * Constructs a Register object with only password and repeatedPassword
      * @param password          the password
      * @param repeatedPassword  the repeated password

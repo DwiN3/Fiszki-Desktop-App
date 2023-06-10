@@ -49,4 +49,7 @@ public interface JsonUser {
      */
     @GET("users/users-level")
     Call<UserLVL> getUserLVL();
+
+    @GET("users/password-reminder")
+    Call<Register> getPassword(@Body Register register);
 }
