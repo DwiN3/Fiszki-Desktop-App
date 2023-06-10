@@ -83,7 +83,7 @@ public class ControllerPasswordReminder {
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.code() == 200){
                     Platform.runLater(() -> {
-                        String message = "Nazwa:   "+ response.body().getNick()+"\nHasło:     "+ response.body().getPassword();;
+                        String message ="Dane logowania do aplikacji fiszki\n\n"+"Nazwa:   "+ response.body().getNick()+"\nHasło:     "+ response.body().getPassword();;
                         SendEmailTLS sendEmailTLS = null;
                         try {
                             sendEmailTLS = new SendEmailTLS(emailString, subject, message);
