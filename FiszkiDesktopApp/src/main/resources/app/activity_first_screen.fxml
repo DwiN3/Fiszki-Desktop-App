@@ -14,7 +14,7 @@
       </Label>
       <Label fx:id="info_first" alignment="CENTER" layoutX="340.0" layoutY="120" prefHeight="21.0" prefWidth="215.0" textFill="WHITE" visible="false">
          <font>
-            <Font  size="14.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <Label alignment="CENTER_RIGHT" layoutX="190.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="Nazwa użytkownika" textFill="WHITE">
@@ -41,11 +41,11 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button fx:id="remind_button_first" layoutX="340.0" layoutY="320.0" prefHeight="25.0" prefWidth="215.0" text="Przypomnienie hasła">
+      <Button fx:id="remind_button_first" layoutX="340.0" layoutY="320.0" prefHeight="25.0" prefWidth="215.0" text="Przypomnienie loginu">
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button fx:id="reset_button_first" layoutX="340.0" layoutY="360.0" prefHeight="25.0" prefWidth="215.0" text="Reset hasła" >
+      <Button fx:id="reset_button_first" layoutX="340.0" layoutY="360.0" prefHeight="25.0" prefWidth="215.0" text="Reset hasła">
          <font>
             <Font size="13.0" />
          </font></Button>

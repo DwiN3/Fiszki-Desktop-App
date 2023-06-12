@@ -94,8 +94,7 @@ public class ControllerEndScreen {
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
         UserLVL pkt = new UserLVL(points);
-        //Call<UserLVL> call = jsonUser.points(pkt);
-        Call<UserLVL> call = jsonUser.points("1",pkt);
+        Call<UserLVL> call = jsonUser.points(pkt);
 
         call.enqueue(new Callback<UserLVL>() {
             @Override

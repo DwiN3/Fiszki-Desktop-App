@@ -20,9 +20,9 @@ import java.io.IOException;
  * This class is the controller for the reminder password screen
  * This class handles the view logic responsible for remembering the user's password
  */
-public class ControllerPasswordReminder {
+public class ControllerLoginReminder {
     @FXML
-    private Label info_password_reminder;
+    private Label info_login_reminder;
     @FXML
     private TextField email_reminder;
     @FXML
@@ -35,11 +35,13 @@ public class ControllerPasswordReminder {
      */
     public void initialize(){
         button_reminder.setOnAction(event -> {
-            info_password_reminder.setVisible(false);
+            info_login_reminder.setVisible(false);
 
             if(!email_reminder.getText().isEmpty()){
-                reminderPasswordRetrofit();
-                blockButtons(true);
+                Platform.runLater(() -> {
+                    reminderLoginRetrofit();
+                    blockButtons(true);
+                });
             }
         });
         back_button_reminder.setOnAction(event -> {
@@ -66,9 +68,9 @@ public class ControllerPasswordReminder {
     /**
      * Performs a user password reminder using Retrofit
      */
-    public void reminderPasswordRetrofit(){
+    public void reminderLoginRetrofit(){
         String emailString = String.valueOf(email_reminder.getText());
-        String subject = "Przypomnienie hasła w aplikacji fiszki";
+        String subject = "Przypomnienie loginu w aplikacji fiszki";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://flashcard-app-api-bkrv.onrender.com/api/")
@@ -76,14 +78,15 @@ public class ControllerPasswordReminder {
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
         User post = new User(emailString);
-        Call<User> call = jsonUser.getPassword(post);
+        Call<User> call = jsonUser.getLogin(post);
 
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+                System.out.println(response.code() + "\n\nWIADOMOŚĆ");
                 if(response.code() == 200){
                     Platform.runLater(() -> {
-                        String message ="Dane logowania do aplikacji fiszki\n\n"+"Nazwa:   "+ response.body().getNick()+"\nHasło:     "+ response.body().getPassword();;
+                        String message ="Nazwa:   "+ response.body().getNick();
                         SendEmailTLS sendEmailTLS = null;
                         try {
                             sendEmailTLS = new SendEmailTLS(emailString, subject, message);
@@ -91,18 +94,18 @@ public class ControllerPasswordReminder {
                             throw new RuntimeException(e);
                         }
                         sendEmailTLS.sendMessage();
-                        info_password_reminder.setStyle("-fx-text-fill: #00FF00;");
-                        info_password_reminder.setText("Hasło zostało wysłane na maila");
-                        info_password_reminder.setVisible(true);
+                        info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
+                        info_login_reminder.setText("Hasło zostało wysłane na maila");
+                        info_login_reminder.setVisible(true);
                         blockButtons(false);
                     });
                 }
 
                 if(!response.isSuccessful()){
                     Platform.runLater(() -> {
-                        info_password_reminder.setStyle("-fx-text-fill: #FF0000;");
-                        info_password_reminder.setText("Brak maila");
-                        info_password_reminder.setVisible(true);
+                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                        info_login_reminder.setText("Brak maila");
+                        info_login_reminder.setVisible(true);
                         blockButtons(false);
                     });
                 }
@@ -112,9 +115,9 @@ public class ControllerPasswordReminder {
             public void onFailure(Call<User> call, Throwable t) {
                 if(t.getMessage().equals("timeout")){
                     Platform.runLater(() -> {
-                        info_password_reminder.setStyle("-fx-text-fill: #FF0000;");
-                        info_password_reminder.setText("Uruchamianie serwera");
-                        info_password_reminder.setVisible(true);
+                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                        info_login_reminder.setText("Uruchamianie serwera");
+                        info_login_reminder.setVisible(true);
                         blockButtons(false);
                     });
                 }

@@ -35,11 +35,11 @@ public interface JsonUser {
 
     /**
      * Retrieves the user's password and login
-     * @param user the User object containing password reset information
+     * @param user the User object containing login information
      * @return a Call object containing a Register object
      */
-    @GET("users/password-reminder")
-    Call<User> getPassword(@Body User user);
+    @POST("users/nick-remind")
+    Call<User> getLogin(@Body User user);
 
     /**
      * Sends a points request to update the user's level
@@ -48,15 +48,6 @@ public interface JsonUser {
     */
     @PUT("users/users-level")
     Call<UserLVL> points(@Body UserLVL userLVL);
-    
-    /**
-     * DO WYWALENIA
-     * Sends a points request to update the user's level
-     * @param userLVL        the UserLVL object containing level information
-     * @return a Call object containing a UserLVL object
-     */
-    @PUT("users/users-level/{collectionName}")
-    Call<UserLVL> points(@Path("collectionName") String collectionName, @Body UserLVL userLVL);
 
     /**
      * Retrieves the user's level
