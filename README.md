@@ -14,15 +14,18 @@ Aplikacja "Fiszki Desktop App" jest odpowiednia dla osób w każdym wieku i o r�
 
 Aplikacja działa na samodzielnie wykonanym api które wykorzystuje serwer: https://render.com/ a łączy się z nim poprzez rozszerzenie Retrofit.
 
-W aplikacji można utworzyć konto, zalogować się i zresetować hasło istniejącego konta. 
+W aplikacji można utworzyć konto, zalogować się i zresetować hasło istniejącego konta. Możliwe jest również przypomnienie loginu poprzez skrzynkę pocztową gmail.
+
 
 Po zalogowaniu można korzystać z zawartości aplikacji. Użytkownik ma możliwość wybrać jedną z pośród wielu kategorii która zawiera słowa o poszczególnej tematyce,  możliwe zagranie w tryb “quiz” lub “wpis”.
 
-Aplikacja posiada dwa tryby gry:
-* Tryb “quiz” pozwala użytkownikowi na zyskiwanie punktów aby zwiększać poziom użytkownika. Gracz wybiera jedną spośród czterech odpowiedzi, gra się kończy po 20 fiszkach i zostajemy przeniesieni do ekranu który zliczy nasze postępy gry, obecny lvl oraz wynik najlepszej poprawnej passy.
-* Tryb “wpis” polega na wyświetlanie poszczególnych słów a celem użytkownika jest wpisanie w pole tekstowe tłumaczenie tego słowa.
+W zakładce “Profil” wyświetli się informacja o loginie użytkownika, jego aktualnym poziomie oraz ilość punktów do następnego poziomu.
 
-Aby zobaczyć informacje o swoim profilu należy wybrać sekcje “Profil”, znajdują się tam informacje o lvl użytkownika oraz ilość punktów do następnego poziomu. 
+Aplikacja posiada dwa tryby gry:
+* Tryb “Quiz” pozwala on na naukę słownictwa za pomocą mechaniki quizu. Gracz wybiera jedną spośród czterech odpowiedzi. 
+* Tryb “Wpis” jest to gra w której użytkownik musi tłumaczyć wyskakujące słowa na język angielski. Jest to trudniejszy tryb ponieważ gracz nie ma do wyboru puli odpowiedzi a ręcznie musi wpisać każde słowo. 
+
+Po ukończeniu jednego z tych trybów zostajemy przeniesieni do ekranu który zliczy nasze postępy gry, obecny lvl oraz wynik najlepszej poprawnej passy.
 
 ## Autorzy:
 Kamil Dereń oraz Bartek Kubik
