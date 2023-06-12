@@ -9,10 +9,12 @@ module org.example {
     requires com.google.gson;
     requires okhttp3;
     requires java.mail;
+    requires activation;
 
     opens app to javafx.fxml;
     opens Controllers to javafx.fxml;
     opens Other;
+    opens Mail;
     opens Retrofit.Models;
     opens Retrofit.JsonPlaceholderAPI;
     exports Controllers;

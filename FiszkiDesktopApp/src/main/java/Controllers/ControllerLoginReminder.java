@@ -38,6 +38,8 @@ public class ControllerLoginReminder {
         button_reminder.setOnAction(event -> {
             info_login_reminder.setVisible(false);
 
+
+
             if(!email_reminder.getText().isEmpty()){
                 Platform.runLater(() -> {
                     reminderLoginRetrofit();
@@ -45,6 +47,8 @@ public class ControllerLoginReminder {
                 });
             }
         });
+
+
         back_button_reminder.setOnAction(event -> {
             try {
                 switchActivity("activity_first_screen");
@@ -85,40 +89,40 @@ public class ControllerLoginReminder {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 int statusCode = response.code();
-                System.out.println("Kodziki "+ response.body());
-//                if (statusCode == 200) {
-//                    String nick = response.body();
-//                    if (nick != null && !nick.isEmpty()) {
-//                        String message = "Nazwa: " + nick;
-//                        SendEmailTLS sendEmailTLS;
-//                        try {
-//                            sendEmailTLS = new SendEmailTLS(emailString, subject, message);
-//                            sendEmailTLS.sendMessage();
-//                            Platform.runLater(() -> {
-//                                info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
-//                                info_login_reminder.setText("Hasło zostało wysłane na maila");
-//                                info_login_reminder.setVisible(true);
-//                                blockButtons(false);
-//                            });
-//                        } catch (IOException e) {
-//                            throw new RuntimeException(e);
-//                        }
-//                    } else {
-//                        Platform.runLater(() -> {
-//                            info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-//                            info_login_reminder.setText("Brak maila");
-//                            info_login_reminder.setVisible(true);
-//                            blockButtons(false);
-//                        });
-//                    }
-//                } else {
-//                    Platform.runLater(() -> {
-//                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-//                        info_login_reminder.setText("Błąd serwera: " + statusCode);
-//                        info_login_reminder.setVisible(true);
-//                        blockButtons(false);
-//                    });
-//                }
+                System.out.println("Kodziki "+ statusCode);
+                if (statusCode == 200) {
+                    String nick = response.body();
+                    if (nick != null && !nick.isEmpty()) {
+                        String message = "Nazwa: " + nick;
+                        SendEmailTLS sendEmailTLS;
+                        try {
+                            sendEmailTLS = new SendEmailTLS(emailString, subject, message);
+                            sendEmailTLS.sendMessage();
+                            Platform.runLater(() -> {
+                                info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
+                                info_login_reminder.setText("Hasło zostało wysłane na maila");
+                                info_login_reminder.setVisible(true);
+                                blockButtons(false);
+                            });
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    } else {
+                        Platform.runLater(() -> {
+                            info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                            info_login_reminder.setText("Brak maila");
+                            info_login_reminder.setVisible(true);
+                            blockButtons(false);
+                        });
+                    }
+                } else {
+                    Platform.runLater(() -> {
+                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                        info_login_reminder.setText("Błąd serwera: " + statusCode);
+                        info_login_reminder.setVisible(true);
+                        blockButtons(false);
+                    });
+                }
             }
 
             @Override
