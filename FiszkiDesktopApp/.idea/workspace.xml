@@ -5,77 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86432195-cb31-4103-9a04-680cea4d97c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/allpackages-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/copy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/element-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery-ui.overrides.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/legal/COPYRIGHT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/legal/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/legal/jquery.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/legal/jqueryUI.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/member-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/module-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerEndScreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerFirstScreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerMainMenu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerProfile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerQuizGame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerRegister.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerResetPassword.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/ControllerWpisGame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Controllers/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Other/DateInstance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Other/SetGame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Other/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Other/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/JsonPlaceholderAPI/JsonFlashcardsCollections.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/JsonPlaceholderAPI/JsonUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/JsonPlaceholderAPI/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/JsonPlaceholderAPI/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/Flashcard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/Register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/UserLVL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/Retrofit/Models/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/app/App.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/app/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/app/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org.example/module-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/package-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/resources/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/resources/x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/search-page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/tag-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/activity_password_reminder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/activity_login_reminder.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -56,7 +56,7 @@ public class ControllerFirstScreen {
         });
         remind_button_first.setOnAction(event -> {
             try {
-                switchActivity("activity_password_reminder");
+                switchActivity("activity_login_reminder");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
