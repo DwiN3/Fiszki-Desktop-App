@@ -102,7 +102,7 @@ public class ControllerLoginReminder {
                             sendEmailTLS.sendMessage();
                             Platform.runLater(() -> {
                                 info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
-                                info_login_reminder.setText("Hasło zostało wysłane na maila");
+                                info_login_reminder.setText("Login został wysłany na maila");
                                 info_login_reminder.setVisible(true);
                                 blockButtons(false);
                             });

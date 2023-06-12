@@ -31,7 +31,7 @@ public interface JsonUser {
      * @return a Call object containing a Register object
      */
     @PUT("users/password-reset")
-    Call<User> resetPassword(@Body User user);
+    Call<String> resetPassword(@Body User user);
 
     /**
      * Retrieves the user's password and login

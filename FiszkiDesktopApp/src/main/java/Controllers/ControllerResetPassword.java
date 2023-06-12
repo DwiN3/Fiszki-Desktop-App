@@ -73,11 +73,12 @@ public class ControllerResetPassword {
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
         User post = new User(emailString,passwordString, passwordReString);
-        Call<User> call = jsonUser.resetPassword(post);
+        Call<String> call = jsonUser.resetPassword(post);
 
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
+                System.out.println("Kodzik"+ response.body());
                 if(response.code() == 200){
                     Platform.runLater(() -> {
                         info_reset_password.setStyle("-fx-text-fill: #00FF00;");
@@ -98,7 +99,7 @@ public class ControllerResetPassword {
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 if(t.getMessage().equals("timeout")){
                     Platform.runLater(() -> {
                         info_reset_password.setStyle("-fx-text-fill: #FF0000;");
@@ -107,6 +108,7 @@ public class ControllerResetPassword {
                         blockButtons(false);
                     });
                 }
+                System.out.println("Kodzik"+ t.getMessage());
             }
         });
     }
