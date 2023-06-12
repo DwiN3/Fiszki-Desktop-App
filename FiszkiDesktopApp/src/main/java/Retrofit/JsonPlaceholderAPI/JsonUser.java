@@ -39,7 +39,7 @@ public interface JsonUser {
      * @return a Call object containing a Register object
      */
     @POST("users/nick-remind")
-    Call<User> getLogin(@Body User user);
+    Call<String> getLogin(@Body User user);
 
     /**
      * Sends a points request to update the user's level

@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -68,7 +69,7 @@ public class ControllerLoginReminder {
     /**
      * Performs a user password reminder using Retrofit
      */
-    public void reminderLoginRetrofit(){
+    public void reminderLoginRetrofit() {
         String emailString = String.valueOf(email_reminder.getText());
         String subject = "Przypomnienie loginu w aplikacji fiszki";
 
@@ -78,50 +79,60 @@ public class ControllerLoginReminder {
                 .build();
         JsonUser jsonUser = retrofit.create(JsonUser.class);
         User post = new User(emailString);
-        Call<User> call = jsonUser.getLogin(post);
+        Call<String> call = jsonUser.getLogin(post);
 
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                System.out.println(response.code() + "\n\nWIADOMOŚĆ");
-                if(response.code() == 200){
-                    Platform.runLater(() -> {
-                        String message ="Nazwa:   "+ response.body().getNick();
-                        SendEmailTLS sendEmailTLS = null;
-                        try {
-                            sendEmailTLS = new SendEmailTLS(emailString, subject, message);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                        sendEmailTLS.sendMessage();
-                        info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
-                        info_login_reminder.setText("Hasło zostało wysłane na maila");
-                        info_login_reminder.setVisible(true);
-                        blockButtons(false);
-                    });
-                }
-
-                if(!response.isSuccessful()){
-                    Platform.runLater(() -> {
-                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-                        info_login_reminder.setText("Brak maila");
-                        info_login_reminder.setVisible(true);
-                        blockButtons(false);
-                    });
-                }
+            public void onResponse(Call<String> call, Response<String> response) {
+                int statusCode = response.code();
+                System.out.println("Kodziki "+ response.body());
+//                if (statusCode == 200) {
+//                    String nick = response.body();
+//                    if (nick != null && !nick.isEmpty()) {
+//                        String message = "Nazwa: " + nick;
+//                        SendEmailTLS sendEmailTLS;
+//                        try {
+//                            sendEmailTLS = new SendEmailTLS(emailString, subject, message);
+//                            sendEmailTLS.sendMessage();
+//                            Platform.runLater(() -> {
+//                                info_login_reminder.setStyle("-fx-text-fill: #00FF00;");
+//                                info_login_reminder.setText("Hasło zostało wysłane na maila");
+//                                info_login_reminder.setVisible(true);
+//                                blockButtons(false);
+//                            });
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    } else {
+//                        Platform.runLater(() -> {
+//                            info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+//                            info_login_reminder.setText("Brak maila");
+//                            info_login_reminder.setVisible(true);
+//                            blockButtons(false);
+//                        });
+//                    }
+//                } else {
+//                    Platform.runLater(() -> {
+//                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+//                        info_login_reminder.setText("Błąd serwera: " + statusCode);
+//                        info_login_reminder.setVisible(true);
+//                        blockButtons(false);
+//                    });
+//                }
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                if(t.getMessage().equals("timeout")){
-                    Platform.runLater(() -> {
-                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-                        info_login_reminder.setText("Uruchamianie serwera");
-                        info_login_reminder.setVisible(true);
-                        blockButtons(false);
-                    });
-                }
+            public void onFailure(Call<String> call, Throwable t) {
+                Platform.runLater(() -> {
+                    info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                    info_login_reminder.setText("Błąd połączenia: " + t.getMessage());
+                    info_login_reminder.setVisible(true);
+                    blockButtons(false);
+                });
+                System.out.println(t.getMessage());
             }
         });
     }
+
+
 }
