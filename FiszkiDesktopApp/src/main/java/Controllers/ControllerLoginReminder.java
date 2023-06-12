@@ -28,19 +28,21 @@ public class ControllerLoginReminder {
     private TextField email_reminder;
     @FXML
     private Button button_reminder, back_button_reminder;
+
     @FXML
-    private void switchActivity(String activity) throws IOException { App.setRoot(activity); }
+    private void switchActivity(String activity) throws IOException {
+        App.setRoot(activity);
+    }
 
     /**
      * Initializes the controller
      */
-    public void initialize(){
+    public void initialize() {
         button_reminder.setOnAction(event -> {
             info_login_reminder.setVisible(false);
 
 
-
-            if(!email_reminder.getText().isEmpty()){
+            if (!email_reminder.getText().isEmpty()) {
                 Platform.runLater(() -> {
                     reminderLoginRetrofit();
                     blockButtons(true);
@@ -60,9 +62,10 @@ public class ControllerLoginReminder {
 
     /**
      * Disables or enables the buttons based on the specified isLoading value
+     *
      * @param isLoading true to disable the buttons and show loading state, false otherwise
      */
-    public void blockButtons(boolean isLoading){
+    public void blockButtons(boolean isLoading) {
         double buttonOpacity = isLoading ? 1.0 : 1.0;
         button_reminder.setDisable(isLoading);
         button_reminder.setOpacity(buttonOpacity);
@@ -89,7 +92,6 @@ public class ControllerLoginReminder {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 int statusCode = response.code();
-                System.out.println("Kodziki "+ statusCode);
                 if (statusCode == 200) {
                     String nick = response.body();
                     if (nick != null && !nick.isEmpty()) {
@@ -107,18 +109,11 @@ public class ControllerLoginReminder {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                    } else {
-                        Platform.runLater(() -> {
-                            info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-                            info_login_reminder.setText("Brak maila");
-                            info_login_reminder.setVisible(true);
-                            blockButtons(false);
-                        });
                     }
                 } else {
                     Platform.runLater(() -> {
                         info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-                        info_login_reminder.setText("Błąd serwera: " + statusCode);
+                        info_login_reminder.setText("Błędny mail");
                         info_login_reminder.setVisible(true);
                         blockButtons(false);
                     });
@@ -127,16 +122,15 @@ public class ControllerLoginReminder {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                Platform.runLater(() -> {
-                    info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
-                    info_login_reminder.setText("Błąd połączenia: " + t.getMessage());
-                    info_login_reminder.setVisible(true);
-                    blockButtons(false);
-                });
-                System.out.println(t.getMessage());
+                if (t.getMessage().equals("timeout")) {
+                    Platform.runLater(() -> {
+                        info_login_reminder.setStyle("-fx-text-fill: #FF0000;");
+                        info_login_reminder.setText("Uruchamianie serwera");
+                        info_login_reminder.setVisible(true);
+                        blockButtons(false);
+                    });
+                }
             }
         });
     }
-
-
 }
